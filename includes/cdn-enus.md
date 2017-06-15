@@ -30,7 +30,7 @@ Refer to [How to create storage accounts](/documentation/articles/storage-create
 Refer to [How to create and deploy cloud services](/documentation/articles/cloud-services-how-to-create-deploy/)
 
 ### Create a website for Azure subscriptions
-Refer to [How to create and deploy websites](/documentation/articles/web-sites-create-deploy/)
+Refer to [How to create and deploy websites](/documentation/services/app-service-web/)
 
 ### Create a media service for Azure subscriptions
 Refer to [How to create and deploy media services](/documentation/articles/media-services-create-account/)

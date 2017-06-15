@@ -14,11 +14,11 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="02/17/2017"
-    wacn.date="03/03/2017"
+    wacn.date="06/15/2017"
     ms.author="msfussell" />  
 
 # Service Fabric Reliable Services 分区
-本文介绍 Azure Service Fabric Reliable Services 分区的基本概念。本文中使用的源代码也可以在 [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/Services/AlphabetPartitions) 上获取。
+本文介绍 Azure Service Fabric Reliable Services 分区的基本概念。本文中使用的源代码也可以在 [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Services/AlphabetPartitions) 上获取。
 
 ## 分区
 分区并不是 Service Fabric 所独有的。事实上，它是生成可缩放服务的核心模式。从更广泛的意义来说，我们可以将分区视为将状态（数据）和计算划分为更小的可访问单元，以提高可伸缩性和性能的一种概念。一种众所周知的分区形式是[数据分区][wikipartition]，也称为分片。
@@ -356,7 +356,7 @@ Service Fabric 提供了三个分区方案可供选择：
     
     ![浏览器屏幕截图](./media/service-fabric-concepts-partitioning/samplerunning.png)
 
-该示例的完整源代码位于 [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/Services/AlphabetPartitions)。
+该示例的完整源代码位于 [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/classic/Services/AlphabetPartitions)。
 
 ## 后续步骤
 

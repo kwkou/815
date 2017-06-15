@@ -15,11 +15,11 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="03/13/2017"
-    wacn.date="04/24/2017"
+    wacn.date="06/15/2017"
     ms.author="juliako"
     ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
     ms.openlocfilehash="3dc742a89b55435528793df451bbb1ce122c6d5f"
-    ms.lasthandoff="04/14/2017" />
+    ms.lasthandoff="06/15/2017" />
 
 # <a name="scaling-media-processing-overview"></a>调整媒体处理的规模概述
 此页概述了如何以及为何调整媒体处理的规模。 
@@ -35,7 +35,7 @@
 | 方案 | **S1** | **S2** | **S3** |
 | --- | --- | --- | --- |
 | 预期的用例| <p>单比特率编码。</p><p>具有 SD 或更低分辨率的文件，不具有高时效性，成本低。 |单比特率和多比特率编码。</p><p>SD 和 HD 编码的正常使用情况。 |单比特率和多比特率编码。</p><p>全高清和 4K 分辨率视频。对时间敏感，更快的编码周转。 </p> |
-| 基准|<p>[输入文件：5 分钟、640x360p、29.97 帧/秒](https://wamspartners.blob.core.windows.net/for-long-term-share/Whistler_5min_360p30.mp4?sr=c&si=AzureDotComReadOnly&sig=OY0TZ%2BP2jLK7vmcQsCTAWl33GIVCu67I02pgarkCTNw%3D)。</p><p>编码为具有相同分辨率的单比特率 MP4 文件大约需要 11 分钟。</p>|<p>[输入文件：5 分钟、1280x720p、29.97 帧/秒](https://wamspartners.blob.core.windows.net/for-long-term-share/Whistler_5min_720p30.mp4?sr=c&si=AzureDotComReadOnly&sig=OY0TZ%2BP2jLK7vmcQsCTAWl33GIVCu67I02pgarkCTNw%3D)</p><p>预设为“H264 单比特率 720p”的编码大约需要 5 分钟。</p><p>预设为“H264 多比特率 720p”的编码大约需要 11.5 分钟。</p>|<p>[输入文件：5 分钟、1920x1080p、29.97 帧/秒](https://wamspartners.blob.core.windows.net/for-long-term-share/Whistler_5min_1080p30.mp4?sr=c&si=AzureDotComReadOnly&sig=OY0TZ%2BP2jLK7vmcQsCTAWl33GIVCu67I02pgarkCTNw%3D)。</p><p>预设为“H264 单比特率 1080p”的编码大约需要 2.7 分钟。</p><p>预设为“H264 多比特率 1080p”的编码大约需要 5.7 分钟。</p>|
+| 基准|<p>输入文件：5 分钟、640x360p、29.97 帧/秒。</p><p>编码为具有相同分辨率的单比特率 MP4 文件大约需要 11 分钟。</p>|<p>输入文件：5 分钟、1280x720p、29.97 帧/秒</p><p>预设为“H264 单比特率 720p”的编码大约需要 5 分钟。</p><p>预设为“H264 多比特率 720p”的编码大约需要 11.5 分钟。</p>|<p>输入文件：5 分钟、1920x1080p、29.97 帧/秒。</p><p>预设为“H264 单比特率 1080p”的编码大约需要 2.7 分钟。</p><p>预设为“H264 多比特率 1080p”的编码大约需要 5.7 分钟。</p>|
 
 ## <a name="considerations"></a>注意事项
 > [AZURE.IMPORTANT]

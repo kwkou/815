@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="data-management"
     ms.date="02/06/2017"
-    wacn.date="03/24/2017"
+    wacn.date="06/15/2017"
     ms.author="rickbyh" />  
 
 
@@ -54,7 +54,7 @@ SQL 数据库支持两种类型的身份验证：
 
 你应该自行熟悉一下下述能够用于限制或提升权限的功能：
 
-* [模拟](https://msdn.microsoft.com/zh-cn/library/vstudio/bb669087)和[模块签名](https://msdn.microsoft.com/zh-cn/library/bb669102)可用于安全地暂时提升权限。
+* 模拟和[模块签名](https://msdn.microsoft.com/zh-cn/library/bb669102)可用于安全地暂时提升权限。
 * [行级安全性](https://msdn.microsoft.com/zh-cn/library/dn765131)可用于限制用户可访问的行。
 * [数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started/)可用于限制敏感数据的公开。
 * [存储过程](https://msdn.microsoft.com/zh-cn/library/ms190782)可用于限制可对数据库执行的操作。

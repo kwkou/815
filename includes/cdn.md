@@ -30,7 +30,7 @@ Azure 内容传送网络 (CDN) 通过遍布在中国大陆的众多物理节点�
 请参阅 [如何创建和部署云服务](/documentation/articles/cloud-services-how-to-create-deploy/) 
 
 ### 为 Azure 订阅创建 Web 应用
-请参阅 [如何创建和部署 Web 应用](/documentation/articles/web-sites-create-deploy/) 
+请参阅 [如何创建和部署 Web 应用](/documentation/services/app-service-web/) 
 
 ### 为 Azure 订阅创建媒体服务
 请参阅 [如何创建和部署媒体服务](/documentation/articles/media-services-create-account/) 

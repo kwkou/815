@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="04/07/2017"
-    wacn.date="05/25/2017"
+    wacn.date="06/15/2017"
     ms.author="kakhan"
     ms.sourcegitcommit="e851a3e1b0598345dc8bfdd4341eb1dfb9f6fb5d"
     ms.openlocfilehash="d2887e255e59c164bb6d733988053f514a118c7b"
@@ -140,7 +140,7 @@ Azure 磁盘加密管理解决方案可以解决以下业务需求：
 
 | 术语 | 定义 |
 | --- | --- |
-| Azure AD | Azure AD 是 [Azure Active Directory](/documentation/services/active-directory/) 的缩写。 若要从 Key Vault 进行身份验证以及存储和检索机密，必须具有 Azure AD 帐户。 |
+| Azure AD | Azure AD 是 [Azure Active Directory](/documentation/services/identity/) 的缩写。 若要从 Key Vault 进行身份验证以及存储和检索机密，必须具有 Azure AD 帐户。 |
 | Azure 密钥保管库 | Key Vault 是基于联邦信息处理标准 (FIPS) 验证的硬件安全模块，可以帮助保护加密密钥和敏感机密。 有关详细信息，请参阅 [Key Vault](/home/features/key-vault/) 文档。 |
 | ARM | Azure Resource Manager |
 | BitLocker |[BitLocker](https://technet.microsoft.com/zh-cn/library/hh831713.aspx) 是一种行业认可的 Windows 卷加密技术，用于在 Windows IaaS VM 上启用磁盘加密。 |
@@ -232,7 +232,7 @@ Azure 磁盘加密管理解决方案可以解决以下业务需求：
  > 如果未指定 -skipVmBackup 参数，则启用加密步骤将失败。
 
 * Azure 磁盘加密解决方案对 Windows IaaS VM 使用 BitLocker 外部密钥保护程序。 对于已加入域的 VM，不要推送会强制执行 TPM 保护程序的任何组策略。 有关“在没有兼容 TPM 的情况下允许 BitLocker”的组策略信息，请参阅 [BitLocker 组策略参考](https://technet.microsoft.com/zh-cn/library/ee706521)。
-* 若要创建 Azure AD 应用程序、创建 Key Vault 或设置现有 Key Vault 并启用加密，请参阅 [Azure 磁盘加密先决条件 PowerShell 脚本](https://github.com/Azure/azure-powershell/blob/dev/src/ResourceManager/Compute/Commands.Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1)。
+* 若要创建 Azure AD 应用程序、创建 Key Vault 或设置现有 Key Vault 并启用加密，请参阅 [Azure 磁盘加密先决条件 PowerShell 脚本](https://github.com/Azure/azure-powershell/blob/master/src/ResourceManager/Compute/Commands.Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1)。
 * 若要使用 Azure CLI 配置磁盘加密先决条件，请参阅[此 Bash 脚本](https://github.com/ejarvi/ade-cli-getting-started)。
 * 若要使用 Azure 备份服务来备份和还原加密的 VM，则使用 Azure 磁盘加密启用加密时，请使用 Azure 磁盘加密密钥配置加密 VM。 备份服务仅支持使用 KEK 配置加密的 VM。 请参阅[如何通过 Azure 备份加密来备份和还原加密的虚拟机](/documentation/articles/backup-azure-vms-encryption/)。
 
@@ -373,7 +373,7 @@ Azure 磁盘加密管理解决方案可以解决以下业务需求：
 
 
 #### <a name="set-up-the-key-vault-access-policy-for-the-azure-ad-application"></a>为 Azure AD 应用程序设置 Key Vault 访问策略
-Azure AD 应用程序需有访问保管库中密钥或机密的权限。 使用 [`Set-AzureKeyVaultAccessPolicy`](https://docs.microsoft.com/powershell/module/azure/set-azurekeyvaultaccesspolicy?view=azuresmps-3.7.0) cmdlet，并将客户端 ID（注册应用程序时生成）用作 _–ServicePrincipalName_ 参数值，即可向应用程序授予权限。 若要了解详细信息，请参阅博客文章 [Azure Key Vault - 分步指南](http://blogs.technet.com/b/kv/archive/2015/06/02/azure-key-vault-step-by-step.aspx)。 以下是有关如何通过 PowerShell 执行此任务的示例：
+Azure AD 应用程序需有访问保管库中密钥或机密的权限。 使用 [`Set-AzureKeyVaultAccessPolicy`](https://docs.microsoft.com/en-us/powershell/module/azurerm.keyvault/set-azurermkeyvaultaccesspolicy?view=azurermps-4.1.0) cmdlet，并将客户端 ID（注册应用程序时生成）用作 _–ServicePrincipalName_ 参数值，即可向应用程序授予权限。 若要了解详细信息，请参阅博客文章 [Azure Key Vault - 分步指南](http://blogs.technet.com/b/kv/archive/2015/06/02/azure-key-vault-step-by-step.aspx)。 以下是有关如何通过 PowerShell 执行此任务的示例：
 
     $keyVaultName = '<yourKeyVaultName>'
     $aadClientID = '<yourAadAppClientID>'
@@ -397,7 +397,7 @@ Azure 磁盘加密有助于保护 Key Vault 中的磁盘加密密钥和机密。
 
 
 #### <a name="set-up-a-key-encryption-key-optional"></a>设置密钥加密密钥（可选）
-如果想要使用 KEK 为 BitLocker 加密密钥增强安全性，请将 KEK 添加到 Key Vault。 使用 [`Add-AzureKeyVaultKey`](https://docs.microsoft.com/powershell/module/azurerm.keyvault/add-azurermkeyvaultkey) cmdlet 在 Key Vault 中创建密钥加密密钥。 还可从本地密钥管理 HSM 导入 KEK。 有关详细信息，请参阅 [Key Vault 文档](/documentation/services/key-vault/)。
+如果想要使用 KEK 为 BitLocker 加密密钥增强安全性，请将 KEK 添加到 Key Vault。 使用 [`Add-AzureKeyVaultKey`](https://docs.microsoft.com/en-us/powershell/module/azurerm.keyvault/add-azurekeyvaultkey?view=azurermps-4.1.0) cmdlet 在 Key Vault 中创建密钥加密密钥。 还可从本地密钥管理 HSM 导入 KEK。 有关详细信息，请参阅 [Key Vault 文档](/documentation/services/key-vault/)。
 
     Add-AzureKeyVaultKey [-VaultName] <string> [-Name] <string> -Destination <string> {HSM | Software}
 

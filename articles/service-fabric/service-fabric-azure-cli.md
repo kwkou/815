@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="03/02/2017"
-    wacn.date="04/24/2017"
+    wacn.date="06/15/2017"
     ms.author="subramar"
     ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
     ms.openlocfilehash="2cab73a861604346910f95249ba1d6023dff6904"
@@ -129,7 +129,6 @@
 
     openssl pkcs12 -in certificate.pfx -out mycert.pem -nodes
 
-有关详细信息，请参阅 [OpenSSL 文档](https://www.openssl.org/docs/man1.0.1/apps/pkcs12.html)。
 
 <a id="troubleshooting"></a>
 ## <a name="troubleshooting"></a>故障排除

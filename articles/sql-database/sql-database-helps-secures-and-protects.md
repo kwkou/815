@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-management"
    ms.date="09/13/2016"
-   wacn.date="12/26/2016"
+   wacn.date="06/15/2017"
    ms.author="carlrab"/>  
 
    
@@ -43,7 +43,7 @@ SQL 数据库提供行业里最大的合规性项目组合。所以如果你需�
 
 SQL 数据库提供多层数据保护。通过在空闲时、运转中或使用中对数据进行加密，针对数据库或应用程序仅让获得授权的用户通过身份验证，以及限制用户使其仅有权访问合适的数据子集，来对你的数据进行保护。此外，SQL 数据库提供持续的活动监视和审核，以此帮助检测潜在威胁，并在发生违规时提供关键事件记录。通过快速实现功能和减小安全风险的能力来平衡这些功能，而不会影响开发人员工作效率或客户体验。
 
-[阅读文档](http://go.microsoft.com/fwlink/?LinkID=787593)
+[阅读文档](/documentation/articles/sql-database-security-overview/)
 
 转到主页以查看 SQL 数据库可提供的其他功能。
 [请查看](/home/features/sql-database/)

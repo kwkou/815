@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/12/2016"
-	wacn.date="12/19/2016"
+	wacn.date="06/15/2017"
 	ms.author="annemill"/>
 
 
@@ -109,8 +109,8 @@ Azure 基础结构能够在 SQL 数据库服务中出现大量工作负荷时动
 
 |错误代码|严重性|说明|
 |---:|---:|:---|
-|10928|20|资源 ID：%d。数据库的 %s 限制是 %d 且已达到该限制。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。<br/><br/>资源 ID 指示已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>*注意：*有关此错误以及如何解决它的详细信息，请参阅：<br/>• [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits/)。 |
-|10929|20|资源 ID：%d。%s 最小保证为 %d，最大限制为 %d，数据库的当前使用率为 %d。但是，服务器当前太忙，无法支持针对该数据库的数目大于 %d 的请求。有关详细信息，请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637)。否则，请稍后重试。<br/><br/>资源 ID 指示已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>*注意：*有关此错误以及如何解决它的详细信息，请参阅：<br/>• [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits/)。|
+|10928|20|资源 ID：%d。数据库的 %s 限制是 %d 且已达到该限制。有关详细信息，请参阅 [/documentation/articles/sql-database-resource-limits/](/documentation/articles/sql-database-resource-limits/)。<br/><br/>资源 ID 指示已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>*注意：*有关此错误以及如何解决它的详细信息，请参阅：<br/>• [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits/)。 |
+|10929|20|资源 ID：%d。%s 最小保证为 %d，最大限制为 %d，数据库的当前使用率为 %d。但是，服务器当前太忙，无法支持针对该数据库的数目大于 %d 的请求。有关详细信息，请参阅 [/documentation/articles/sql-database-resource-limits/](/documentation/articles/sql-database-resource-limits/)。否则，请稍后重试。<br/><br/>资源 ID 指示已达到限制的资源。对于工作线程，资源 ID = 1。对于会话，资源 ID = 2。<br/><br/>*注意：*有关此错误以及如何解决它的详细信息，请参阅：<br/>• [Azure SQL 数据库资源限制](/documentation/articles/sql-database-resource-limits/)。|
 |40544|20|数据库已达到大小配额。请将数据分区或删除、删除索引或查阅文档以找到可能的解决方案。|
 |40549|16|由于你有长时间运行的事务，已终止会话。请尝试缩短事务运行时间。|
 |40550|16|由于会话获取的锁过多，已终止该会话。请尝试在单个事务中读取或修改更少的行。|
@@ -125,7 +125,7 @@ Azure 基础结构能够在 SQL 数据库服务中出现大量工作负荷时动
 | ErrorNumber | ErrorSeverity | ErrorFormat | ErrorInserts | ErrorCause | ErrorCorrectiveAction |
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | 1132 | EX\_RESOURCE | 弹性池已达到其存储限制。弹性池的存储使用不能超过 (%d) MB。 | 弹性池空间限制 (MB)。 | 达到弹性池的存储限制时，尝试向数据库写入数据。 | 在可能的情况下，请考虑增加弹性池的 DTU 数，以便提高其存储限制、降低弹性池中各数据库使用的存储，或者从弹性池中删除数据库。 |
-| 10929 | EX\_USER | %s 最小保证为 %d，最大限制为 %d，数据库的当前使用率为 %d。但是，服务器当前太忙，无法支持针对该数据库的数目大于 %d 的请求。请参阅 [http://go.microsoft.com/fwlink/?LinkId=267637](http://go.microsoft.com/fwlink/?LinkId=267637) 以获得帮助。否则，请稍后重试。 | 每个数据库的 DTU 最小值；每个数据库的 DTU 最大值 | 弹性池中所有数据库上尝试的并发辅助进程（请求）总数超过池限制。 | 可能情况下，请考虑增加弹性池的 DTU 数，以便提高其辅助进程限制，或者从弹性池中删除数据库。 |
+| 10929 | EX\_USER | %s 最小保证为 %d，最大限制为 %d，数据库的当前使用率为 %d。但是，服务器当前太忙，无法支持针对该数据库的数目大于 %d 的请求。请参阅 [/documentation/articles/sql-database-resource-limits/](/documentation/articles/sql-database-resource-limits/) 以获得帮助。否则，请稍后重试。 | 每个数据库的 DTU 最小值；每个数据库的 DTU 最大值 | 弹性池中所有数据库上尝试的并发辅助进程（请求）总数超过池限制。 | 可能情况下，请考虑增加弹性池的 DTU 数，以便提高其辅助进程限制，或者从弹性池中删除数据库。 |
 | 40844 | EX\_USER | 弹性池中数据库“%ls”（位于服务器“%ls”上）是“%ls”版本的数据库，不能有连续的复制关系。 | 数据库名称、数据库版本、服务器名称 | 针对弹性池中非高级数据库发出 StartDatabaseCopy 命令。 | 即将支持 |
 | 40857 | EX\_USER | 找不到服务器“%ls”的弹性池，弹性池名称：“%ls”。 | 服务器名称；弹性池名称 | 指定的弹性池在指定的服务器中不存在。 | 请提供有效的弹性池名称。 |
 | 40858 | EX\_USER | 弹性池“%ls”已存在于服务器“%ls”中 | 弹性池名称、服务器名称 | 指定的弹性池已存在于指定的逻辑服务器中。 | 提供新弹性池名称。 |

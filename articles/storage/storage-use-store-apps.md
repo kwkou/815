@@ -14,7 +14,7 @@
     ms.devlang="dotnet"
     ms.topic="article"
     ms.date="12/08/2016"
-    wacn.date="01/06/2017"
+    wacn.date="06/15/2017"
     ms.author="marsma" />
 
 # 如何在 Windows 应用商店应用中使用 Azure 存储
@@ -24,7 +24,7 @@
 ## 下载所需工具
 - [Visual Studio](https://www.visualstudio.com/zh-cn/visual-studio-homepage-vs.aspx) 让用户能够轻松生成、调试、本地化、包装和部署 Windows 应用商店应用。需要 Visual Studio 2012 或更高版本。
 - [Azure 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage)提供了用于使用 Azure 存储的 Windows 运行时类库。
-- [适用于 Windows 应用商店应用的 WCF 数据服务工具](http://www.microsoft.com/download/details.aspx?id=30714)利用 Visual Studio 中对 Windows 应用商店应用的客户端 OData 支持，扩展了添加服务引用的体验。
+- 适用于 Windows 应用商店应用的 WCF 数据服务工具利用 Visual Studio 中对 Windows 应用商店应用的客户端 OData 支持，扩展了添加服务引用的体验。
 
 ## 开发应用
 ### 做好准备
@@ -42,7 +42,7 @@
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Auth;
 
-接下来，向页面添加一个按钮。将以下代码添加到其 **Click** 事件，并使用 [async 关键字](http://msdn.microsoft.com/zh-cn/library/vstudio/hh156513.aspx)修改事件处理程序方法：
+接下来，向页面添加一个按钮。将以下代码添加到其 **Click** 事件，并使用 async 关键字修改事件处理程序方法：
 
     var credentials = new StorageCredentials(accountName, accountKey);
     var account = new CloudStorageAccount(credentials, true);

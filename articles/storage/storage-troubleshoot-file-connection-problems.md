@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/15/2017"
-    wacn.date="03/20/2017"
+    wacn.date="06/15/2017"
     ms.author="genli" />  
 
 
@@ -97,7 +97,7 @@
 
 ### 如何跟踪 Azure 文件存储中的读写操作
 
-[Microsoft Message Analyzer](https://www.microsoft.com/zh-cn/download/details.aspx?id=44226) 能够以明文形式显示客户端的请求，并且有线请求和事务之间的关系良好（假设此处的 SMB 不是 REST）。其缺点在于，如果存在许多 IaaS VM 工作进程，则需要在每个客户端上运行此工具，因此十分耗时。
+[Microsoft Message Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=44226) 能够以明文形式显示客户端的请求，并且有线请求和事务之间的关系良好（假设此处的 SMB 不是 REST）。其缺点在于，如果存在许多 IaaS VM 工作进程，则需要在每个客户端上运行此工具，因此十分耗时。
 
 如果将 Message Analyze 与 ProcMon 配合使用，就可以清楚了解负责事务的应用代码。
 

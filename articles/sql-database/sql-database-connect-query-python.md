@@ -15,7 +15,7 @@
     ms.devlang="python"
     ms.topic="article"
     ms.date="04/05/2017"
-    wacn.date="05/22/2017"
+    wacn.date="06/15/2017"
     ms.author="meetb;carlrab;sstein"
     ms.translationtype="Human Translation"
     ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
@@ -75,7 +75,7 @@
     <img src="./media/sql-database-connect-query-dotnet/server-name.png" alt="connection strings" style="width: 780px;" />
    
 ## <a name="select-data"></a>选择数据
-使用 [pyodbc.connect](https://github.com/mkleehammer/pyodbc/wiki) 函数和 [SELECT](https://msdn.microsoft.com/zh-cn/library/ms189499.aspx) Transact-SQL 语句查询 Azure SQL 数据库中的数据。 [Cursor.execute](https://mkleehammer.github.io/pyodbc/api-cursor.html) 函数可用于针对 SQL 数据库从查询中检索结果集。 此函数实际上可接受任何查询，并返回可使用 [cursor.fetchone()](https://mkleehammer.github.io/pyodbc/api-cursor.html) 循环访问的结果集。
+使用 [pyodbc.connect](https://github.com/mkleehammer/pyodbc/wiki) 函数和 [SELECT](https://msdn.microsoft.com/zh-cn/library/ms189499.aspx) Transact-SQL 语句查询 Azure SQL 数据库中的数据。 Cursor.execute 函数可用于针对 SQL 数据库从查询中检索结果集。 此函数实际上可接受任何查询，并返回可使用 cursor.fetchone() 循环访问的结果集。
 
     import pyodbc
     server = 'yourserver.database.chinacloudapi.cn'
@@ -107,7 +107,7 @@
     cnxn.commit()
 
 ## <a name="update-data"></a>更新数据
-可使用 [cursor.execute](https://mkleehammer.github.io/pyodbc/api-cursor.html) 函数执行 [UPDATE](https://msdn.microsoft.com/zh-cn/library/ms177523.aspx) Transact-SQL 语句，更新 Azure SQL 数据库中的数据。
+可使用 cursor.execute 函数执行 [UPDATE](https://msdn.microsoft.com/zh-cn/library/ms177523.aspx) Transact-SQL 语句，更新 Azure SQL 数据库中的数据。
 
     import pyodbc
     server = 'yourserver.database.chinacloudapi.cn'
@@ -124,7 +124,7 @@
 
 
 ## <a name="delete-data"></a>删除数据
-可使用 [cursor.execute](https://mkleehammer.github.io/pyodbc/api-cursor.html) 函数执行 [DELETE](https://msdn.microsoft.com/zh-cn/library/ms189835.aspx) Transact-SQL 语句，删除 Azure SQL 数据库中的数据。
+可使用 cursor.execute 函数执行 [DELETE](https://msdn.microsoft.com/zh-cn/library/ms189835.aspx) Transact-SQL 语句，删除 Azure SQL 数据库中的数据。
 
     import pyodbc
     server = 'yourserver.database.chinacloudapi.cn'

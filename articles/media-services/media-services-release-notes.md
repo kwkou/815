@@ -14,7 +14,7 @@
     ms.devlang="dotnet"
     ms.topic="article"
     ms.date="03/02/2017"
-    wacn.date="04/27/2017"
+    wacn.date="06/15/2017"
     ms.author="juliako" />  
 
 
@@ -369,7 +369,7 @@ Azure 媒体服务 .NET SDK 当前版本为 3.1.0.1。
 
 ### <a id="may_14_changes"></a>媒体服务一般更新
 
-现在可以使用[动态打包]对 HTTP Live Streaming 内容 (HLS) v3 进行流式处理。若要对 HLS v3 进行流式处理，请将以下格式添加到原点定位符路径：*.ism/manifest(format=m3u8-aapl-v3)。有关详细信息，请参阅 [Nick Drouin 的博客]。
+现在可以使用[动态打包]对 HTTP Live Streaming 内容 (HLS) v3 进行流式处理。若要对 HLS v3 进行流式处理，请将以下格式添加到原点定位符路径：*.ism/manifest(format=m3u8-aapl-v3)。
 
 动态打包现在还支持基于使用 PlayReady 静态加密的平滑流式处理内容传递使用 PlayReady 加密的 HLS（v3 和 v4）。有关如何使用 PlayReady 加密平滑流式处理内容的信息，请参阅[使用 PlayReady 保护平滑流]。
 
@@ -629,7 +629,6 @@ Azure 媒体服务 .NET SDK 扩展是一组扩展方法和帮助器函数，可�
 [流式处理存储加密内容]: /documentation/articles/media-services-dotnet-configure-asset-delivery-policy/
 [Azure Management Portal]: https://manage.windowsazure.cn
 [动态打包]: /documentation/articles/media-services-dynamic-packaging-overview/
-[Nick Drouin 的博客]: http://blog-ndrouin.azurewebsites.net/hls-v3-new-old-thing/
 [使用 PlayReady 保护平滑流]: /documentation/articles/media-services-static-packaging/
 [适用于 .NET 的媒体服务 SDK 中的重试逻辑]: http://msdn.microsoft.com/zh-cn/library/azure/dn745650.aspx
 [Grass Valley Announces EDIUS 7 Streaming Through the Cloud]: http://www.streamingmedia.com/Producer/Articles/ReadArticle.aspx?ArticleID=96351&utm_source=dlvr.it&utm_medium=twitter
@@ -640,7 +639,7 @@ Azure 媒体服务 .NET SDK 扩展是一组扩展方法和帮助器函数，可�
 [Azure Active Directory 访问控制服务 (ACS)]: http://msdn.microsoft.com/zh-cn/library/hh147631.aspx
 [使用适用于 .NET 的媒体服务 SDK 连接到媒体服务]: /documentation/articles/media-services-dotnet-connect-programmatically/
 [Azure 媒体服务 .NET SDK 扩展]: https://github.com/Azure/azure-sdk-for-media-services-extensions/tree/dev
-[azure-sdk-tools]: https://github.com/Azure/azure-sdk-tools
+[azure-sdk-tools]: https://github.com/Azure/azure-sdk-tools-samples
 [GitHub]: https://github.com/Azure/azure-sdk-for-media-services
 [跨多个存储帐户管理媒体服务资产]: /documentation/articles/meda-services-managing-multiple-storage-accounts/
 [处理媒体服务作业通知]: /documentation/articles/media-services-check-job-progress/#check_progress_with_queues

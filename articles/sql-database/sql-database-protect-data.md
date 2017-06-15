@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="data-management"
     ms.date="12/21/2016"
-    wacn.date="01/25/2017"
+    wacn.date="06/15/2017"
     ms.author="carlrab" />  
 
 
@@ -85,7 +85,7 @@ Azure SQL 数据库审核可跟踪数据库活动，通过将数据库事件记�
 
 * 除了 db\_datareader 和 db\_datawriter 以外的[数据库角色](https://msdn.microsoft.com/zh-cn/library/ms189121)可用于创建权力较大的应用程序用户帐户或权力较小的管理帐户。
 * 精细[权限](https://msdn.microsoft.com/zh-cn/library/ms191291)可让你控制可以对数据库中单个列、表、视图、过程和其他对象执行的操作。
-* [模拟](https://msdn.microsoft.com/zh-cn/library/vstudio/bb669087)和[模块签名](https://msdn.microsoft.com/zh-cn/library/bb669102)可用于安全地暂时提升权限。
+* 模拟和[模块签名](https://msdn.microsoft.com/zh-cn/library/bb669102)可用于安全地暂时提升权限。
 * [行级安全性](https://msdn.microsoft.com/zh-cn/library/dn765131)可用于限制用户可访问的行。
 * [数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started/)可用于限制敏感数据的公开。
 * [存储过程](https://msdn.microsoft.com/zh-cn/library/ms190782)可用于限制可对数据库执行的操作。

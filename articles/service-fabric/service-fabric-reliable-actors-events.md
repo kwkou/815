@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="03/02/2017"
-    wacn.date="04/24/2017"
+    wacn.date="06/15/2017"
     ms.author="amanbha"
     ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
     ms.openlocfilehash="d2eedf435c2b7ef75f6bccd8da2a037fb0ea4c59"
@@ -79,5 +79,4 @@
 * [执行组件可重入性](/documentation/articles/service-fabric-reliable-actors-reentrancy/)
 * [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics/)
 * [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
-* [代码示例](https://github.com/Azure/servicefabric-samples)
 <!--Update_Description:add anchors to sub titles-->

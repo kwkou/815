@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="03/01/2017"
-    wacn.date="05/08/2017"
+    wacn.date="06/15/2017"
     ms.author="juliako"
     ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
     ms.openlocfilehash="a3f24c90912ce9a06ae7a13a7691d17c6cda193e"
@@ -55,7 +55,7 @@
 >不同 AMS 策略的策略限制为 1,000,000 个（例如，对于定位器策略或 ContentKeyAuthorizationPolicy）。 如果始终使用相同的日期/访问权限，则应使用相同的策略 ID，例如，用于要长期就地保留的定位符的策略（非上传策略）。 有关详细信息，请参阅[此](/documentation/articles/media-services-dotnet-manage-entities/#limit-access-policies)主题。
 
 
-若要深入了解本主题中使用的 AMS REST 实体，请参阅 [Azure 媒体服务 REST API 参考](https://docs.microsoft.com/zh-cn/rest/api/media/services/azure-media-services-rest-api-reference)。 也可参阅 [Azure 媒体服务概念](/documentation/articles/media-services-concepts/)。
+若要深入了解本主题中使用的 AMS REST 实体，请参阅 [Azure 媒体服务 REST API 参考](https://docs.microsoft.com/en-us/rest/api/media/mediaservice)。 也可参阅 [Azure 媒体服务概念](/documentation/articles/media-services-concepts/)。
 
 ## <a name="start-streaming-endpoints-using-the-azure-classic-management-portal"></a>使用 Azure 经典管理门户启动流式处理终结点
 

@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-management"
    ms.date="10/13/2016"
-   wacn.date="10/31/2016"
+   wacn.date="06/15/2017"
    ms.author="carlrab"/>
 
 # Azure SQL 数据库动态缩放规模
@@ -30,19 +30,18 @@
 ## 当你的应用突然获得成功时
 SQL 数据库即刻便能轻松地扩展规模。所以如果你的应用突然获得成功，只需单击一下便能适应新的性能需求。另外，由于最大程度地减少了停机时间，不用担心在需要增加或减少性能时，应用会受到影响。
 
-[阅读文档](http://go.microsoft.com/fwlink/?LinkID=787569)
+[阅读文档](/documentation/articles/sql-database-service-tiers/)
 
 ## 在预算之内  
 
 在尝试创建应用时你最不需要担心的就是数据库的花费。这就是 SQL 数据库有一个“按需支付”计划的原因。通过“基本”、“标准”和“高级”性能选项，你可以决定哪种性能选项适合你的预算。而且，如果你的应用获得快速发展，你可以随时选择扩展性能。
 
-[阅读文档](http://go.microsoft.com/fwlink/?LinkID=787570)
+[阅读文档](/documentation/articles/sql-database-service-tiers/)
 
 ## 获取最快的性能
 
 SQL 数据库包含最前沿的内存技术，可执行极快的事务，同时进行实时分析查询。内置顾问帮助开发人员迁移到内存表格、索引或存储过程。因此，最终用户可以体验高达 30 倍更快速度的事务处理和 100 倍更快速度的查询处理。
 
-[阅读文档](http://go.microsoft.com/fwlink/?LinkID=787580)
 
 转到主页以查看 SQL 数据库可提供的其他功能。
 [请查看](/home/features/sql-database/)

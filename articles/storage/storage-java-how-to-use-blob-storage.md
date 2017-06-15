@@ -14,7 +14,7 @@
     ms.devlang="java"
     ms.topic="article"
     ms.date="12/08/2016"
-    wacn.date="01/06/2017"
+    wacn.date="06/05/2017"
     ms.author="marsma" />
 
 # 如何通过 Java 使用 Blob 存储
@@ -66,7 +66,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 ## 创建容器
 利用 **CloudBlobClient** 对象，可以获得容器和 Blob 的引用对象。以下代码将创建 **CloudBlobClient** 对象。
 
-> [AZURE.NOTE] 还有其他方式来创建 **CloudStorageAccount** 对象；有关详细信息，请参阅 [Azure 存储空间客户端 SDK 参考]中的 **CloudStorageAccount**。
+> [AZURE.NOTE] 还有其他方式来创建 **CloudStorageAccount** 对象
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../../includes/storage-container-naming-rules-include.md)]
 
@@ -164,7 +164,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 例如，你可以创建一个名为“photos”的容器，你可以在其中上传名为“rootphoto1”、“2010/photo1”、“2010/photo2”和“2011/photo1”的 Blob。这将在“photos”容器中创建虚拟目录“2010”和“2011”。当你对“photos”容器调用 **listBlobs** 时，返回的集合将包含表示最高层中所含目录和 Blob 的 **CloudBlobDirectory** 和 **CloudBlob** 对象。在本例中，将返回目录“2010”和“2011”以及照片“rootphoto1”。可使用 **instanceof** 运算符来区分这些对象。
 
-还可以向 **listBlobs** 方法传入参数，并将 **useFlatBlobListing** 参数设置为 true。这将导致返回每个 Blob，而无论目录如何。有关详细信息，请参阅 [Azure 存储空间客户端 SDK 参考]中的 **CloudBlobContainer.listBlobs**。
+还可以向 **listBlobs** 方法传入参数，并将 **useFlatBlobListing** 参数设置为 true。这将导致返回每个 Blob，而无论目录如何。
 
 ## 下载 Blob
 
@@ -251,7 +251,6 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 现在，你已了解有关 Blob 存储的基础知识，可单击下面的链接来了解更复杂的存储任务。
 
 * [Azure Storage SDK for Java][Azure Storage SDK for Java]
-* [Azure 存储客户端 SDK 参考][Azure Storage Client SDK Reference]
 * [Azure Storage REST API（Azure 存储 REST API）][Azure Storage REST API]
 * [Azure 存储团队博客][Azure Storage Team Blog]
 
@@ -260,8 +259,6 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 [Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
-[Azure 存储空间客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
 [Azure Storage REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
 

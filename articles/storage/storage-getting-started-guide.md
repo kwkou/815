@@ -15,7 +15,7 @@
     ms.devlang="dotnet"
     ms.topic="get-started-article"
     ms.date="02/23/2017"
-    wacn.date="04/24/2017"
+    wacn.date="06/15/2017"
     ms.author="marsma"
     ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
     ms.openlocfilehash="0a9207a7264d2ead5017f6de6de3e74b7a5ed41f"
@@ -34,7 +34,7 @@
 2. 安装最新版的[用于 .NET 的 Azure SDK](/downloads/)。 SDK 包括 Azure 快速入门示例项目、Azure 存储模拟器和 [用于 .NET 的 Azure 存储空间客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
 3. 确保在你的计算机上安装了 [.NET Framework 4.5](http://www.microsoft.com/download/details.aspx?id=30653) ，因为我们将在本教程中使用的 Azure 快速入门示例项目需要它。
 
-    如果你不确定计算机上安装了哪个版本的 .NET Framework，请参阅 [如何：确定安装的 .NET Framework 版本](https://msdn.microsoft.com/vstudio/hh925568.aspx)。 或者，按“开始”按钮或 Windows 键，并键入“控制面板”。 然后，单击“程序”  >  “程序和功能”，然后在已安装程序中确定是否列出 .NET Framework 4.5。
+    如果你不确定计算机上安装了哪个版本的 .NET Framework，请按“开始”按钮或 Windows 键，并键入“控制面板”。 然后，单击“程序”  >  “程序和功能”，然后在已安装程序中确定是否列出 .NET Framework 4.5。
 4. 你将需要 Azure 订阅和 Azure 存储帐户。
 
     - 若要获取 Azure 订阅，请参阅 [1 元试用](/pricing/1rmb-trial/)、[购买选项](/pricing/overview/)。

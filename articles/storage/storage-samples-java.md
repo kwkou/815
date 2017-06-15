@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage"
     ms.date="01/12/2017"
-    wacn.date="02/24/2017"
+    wacn.date="06/15/2017"
     ms.author="seguler" />  
 
 
@@ -35,10 +35,6 @@
 <tr> 
 <td>块 blob</td>
 <td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java">Java 中的 Azure Blob 服务入门</a></td>
-</tr> 
-<tr> 
-<td>客户端加密</td>
-<td><a href="https://github.com/Azure-Samples/storage-java-client-side-encryption">Java 中的 Azure 客户端加密入门</a></td>
 </tr> 
 <tr> 
 <td>复制 Blob</td>

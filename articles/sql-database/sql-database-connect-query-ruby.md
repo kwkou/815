@@ -15,7 +15,7 @@
     ms.devlang="ruby"
     ms.topic="article"
     ms.date="04/05/2017"
-    wacn.date="05/22/2017"
+    wacn.date="06/15/2017"
     ms.author="andrela;sstein;carlrab"
     ms.translationtype="Human Translation"
     ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
@@ -25,7 +25,7 @@
 
 # <a name="azure-sql-database-use-ruby-to-connect-and-query-data"></a>Azure SQL 数据库：使用 Ruby 进行连接和数据查询
 
-本快速入门演示了如何通过 Mac OS 和 Ubuntu Linux 平台使用 [Ruby](https://Ruby.org) 连接到 Azure SQL 数据库，然后使用 Transact-SQL 语句在数据库中查询、插入、更新和删除数据。
+本快速入门演示了如何通过 Mac OS 和 Ubuntu Linux 平台使用 Ruby 连接到 Azure SQL 数据库，然后使用 Transact-SQL 语句在数据库中查询、插入、更新和删除数据。
 
 此快速入门使用以下某个快速入门中创建的资源作为其起点：
 

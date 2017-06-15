@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="02/10/2017"
-    wacn.date="03/03/2017"
+    wacn.date="06/15/2017"
     ms.author="vturecek" />  
 
 
@@ -255,6 +255,5 @@ Reliable Actors 是可封装逻辑与状态的单线程对象。由于执行组�
  - [执行组件多态性和面向对象的设计模式](/documentation/articles/service-fabric-reliable-actors-polymorphism/)
  - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics/)
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
- - [代码示例](https://github.com/Azure/servicefabric-samples)
 
 <!---HONumber=Mooncake_0227_2017-->

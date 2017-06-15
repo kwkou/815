@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="01/04/2017"
-    wacn.date="02/20/2017"
+    wacn.date="06/15/2017"
     ms.author="abhisram" />  
 
 
@@ -169,7 +169,6 @@ Reliable Actors 运行时发布与执行组件激活和停用相关的以下性�
 ## 后续步骤
  - [Reliable Actors 如何使用 Service Fabric 平台](/documentation/articles/service-fabric-reliable-actors-platform/)
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
- - [代码示例](https://github.com/Azure/servicefabric-samples)
  - [PerfView 中的 EventSource 提供程序](https://blogs.msdn.microsoft.com/vancem/2012/07/09/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource/)
 
 <!---HONumber=Mooncake_0213_2017-->

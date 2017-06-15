@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="03/06/2017"
-    wacn.date="04/24/2017"
+    wacn.date="06/15/2017"
     ms.author="vturecek"
     ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
     ms.openlocfilehash="1acf73f5ed5984dcf65d1267ab66ab5755deb6cc"
@@ -143,7 +143,6 @@
 * [执行组件状态管理](/documentation/articles/service-fabric-reliable-actors-state-management/)
 * [执行组件生命周期和垃圾回收](/documentation/articles/service-fabric-reliable-actors-lifecycle/)
 * [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
-* [代码示例](https://github.com/Azure/servicefabric-samples)
 
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-get-started/reliable-actors-newproject.PNG

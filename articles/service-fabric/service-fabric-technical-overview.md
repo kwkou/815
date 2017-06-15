@@ -14,14 +14,14 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="2/17/2017"
-    wacn.date="03/03/2017"
+    wacn.date="06/15/2017"
     ms.author="ryanwi" />  
 
 
 # Service Fabric 术语概述
 Service Fabric 是一种分布式系统平台，可让用户轻松打包、部署和管理可缩放、可靠的微服务。本主题详细说明 Service Fabric 所使用的术语，以帮助了解文档中使用的术语。
 
-以下微软虚拟学院视频也讨论了本部分中列出的概念：<a target="_blank" href="https://mva.microsoft.com/en-us/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=tbuZM46yC_5206218965">核心概念</a>、<a target="_blank" href="https://mva.microsoft.com/zh-CN/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=tlkI046yC_2906218965">设计时概念</a>和<a target="_blank" href="https://mva.microsoft.com/zh-CN/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=x7CVH56yC_1406218965">运行时概念</a>。
+以下微软虚拟学院视频也讨论了本部分中列出的概念：<a target="_blank" href="https://mva.microsoft.com/en-us/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=tbuZM46yC_5206218965">核心概念</a>、<a target="_blank" href="https://mva.microsoft.com/en-us/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=tlkI046yC_2906218965">设计时概念</a>和<a target="_blank" href="https://mva.microsoft.com/en-us/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=x7CVH56yC_1406218965">运行时概念</a>。
 
 ## 基础结构概念
 **群集**：一组通过网络连接在一起的虚拟机或物理计算机，将在其中部署和管理微服务。群集可以扩展到成千上万台计算机。

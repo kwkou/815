@@ -16,7 +16,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="data-management"
 	ms.date="07/12/2016"
-	wacn.date="11/16/2016"
+	wacn.date="06/15/2017"
 	ms.author="annemill" />
 
 
@@ -119,7 +119,6 @@
 
 前一个示例演示你可以将一个本地事务添加到任何具有两行的 ADO.NET 代码。事务提供了一个快速提高代码性能的方法，这些代码用于执行顺序插入、更新和删除操作。但是，为了实现最佳性能，请考虑进一步更改代码，以利用客户端批处理（如表值参数）。
 
-有关 ADO.NET 中事务的详细信息，请参阅 [ADO.NET 中的本地事务](https://msdn.microsoft.com/zh-cn/library/vstudio/2k2hy99x.aspx)。
 
 ### 表值参数
 表值参数支持用户定义的表类型作为 Transact-SQL 语句、存储过程和函数的参数。使用这个客户端批处理方法，你可以在表值参数中发送多行数据。若要使用表值参数，请首先定义表类型。以下 Transact-SQL 语句将创建一个名为 **MyTableType** 的表类型。

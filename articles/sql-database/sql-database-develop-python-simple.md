@@ -15,7 +15,7 @@
     ms.devlang="python"
     ms.topic="article"
     ms.date="02/03/2017"
-    wacn.date="03/24/2017"
+    wacn.date="06/15/2017"
     ms.author="meetb" />
 
 # 使用 Python 连接到 SQL 数据库
@@ -85,7 +85,7 @@
         print row
 
 ### 执行 SQL SELECT 语句
-[Cursor.execute](https://mkleehammer.github.io/pyodbc/api-cursor.html) 函数可用于针对 SQL 数据库从查询中检索结果集。此函数实际上可接受任何查询，并返回可使用 [cursor.fetchone()](https://mkleehammer.github.io/pyodbc/api-cursor.html) 循环访问的结果集。
+Cursor.execute 函数可用于针对 SQL 数据库从查询中检索结果集。此函数实际上可接受任何查询，并返回可使用 cursor.fetchone() 循环访问的结果集。
 
     import pyodbc
     server = 'yourserver.database.chinacloudapi.cn'
