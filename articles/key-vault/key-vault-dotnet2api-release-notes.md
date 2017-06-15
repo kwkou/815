@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Key Vault .NET 2.x API 发行说明 | Azure"
+    pageTitle="密钥保管库 .NET 2.x API 发行说明 | Azure"
     description=".NET 开发人员可使用此 API 来编写 Azure 密钥保管库的代码"
     services="key-vault"
     author="BrucePerlerMS"
@@ -22,9 +22,9 @@
     ms.lasthandoff="05/26/2017" />
 
 # <a name="azure-key-vault-net-20---release-notes-and-migration-guide"></a>Azure 密钥保管库 .NET 2.0 - 发行说明和迁移指南
-以下说明和指南适用于使用 Azure Key Vault .NET/C# 库的开发人员。 在从 1.0 版到 2.0 版的转换中，进行了大量需要代码迁移的更新，使你可以受益于功能的改进和新增，例如 **Key Vault 证书**支持。
+以下说明和指南适用于使用 Azure 密钥保管库 .NET/C# 库的开发人员。 在从 1.0 版到 2.0 版的转换中，进行了大量需要代码迁移的更新，使你可以受益于功能的改进和新增，例如 **Key Vault 证书**支持。
 
-## <a name="key-vault-certificates"></a>Key Vault 证书
+## <a name="key-vault-certificates"></a>密钥保管库证书
 
 密钥保管库证书支持适用于 x509 证书管理，它提供以下行为：  
 
@@ -38,8 +38,8 @@
 
 ## <a name="net-support"></a>.NET 支持
 
-- Azure Key Vault .NET/C# 库 2.0 版不支持 **.NET 4.0**
-- Azure Key Vault .NET/C# 库 2.0 版支持 **.NET Core**
+- Azure 密钥保管库 .NET/C# 库 2.0 版不支持 **.NET 4.0**
+- Azure 密钥保管库 .NET/C# 库 2.0 版支持 **.NET Core**
 
 ## <a name="namespaces"></a>命名空间
 
@@ -71,7 +71,7 @@
 
 ## <a name="downloaded-packages"></a>下载的包
 
-当客户端处理 Key Vault 的依赖项时，会已下载以下内容
+当客户端处理密钥保管库的依赖项时，会已下载以下内容
 
 ### <a name="previous-package-list"></a>以前的包列表
 

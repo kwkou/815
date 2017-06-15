@@ -184,23 +184,23 @@
 
 此命令列出以表格形式显示的所有密钥和所选属性：
 
-az keyvault key list --vault-name 'ContosoKeyVault'
+    az keyvault key list --vault-name 'ContosoKeyVault'
 
 此命令显示特定密钥的完整属性列表：
 
-az keyvault key show --vault-name 'ContosoKeyVault' --name 'ContosoFirstKey'
+    az keyvault key show --vault-name 'ContosoKeyVault' --name 'ContosoFirstKey'
 
 此命令列出以表格形式显示的所有机密名称和所选属性：
 
-az keyvault secret list --vault-name 'ContosoKeyVault'
+    az keyvault secret list --vault-name 'ContosoKeyVault'
 
 下面是演示如何删除特定密钥的示例：
 
-az keyvault key delete --vault-name 'ContosoKeyVault' --name 'ContosoFirstKey'
+    az keyvault key delete --vault-name 'ContosoKeyVault' --name 'ContosoFirstKey'
 
 下面是演示如何删除特定机密的示例：
 
-az keyvault secret delete --vault-name 'ContosoKeyVault' --name 'SQLPassword'
+    az keyvault secret delete --vault-name 'ContosoKeyVault' --name 'SQLPassword'
 
 
 ## <a name="next-steps"></a>后续步骤
