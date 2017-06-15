@@ -55,7 +55,7 @@ Dave 为订阅分配了以下角色：
 | 角色 | 已分配到 | 说明 |
 | --- | --- | --- |
 | [所有者](/documentation/articles/role-based-access-built-in-roles/#owner) |Contoso AD 中的托管 ID |此 ID 是通过 Contoso 的标识管理工具，配合适时使用 (JIT) 访问权限控制的，可确保订阅所有者的访问完全受到审核。 |
-| [安全管理器](/documentation/articles/role-based-access-built-in-roles/#security-manager) |安全与风险管理部门 |此角色允许用户查看 Azure 安全中心及资源状态。 |
+| [安全管理器](/documentation/articles/role-based-access-built-in-roles/#sql-security-manager) |安全与风险管理部门 |此角色允许用户查看 Azure 安全中心及资源状态。 |
 | [网络参与者](/documentation/articles/role-based-access-built-in-roles/#network-contributor) |网络团队 |此角色允许 Contoso 的网络团队管理站点到站点 VPN 和虚拟网络。 |
 | *自定义角色* |应用程序所有者 |Dave 创建了一个可授权修改资源组中资源的角色。有关详细信息，请参阅 [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles/) |
 
