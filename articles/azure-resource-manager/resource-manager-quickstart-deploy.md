@@ -82,6 +82,10 @@
 1. 若要安装 Azure CLI，请参阅 [安装 Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure/install-az-cli2)。
 
 2. 若要快速开始进行部署，请使用以下命令：
+        az configure
+        # Update the following key-value item in config file of specific directory which show in screeen.
+        # [cloud]
+        # name = AzureChinaCloud
 
         az login
         az account set --subscription {subscription-id}

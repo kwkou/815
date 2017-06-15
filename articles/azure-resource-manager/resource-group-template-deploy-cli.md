@@ -42,6 +42,11 @@
 
 以下示例将创建一个资源组，并从本地计算机部署模板：
 
+    az configure
+    # Update the following key-value item in config file of specific directory which show in screeen.
+    # [cloud]
+    # name = AzureChinaCloud
+
     az login
 
     az group create --name ExampleGroup --location "China North"

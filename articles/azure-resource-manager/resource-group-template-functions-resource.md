@@ -35,8 +35,8 @@ Resource Manager 提供以下用于获取资源值的函数：
 
 若要从参数、变量或当前部署获取值，请参阅 [Deployment value functions](/documentation/articles/resource-group-template-functions-deployment/)（部署值函数）。
 
-<a id="listkeys" />
-## <a id="list"></a> listKeys 和 list{Value}
+<a name="listkeys" />
+## <a name="list"></a> listKeys 和 list{Value}
 `listKeys(resourceName or resourceIdentifier, apiVersion)`
 
 `list{Value}(resourceName or resourceIdentifier, apiVersion)`
@@ -107,7 +107,7 @@ ListKeys 返回的对象采用以下格式：
 
 其他列表函数具有不同的返回格式。 若要查看函数的格式，请将其包含在 outputs 节中，如示例模板所示。 
 
-## <a id="providers"></a> providers
+## <a name="providers"></a> providers
 `providers(providerNamespace, [resourceType])`
 
 返回有关资源提供程序及其支持的资源类型的信息。 如果未提供资源类型，该函数将返回资源提供程序支持的所有类型。
@@ -147,7 +147,7 @@ ListKeys 返回的对象采用以下格式：
 
 不保证返回值的数组排序。
 
-## <a id="reference"></a> reference
+## <a name="reference"></a> reference
 `reference(resourceName or resourceIdentifier, [apiVersion])`
 
 返回表示资源的运行时状态的对象。
@@ -238,7 +238,7 @@ reference 函数从运行时状态派生其值，因此不能在 variables 节�
 
 每种资源类型返回 reference 函数的不同属性。 该函数不返回单个预定义的格式。 若要查看资源类型的属性，请返回 outputs 节中的对象，如示例所示。
 
-## <a id="resourcegroup"></a> resourceGroup
+## <a name="resourcegroup"></a> resourceGroup
 `resourceGroup()`
 
 返回表示当前资源组的对象。 
@@ -286,7 +286,7 @@ resourceGroup 函数的一个常见用途是在与资源组相同的位置中创
       }
     }
 
-## <a id="resourceid"></a> resourceId
+## <a name="resourceid"></a> resourceId
 `resourceId([subscriptionId], [resourceGroupName], resourceType, resourceName1, [resourceName2]...)`
 
 返回资源的唯一标识符。 如果资源名称不确定或未设置在相同的模板内，请使用此函数。 
@@ -371,7 +371,7 @@ resourceGroup 函数的一个常见用途是在与资源组相同的位置中创
 
     /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
 
-## <a id="subscription"></a> 订阅
+## <a name="subscription"></a> 订阅
 `subscription()`
 
 返回有关当前部署的订阅的详细信息。 

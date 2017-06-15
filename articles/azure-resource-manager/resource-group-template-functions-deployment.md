@@ -32,7 +32,7 @@ Resource Manager 提供以下函数，用于从与部署相关的模板和值部
 
 若要从资源、资源组或订阅获取值，请参阅 [Resource functions](/documentation/articles/resource-group-template-functions-resource/)（资源函数）。
 
-## <a id="deployment"></a> 部署
+## <a name="deployment"></a> 部署
 `deployment()`
 
 返回有关当前部署操作的信息。
