@@ -130,8 +130,8 @@ Azure Active Directory 可以使用 Resource Manager 为订阅启用基于角色
 ## <a name="resource-manager"></a>Resource Manager
 | 功能 | 已启用 Resource Manager | REST API | 模板格式 |
 | --- | --- | --- | --- |
-| 授权 |是 |[授权 REST](https://docs.microsoft.com/zh-cn/rest/api/authorization) |[资源锁](/documentation/articles/resource-manager-template-lock/)<br /> [Microsoft.Authorization](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Authorization%22&type=Code) |
-| 资源 |是 |[资源 REST](https://docs.microsoft.com/zh-cn/rest/api/resources) | [资源链接](/documentation/articles/resource-manager-template-links/) <br/> [Microsoft.Resources](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Resources%22&type=Code) |
+| 授权 |是 |[授权 REST](https://docs.microsoft.com/zh-cn/rest/api/authorization) | [Microsoft.Authorization](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Authorization%22&type=Code) |
+| 资源 |是 |[资源 REST](https://docs.microsoft.com/zh-cn/rest/api/resources) | [Microsoft.Resources](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Resources%22&type=Code) |
 
 ## <a name="resource-providers-and-types"></a> 资源提供程序和类型
 部署资源时，经常需要检索有关资源提供程序和类型的信息。 可以通过 REST API、Azure PowerShell 或 Azure CLI 检索此信息。
