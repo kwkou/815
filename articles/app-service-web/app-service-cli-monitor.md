@@ -66,9 +66,9 @@
 |---|---|
 | [az group create](https://docs.microsoft.com/zh-cn/cli/azure/group#create) | 创建用于存储所有资源的资源组。 |
 | [az appservice plan create](https://docs.microsoft.com/zh-cn/cli/azure/appservice/plan#create) | 创建应用服务计划。 这与 Azure Web 应用的服务器场类似。 |
-| [az appservice web create](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web#create) | 创建应用服务计划中的 Azure Web 应用。 |
-| [az appservice web log config](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web/log#config) | 配置 Azure Web 应用将持久保留的日志。 |
-| [az appservice web log download](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web/log#download) | 将 Azure Web 应用的日志下载到本地计算机。 |
+| [az appservice web create](https://docs.microsoft.com/zh-cn/cli/azure/webapp#create) | 创建应用服务计划中的 Azure Web 应用。 |
+| [az appservice web log config](https://docs.microsoft.com/zh-cn/cli/azure/webapp/log#config) | 配置 Azure Web 应用将持久保留的日志。 |
+| [az appservice web log download](https://docs.microsoft.com/zh-cn/cli/azure/webapp/log#download) | 将 Azure Web 应用的日志下载到本地计算机。 |
 
 ## <a name="next-steps"></a>后续步骤
 

@@ -71,8 +71,8 @@
 |---|---|
 | [az group create](https://docs.microsoft.com/zh-cn/cli/azure/group#create) | 创建用于存储所有资源的资源组。 |
 | [az appservice plan create](https://docs.microsoft.com/zh-cn/cli/azure/appservice/plan#create) | 创建应用服务计划。 |
-| [az appservice web create](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web#delete) | 创建 Web 应用。 |
-| [az appservice web config hostname add](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web/config/hostname#add) | 将自定义域映射到 Web 应用。 |
+| [az appservice web create](https://docs.microsoft.com/zh-cn/cli/azure/webapp#delete) | 创建 Web 应用。 |
+| [az appservice web config hostname add](https://docs.microsoft.com/zh-cn/cli/azure/webapp/config/hostname#add) | 将自定义域映射到 Web 应用。 |
 
 ## <a name="next-steps"></a>后续步骤
 

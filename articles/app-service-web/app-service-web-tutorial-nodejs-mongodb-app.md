@@ -238,7 +238,7 @@ Node.js 应用程序已准备就绪，可供部署。
 
 ### <a name="create-a-web-app"></a>创建 Web 应用
 
-创建应用服务计划后，请在 `myAppServicePlan` 应用服务计划中创建 Web 应用。 该 Web 应用提供托管空间用于部署代码，并提供一个 URL 用于查看已部署的应用程序。 使用 [az appservice web create](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web#create) 命令创建该 Web 应用。 
+创建应用服务计划后，请在 `myAppServicePlan` 应用服务计划中创建 Web 应用。 该 Web 应用提供托管空间用于部署代码，并提供一个 URL 用于查看已部署的应用程序。 使用 [az appservice web create](https://docs.microsoft.com/zh-cn/cli/azure/webapp#create) 命令创建该 Web 应用。 
 
 在以下命令中，请将 `<app_name>` 占位符替换为你自己的唯一应用名称。 此唯一名称将用作 Web 应用的默认域名的一部分，因此，该名称需要在 Azure 中的所有应用之间保持唯一。 稍后，可以先将任何自定义 DNS 条目映射到 Web 应用，然后向用户公开该条目。 
 
@@ -266,14 +266,14 @@ Node.js 应用程序已准备就绪，可供部署。
 
 可以通过不同的方法将应用程序部署到 Azure 应用服务，包括 FTP、本地 Git，以及 GitHub、Visual Studio Team Services 和 Bitbucket。 对于 FTP 和本地 Git 部署，需在服务器上配置一个部署用户，用于对部署进行身份验证。 
 
-使用 [az appservice web deployment user set](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web/deployment/user#set) 命令创建帐户级别的凭据。 
+使用 [az appservice web deployment user set](https://docs.microsoft.com/zh-cn/cli/azure/webapp/deployment/user#set) 命令创建帐户级别的凭据。 
 
 > [AZURE.NOTE] 
 > 在应用服务中进行 FTP 和本地 Git 部署时需要一个部署用户。 此部署用户是帐户级用户。 因此，它不同于 Azure 订阅帐户。 只需创建此部署用户一次。
 
     az appservice web deployment user set --user-name <specify-a-username> --password <mininum-8-char-captital-lowercase-number>
 
-使用 [az appservice web source-control config-local-git](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web/source-control#config-local-git) 命令配置对 Azure Web 应用的本地 Git 访问。 
+使用 [az appservice web source-control config-local-git](https://docs.microsoft.com/zh-cn/cli/azure/webapp/source-control#config-local-git) 命令配置对 Azure Web 应用的本地 Git 访问。 
 
     az appservice web source-control config-local-git --name <app_name> --resource-group myResourceGroup
 
@@ -338,7 +338,7 @@ Node.js 应用程序已准备就绪，可供部署。
 
 ### <a name="configure-an-environment-variable-in-azure"></a>在 Azure 中配置环境变量
 
-在应用服务中，使用 [az appservice web config appsettings update](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web/config/appsettings#update) 命令将环境变量设置为_应用设置_。 
+在应用服务中，使用 [az appservice web config appsettings update](https://docs.microsoft.com/zh-cn/cli/azure/webapp/config/appsettings#update) 命令将环境变量设置为_应用设置_。 
 
 使用以下示例可在 Azure Web 应用中配置 `MONGODB_URI` 应用设置。 请务必按上文所述替换占位符。
 

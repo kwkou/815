@@ -74,10 +74,10 @@
 |---|---|
 | [az group create](https://docs.microsoft.com/zh-cn/cli/azure/group#create) | 创建用于存储所有资源的资源组。 |
 | [az appservice plan create](https://docs.microsoft.com/zh-cn/cli/azure/appservice/plan#create) | 创建应用服务计划。 |
-| [az appservice web create](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web#delete) | 创建 Azure Web 应用。 |
-| [az appservice web deployment user set](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web/deployment/user#set) | 为应用服务设置帐户级别部署凭据。 |
-| [az appservice web source-control config-local-git](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web/source-control#config-local-git) | 为本地 Git 存储库创建源控件配置。 |
-| [az appservice web browse](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web#browse) | 在浏览器中打开 Azure Web 应用。 |
+| [az appservice web create](https://docs.microsoft.com/zh-cn/cli/azure/webapp#delete) | 创建 Azure Web 应用。 |
+| [az appservice web deployment user set](https://docs.microsoft.com/zh-cn/cli/azure/webapp/deployment/user#set) | 为应用服务设置帐户级别部署凭据。 |
+| [az appservice web source-control config-local-git](https://docs.microsoft.com/zh-cn/cli/azure/webapp/source-control#config-local-git) | 为本地 Git 存储库创建源控件配置。 |
+| [az appservice web browse](https://docs.microsoft.com/zh-cn/cli/azure/webapp#browse) | 在浏览器中打开 Azure Web 应用。 |
 
 ## <a name="next-steps"></a>后续步骤
 

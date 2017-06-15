@@ -69,7 +69,7 @@
 |---|---|
 | [az group create](https://docs.microsoft.com/zh-cn/cli/azure/group#create) | 创建用于存储所有资源的资源组。 |
 | [az appservice plan create](https://docs.microsoft.com/zh-cn/cli/azure/appservice/plan#create) | 创建应用服务计划。 这与 Azure Web 应用的服务器场类似。 |
-| [az appservice web create](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web#create) | 创建应用服务计划中的 Azure Web 应用。 |
+| [az appservice web create](https://docs.microsoft.com/zh-cn/cli/azure/webapp#create) | 创建应用服务计划中的 Azure Web 应用。 |
 | [az network traffic-manager profile create](https://docs.microsoft.com/zh-cn/cli/azure/network/traffic-manager/profile#create) | 创建 Azure 流量管理器配置文件。 |
 | [az network traffic-manager endpoint create](https://docs.microsoft.com/zh-cn/cli/azure/network/traffic-manager/endpoint#create) | 将终结点添加到 Azure 流量管理器配置文件。 |
 

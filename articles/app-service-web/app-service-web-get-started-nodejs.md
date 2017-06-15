@@ -85,7 +85,7 @@
 > `username` 和 `password` 是帐户级别的凭据，因此不同于 Azure 订阅凭据。 只需创建这些凭据一次。
 >
 
-使用 [az appservice web deployment user set](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web/deployment/user#set) 命令创建帐户级别的凭据。
+使用 [az appservice web deployment user set](https://docs.microsoft.com/zh-cn/cli/azure/webapp/deployment/user#set) 命令创建帐户级别的凭据。
 
     az appservice web deployment user set --user-name <username> --password <password>
 
@@ -131,7 +131,7 @@
 
 ## <a name="create-a-web-app"></a>创建 Web 应用
 
-创建应用服务计划后，请在 `quickStartPlan` 应用服务计划中创建 Web 应用。 该 Web 应用提供托管空间用于部署代码，并提供一个 URL 用于查看已部署的应用程序。 使用 [az appservice web create](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web#create) 命令创建该 Web 应用。
+创建应用服务计划后，请在 `quickStartPlan` 应用服务计划中创建 Web 应用。 该 Web 应用提供托管空间用于部署代码，并提供一个 URL 用于查看已部署的应用程序。 使用 [az appservice web create](https://docs.microsoft.com/zh-cn/cli/azure/webapp#create) 命令创建该 Web 应用。
 
 在以下命令中，请将出现的 <app_name> 占位符替换为你自己的唯一应用名称。 <app_name> 将用作 Web 应用的默认 DNS 站点，因此，该名称需要在 Azure 中的所有应用之间保持唯一。 稍后，可以先将任何自定义 DNS 条目映射到 Web 应用，然后向用户公开该条目。
 
@@ -165,10 +165,10 @@
 
 ## <a name="configure-to-use-nodejs"></a>配置为使用 Node.js
 
-使用 [az appservice web config update](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web/config#update) 命令将 Web 应用配置为使用 Node.js 版本 `6.9.3`。
+使用 [az appservice web config update](https://docs.microsoft.com/zh-cn/cli/azure/webapp/config#update) 命令将 Web 应用配置为使用 Node.js 版本 `6.9.3`。
 
 > [AZURE.TIP]
-> 以这种方式设置 Node.js 版本会使用平台提供的默认容器。如果你想要使用自己的容器，请参阅 [az appservice web config container update](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web/config/container#update) 命令的 CLI 参考文章。
+> 以这种方式设置 Node.js 版本会使用平台提供的默认容器。如果你想要使用自己的容器，请参阅 [az appservice web config container update](https://docs.microsoft.com/zh-cn/cli/azure/webapp/config/container#update) 命令的 CLI 参考文章。
 
     az appservice web config update --linux-fx-version "NODE|6.9.3" --startup-file process.json --name <app_name> --resource-group myResourceGroup
 
@@ -176,7 +176,7 @@
 
 可以通过不同的方法部署到 Web 应用，包括 FTP、本地 Git，以及 GitHub、Visual Studio Team Services 和 Bitbucket。
 
-使用 [az appservice web source-control config-local-git](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web/source-control#config-local-git) 命令配置对 Web 应用的本地 git 访问。
+使用 [az appservice web source-control config-local-git](https://docs.microsoft.com/zh-cn/cli/azure/webapp/source-control#config-local-git) 命令配置对 Web 应用的本地 git 访问。
 
     az appservice web source-control config-local-git --name <app_name> --resource-group myResourceGroup --query url --output tsv
 
