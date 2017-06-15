@@ -8,7 +8,7 @@
 |:---|:---:|
 | Active Directory | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc) |
 | Apache | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/apache2-on-ubuntu-vm) |
-| Couchbase | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/couchbase-on-ubuntu) |
+| Couchbase | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/couchbase) |
 | DataStax | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/datastax) |
 | Django | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/django-app) |
 | Elasticsearch | [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/elasticsearch) |

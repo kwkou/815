@@ -300,10 +300,10 @@
 
 另请阅读 [SCN Wiki](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes) ，其中包含适用于 Linux 的所有 SAP 说明。
 
-你应当使用过 Azure 体系结构，并知道如何部署和操作 Azure 虚拟机。 有关详细信息，请参阅 <https://azure.microsoft.com/documentation/>
+你应当使用过 Azure 体系结构，并知道如何部署和操作 Azure 虚拟机。 有关详细信息，请参阅 <https://www.azure.cn/documentation/>
 
 > [AZURE.NOTE]
-> 我们**不**讨论 Azure 平台的 Azure 平台即服务 (PaaS) 产品。 本文讨论如何在 Azure 虚拟机 (IaaS) 中运行数据库管理系统 (DBMS)，就像在本地环境中运行 DBMS 一样。 这两种产品的数据库性能与功能差异极大，不应混用。 另请参阅：<https://azure.microsoft.com/services/sql-database/>
+> 我们**不**讨论 Azure 平台的 Azure 平台即服务 (PaaS) 产品。 本文讨论如何在 Azure 虚拟机 (IaaS) 中运行数据库管理系统 (DBMS)，就像在本地环境中运行 DBMS 一样。 这两种产品的数据库性能与功能差异极大，不应混用。 另请参阅：<https://www.azure.cn/home/features/sql-database/>
 >
 >
 
@@ -523,7 +523,7 @@ Azure 可用性集是 VM 或服务的逻辑分组，可确保 VM 和其他服务
 自从有了 Azure，你就可以轻松地将构建于 Windows Server 平台的现有 SQL Server 应用程序迁移到 Azure 虚拟机。 借助虚拟机中的 SQL Server，你可以轻松地将这些应用程序迁移到 Azure，从而减少部署、管理和维护企业级应用程序的总拥有成本。 借助 Azure 虚拟机中的 SQL Server，管理员和开发人员仍然可以使用在本地可用的相同开发和管理工具。
 
 > [AZURE.IMPORTANT]
-> 请注意，我们不讨论 Azure SQL 数据库，它是 Azure 平台的“平台即服务”产品。 本文讨论的是如何运行 SQL Server 产品（已知适用于 Azure 虚拟机中的本地部署），以及如何运用 Azure 的“服务架构”功能。 这两种产品的数据库性能与功能差异很大，不应混用。 另请参阅：<https://azure.microsoft.com/services/sql-database/>
+> 请注意，我们不讨论 Azure SQL 数据库，它是 Azure 平台的“平台即服务”产品。 本文讨论的是如何运行 SQL Server 产品（已知适用于 Azure 虚拟机中的本地部署），以及如何运用 Azure 的“服务架构”功能。 这两种产品的数据库性能与功能差异很大，不应混用。 另请参阅：<https://www.azure.cn/home/features/sql-database/>
 >
 >
 
@@ -538,7 +538,7 @@ Azure 可用性集是 VM 或服务的逻辑分组，可确保 VM 和其他服务
 * **SQL 功能支持**：Azure 虚拟机支持大部分 SQL Server 功能，但有一些例外。 **不支持使用共享磁盘的 SQL Server 故障转移群集**。  单个 Azure 区域内支持数据库镜像、AlwaysOn 可用性组、复制、日志传送和 Service Broker 等分布式技术。 不同的 Azure 区域之间也支持 SQL Server AlwaysOn，如此处所述：<https://blogs.technet.com/b/dataplatforminsider/archive/2014/06/19/sql-server-alwayson-availability-groups-supported-between-microsoft-azure-regions.aspx>。  有关更多详细信息，请查看 [支持声明](https://support.microsoft.com/zh-cn/kb/956893) 。 此外，请查看 [此处][virtual-machines-sql-server-infrastructure-services]
 * **SQL 性能**：相比其他公有云虚拟化产品，我们确信 Azure 托管的虚拟机将运行得非常顺利，但个别结果可能不同。 请查看 [此文][virtual-machines-sql-server-performance-best-practices] 。
 * **使用来自 Azure 应用商店的映像**：部署新 Azure VM 的最快方式是使用来自 Azure 应用商店的映像。 Azure 应用商店提供包含 SQL Server 的映像。 已经安装 SQL Server 的映像不能立即用于 SAP NetWeaver 应用程序。 原因是这些映像安装了默认的 SQL Server 排序规则，而不是 SAP NetWeaver 系统所需的排序规则。 若要使用此类映像，请查看 [使用来自 Azure 应用商店的 SQL Server 映像][dbms-guide-5.6] 一章中所述的步骤。
-* 有关详细信息，请查看 [定价详细信息](https://azure.microsoft.com/pricing/) 。 [SQL Server 2012 Licensing Guide](https://download.microsoft.com/download/7/3/C/73CAD4E0-D0B5-4BE5-AB49-D5B886A5AE00/SQL_Server_2012_Licensing_Reference_Guide.pdf)（SQL Server 2012 许可指南）和 [SQL Server 2014 Licensing Guide](https://download.microsoft.com/download/B/4/E/B4E604D9-9D38-4BBA-A927-56E4C872E41C/SQL_Server_2014_Licensing_Guide.pdf)（SQL Server 2014 许可指南）也是相当重要的资源。
+* 有关详细信息，请查看 [定价详细信息](https://www.azure.cn/pricing/) 。 [SQL Server 2012 Licensing Guide](https://download.microsoft.com/download/7/3/C/73CAD4E0-D0B5-4BE5-AB49-D5B886A5AE00/SQL_Server_2012_Licensing_Reference_Guide.pdf)（SQL Server 2012 许可指南）和 [SQL Server 2014 Licensing Guide](https://download.microsoft.com/download/B/4/E/B4E604D9-9D38-4BBA-A927-56E4C872E41C/SQL_Server_2014_Licensing_Guide.pdf)（SQL Server 2014 许可指南）也是相当重要的资源。
 
 ### <a name="sql-server-configuration-guidelines-for-sap-related-sql-server-installations-in-azure-vms"></a>在 Azure VM 中安装 SAP 相关 SQL Server 的 SQL Server 配置准则
 #### <a name="recommendations-on-vmvhd-structure-for-sap-related-sql-server-deployments"></a>适用于 SAP 相关 SQL Server 部署的 VM/VHD 结构建议
@@ -778,8 +778,6 @@ SAP 目前支持 SAP ASE 版本 16.0，可与 SAP Business Suite 产品搭配使
 * [1590719]
 * [1973241]
 
-有关在 SAP ASE 上运行 SAP Business Suite 的常规信息可在 [SCN](https://scn.sap.com/community/ase)
-
 ### <a name="sap-ase-configuration-guidelines-for-sap-related-sap-ase-installations-in-azure-vms"></a>在 Azure VM 中安装 SAP 相关 SAP ASE 的 SAP ASE 配置准则
 #### <a name="structure-of-the-sap-ase-deployment"></a>SAP ASE 部署的结构
 按照一般的说明，SAP ASE 可执行文件应该位于或安装在 VM 的基础 VHD 的系统驱动器（驱动器 c:\) 中。 通常情况下，SAP NetWeaver 工作负荷对大部分 SAP ASE 系统和工具数据库的使用率并不很高。 因此，系统和工具数据库（master、model、saptools、sybmgmtdb、sybsystemdb）也可以保留在驱动器 C:\ 上。
@@ -930,8 +928,6 @@ SAP 目前支持 SAP ASE 版本 16.0，可与 SAP Business Suite 产品搭配使
 
 * [1590719]
 * [1973241]
-
-有关在 SAP ASE 上运行 SAP Business Suite 的常规信息可在 [SCN](https://scn.sap.com/community/ase)
 
 ### <a name="sap-ase-configuration-guidelines-for-sap-related-sap-ase-installations-in-azure-vms"></a>在 Azure VM 中安装 SAP 相关 SAP ASE 的 SAP ASE 配置准则
 #### <a name="structure-of-the-sap-ase-deployment"></a>SAP ASE 部署的结构

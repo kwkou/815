@@ -311,7 +311,7 @@
 [Git]: http://www.git-scm.com/
 [Java Developer Center]: /develop/java/
 [Java 开发人员工具包 8]: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-[Jax-RS]: https://jax-rs-spec.java.net/
+[Jax-RS]: http://docs.oracle.com/javaee/6/tutorial/doc/giepu.html
 [Maven]: https://maven.apache.org/
 [Azure]: https://www.azure.cn/
 [在线 Swagger 编辑器]: http://editor.swagger.io/

@@ -25,7 +25,7 @@
 ## 正式 Ubuntu 云映像
 Ubuntu 现已发布正式 Azure VHD，可从 [http://cloud-images.ubuntu.com/](http://cloud-images.ubuntu.com/) 下载。如果你需要为 Azure 构建自己专用的 Ubuntu 映像，而不是使用以下手动过程，则我们建议你先使用这些已知良好的 VHD，并根据需要进行自定义。始终可以在以下位置找到最新的映像版本：
 
-* Ubuntu 12.04/Precise：[ubuntu-12.04-server-cloudimg-amd64-disk1.vhd.zip](http://cloud-images.ubuntu.com/releases/precise/release/ubuntu-12.04-server-cloudimg-amd64-disk1.vhd.zip)
+* Ubuntu 12.04/Precise：[ubuntu-12.04-server-cloudimg-amd64-disk1.vhd.zip](http://cloud-images-archive.ubuntu.com/releases/precise/release-20170502/ubuntu-12.04-server-cloudimg-amd64-disk1.vhd.zip)
 * Ubuntu 14.04/Trusty：[ubuntu-14.04-server-cloudimg-amd64-disk1.vhd.zip](http://cloud-images.ubuntu.com/releases/trusty/release/ubuntu-14.04-server-cloudimg-amd64-disk1.vhd.zip)
 * Ubuntu 16.04/Xenial：[ubuntu-16.04-server-cloudimg-amd64-disk1.vhd.zip](http://cloud-images.ubuntu.com/releases/xenial/release/ubuntu-16.04-server-cloudimg-amd64-disk1.vhd.zip)
 

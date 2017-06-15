@@ -72,7 +72,7 @@ Azure Linux 代理 (waagent) 可以管理 Linux 与 FreeBSD 预配，以及 VM �
 ## 要求
 以下系统已经过测试并确认兼容 Azure Linux 代理：
 
-> [AZURE.NOTE] 此列表可能不同于 Azure Platform 所支持系统的官方列表，详见以下网页：[http://support.microsoft.com/kb/2805216](http://support.microsoft.com/kb/2805216)
+> [AZURE.NOTE] 此列表可能不同于 Azure Platform 所支持系统的官方列表，详见以下网页：[virtual-machines-linux-endorsed-distros](/documentation/articles/virtual-machines-linux-endorsed-distros/)
 
 * CoreOS
 * CentOS 6.3+

@@ -106,7 +106,7 @@ Azure 门户中的 Web 作业仪表板提供了强大的管理功能，可让你
 
 * [Web 作业团队在 GitHub 上提供的示例应用程序](https://github.com/azure/azure-webjobs-sdk-samples)
 * [使用 WebJobs SDK 创建包含 Web 作业后端的简单 Azure Web 应用](http://code.msdn.microsoft.com/Simple-Azure-Website-with-b4391eeb)
-* [SiteMonitR](http://code.msdn.microsoft.com/SiteMonitR-dd4fcf77)。演示计划 Web 作业和事件驱动型 Web 作业的用法。请参阅博客文章[使用 Azure WebJobs SDK 重新生成 SiteMonitR](http://www.bradygaster.com/post/rebuilding-the-sitemonitr-using-windows-azure-webjobs)。
+* [SiteMonitR](http://code.msdn.microsoft.com/SiteMonitR-dd4fcf77)。演示计划 Web 作业和事件驱动型 Web 作业的用法。
 
 ##<a name="blogs"></a>博客
 

@@ -43,9 +43,9 @@
 
     下列其中一个版本的 Visual Studio：
 
-    * Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)
+    * Visual Studio 2012 Update 4
 
-    * Visual Studio 2013 [Update 4](http://www.microsoft.com/download/details.aspx?id=44921) 或 [Visual Studio 2013 Community](http://go.microsoft.com/fwlink/?LinkId=517284)
+    * Visual Studio 2013 [Update 4](https://www.microsoft.com/download/details.aspx?id=45326) 或 [Visual Studio 2013 Community](http://go.microsoft.com/fwlink/?LinkId=517284)
     * [Visual Studio 2015](https://www.visualstudio.com/zh-cn/downloads/)
 
     * Visual Studio 2015（任何版本）

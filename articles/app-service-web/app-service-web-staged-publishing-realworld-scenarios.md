@@ -337,7 +337,7 @@
 6. 将 Umbraco 本地 Web 应用成功发布到过渡 Web 应用后，浏览到过渡 Web 应用，并运行一些测试以便排除任何问题。
 
 #### 设置 Courier2 部署模块
-借助 [Courier2](http://umbraco.com/products/more-add-ons/courier-2) 模块，只需右键单击即可从过渡 Web 应用将内容、样式表和开发模块推送到生产 Web 应用。此过程可降低部署更新时中断生产 Web 应用的风险。为 `*.chinacloudsites.cn` 域和自定义域（例如 http://abc.com ）购买 Courier2 许可证。购买许可证后，将下载的许可证（.LIC 文件）放在 `bin` 文件夹中。
+借助 Courier2 模块，只需右键单击即可从过渡 Web 应用将内容、样式表和开发模块推送到生产 Web 应用。此过程可降低部署更新时中断生产 Web 应用的风险。为 `*.chinacloudsites.cn` 域和自定义域（例如 http://abc.com ）购买 Courier2 许可证。购买许可证后，将下载的许可证（.LIC 文件）放在 `bin` 文件夹中。
 
 ![将许可证文件放在 bin 文件夹下](./media/app-service-web-staged-publishing-realworld-scenarios/13droplic.png)  
 
@@ -367,7 +367,7 @@
               </repository>
          </repositories>
 
-4. 在 `<repositories>` 下面输入生产站点 URL 和用户信息。如果使用默认的 Umbraco 成员资格提供程序，则在 <user> 部分中添加管理用户的 ID。如果使用自定义的 Umbraco 成员资格提供程序，则使用 Courier2 模块中的 `<login>`、`<password>` 连接到生产站点。有关更多详细信息，[请参阅 Courier2 模块文档](http://umbraco.com/help-and-support/customer-area/courier-2-support-and-download/developer-documentation)。
+4. 在 `<repositories>` 下面输入生产站点 URL 和用户信息。如果使用默认的 Umbraco 成员资格提供程序，则在 <user> 部分中添加管理用户的 ID。如果使用自定义的 Umbraco 成员资格提供程序，则使用 Courier2 模块中的 `<login>`、`<password>` 连接到生产站点。
 
 5. 同样，在生产站点上安装 Courier2 模块，并在其相应的 courier.config 文件中将其配置为指向过渡 Web 应用，如下所示。
 

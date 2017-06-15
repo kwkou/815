@@ -170,7 +170,7 @@ Maven 插件可用于自定义项目的生成阶段。 例如，如何编译项�
 
 ### <a name="add-plug-ins"></a>添加插件
 
-对于以 Java 语言实现的 Apache Storm 拓扑，[Exec Maven 插件](http://mojo.codehaus.org/exec-maven-plugin/)十分有用，因为它可让你轻松地在开发环境本地运行拓扑。 在 `pom.xml` 文件的 `<plugins>` 部分中添加以下内容，以包括 Exec Maven 插件：
+对于以 Java 语言实现的 Apache Storm 拓扑，Exec Maven 插件十分有用，因为它可让你轻松地在开发环境本地运行拓扑。 在 `pom.xml` 文件的 `<plugins>` 部分中添加以下内容，以包括 Exec Maven 插件：
 
     <plugin>
         <groupId>org.codehaus.mojo</groupId>

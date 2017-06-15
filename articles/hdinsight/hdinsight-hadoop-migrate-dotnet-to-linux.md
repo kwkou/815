@@ -26,7 +26,7 @@
 
 # <a name="migrate-net-solutions-for-windows-based-hdinsight-to-linux-based-hdinsight"></a>将基于 Windows 的 HDInsight 的 .NET 解决方案迁移到基于 Linux 的 HDInsight
 
-基于 Linux 的 HDInsight 群集使用 [Mono (https://mono-project.com)](https://mono-project.com) 运行 .NET 应用程序。 Mono 支持将 .NET 组件（例如 MapReduce 应用程序）与基于 Linux 的 HDInsight 配合使用。 在此文档中，了解如何迁移为基于 Windows 的 HDInsight 群集创建的 .NET 解决方案，以与基于 Linux 的 HDInsight 上的 Mono 配合使用。
+基于 Linux 的 HDInsight 群集使用 [Mono (http://mono-project.com)](http://mono-project.com) 运行 .NET 应用程序。 Mono 支持将 .NET 组件（例如 MapReduce 应用程序）与基于 Linux 的 HDInsight 配合使用。 在此文档中，了解如何迁移为基于 Windows 的 HDInsight 群集创建的 .NET 解决方案，以与基于 Linux 的 HDInsight 上的 Mono 配合使用。
 
 ## <a name="mono-compatibility-with-net"></a>Mono 与 .NET 的兼容性
 

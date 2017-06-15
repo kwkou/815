@@ -351,8 +351,5 @@ Analysis Services 的**默认实例**侦听 TCP 端口 **2383**。在虚拟机�
 > [AZURE.NOTE]
 > [Submit feedback and contact information through Microsoft SQL Server Connect](https://connect.microsoft.com/SQLServer/Feedback)
 
-### 社区内容
-* [使用 PowerShell 管理 Azure SQL 数据库。](http://blogs.msdn.com/b/windowsazure/archive/2013/02/07/windows-azure-sql-database-management-with-powershell.aspx)
-
 <!---HONumber=Mooncake_0313_2017-->
 <!--Update_Description: wording update-->

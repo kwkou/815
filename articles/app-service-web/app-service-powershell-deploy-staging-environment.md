@@ -62,7 +62,7 @@
     -ResourceName $webappname/staging/web -ApiVersion 2015-08-01 -Force
 
     # Swap the verified/warmed up staging slot into production.
-    Swap-AzureRmWebAppSlot -Name $webappname -ResourceGroupName myResourceGroup `
+    Switch-​Azure​Rm​Web​App​Slot -Name $webappname -ResourceGroupName myResourceGroup `
     -SourceSlotName staging -DestinationSlotName production
 
 ## <a name="clean-up-deployment"></a>清理部署 
@@ -83,7 +83,7 @@
 | [Set-AzureRmAppServicePlan](https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.websites/v2.5.0/set-azurermappserviceplan) | 修改应用服务计划以更改其定价层。 |
 | [New-AzureRmWebAppSlot](https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.websites/v2.5.0/new-azurermwebappslot) | 为 Web 应用创建部署槽。 |
 | [Set-AzureRmResource](https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.resources/v3.5.0/set-azurermresource) | 修改资源组中的资源。 |
-| [Swap-AzureRmWebAppSlot](https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.websites/v2.5.0/swap-azurermwebappslot) | 将 Web 应用的部署槽交换到生产环境。 |
+| [Switch-​Azure​Rm​Web​App​Slot](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.websites/switch-azurermwebappslot) | 将 Web 应用的部署槽交换到生产环境。 |
 
 ## <a name="next-steps"></a>后续步骤
 

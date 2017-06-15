@@ -92,7 +92,6 @@
     [应用服务定价详细信息](/pricing/details/app-service/)
   
     [应用服务定价详细信息 - SSL 连接](/pricing/details/app-service/)
-* 有关 Azure App Service 最佳实践（包括构建可缩放、有弹性的体系结构）的信息，请参阅 [Best Practices: Azure App Service Web Apps（最佳实践：Azure App Service Web 应用）](http://blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx)。
 
 <!-- LINKS -->
 

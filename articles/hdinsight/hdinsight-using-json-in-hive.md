@@ -160,7 +160,7 @@ SerDe 是用于分析嵌套 JSON 文档的最佳选择，不但可定义 JSON �
     3. 添加指向 **C:\Program Files\Java\jdk1.7.0_55** 或任何 JDK 安装位置的新 **JAVA_HOME** 环境变量。
 
         ![设置 JDK 的正确配置值][image-hdi-hivejson-jdk]
-2. 安装 [Maven 3.3.1](http://mirror.olnevhost.net/pub/apache/maven/maven-3/3.3.1/binaries/apache-maven-3.3.1-bin.zip)
+2. 安装 [Maven 3.3.1](https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.3.1/apache-maven-3.3.1-bin.zip)
 
     转到“控件面板”->“编辑系统变量”（对应于帐户的 Environment 变量），将 bin 文件夹添加到路径。 以下屏幕截图显示了如何执行此操作。
 

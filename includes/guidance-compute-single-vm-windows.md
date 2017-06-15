@@ -130,7 +130,7 @@ RBAC 不限制已登录到 VM 的用户可以执行的操作。这些权限由�
 
 [GitHub][github-folder] 中提供了此参考体系结构的部署。它包括 VNet、NSG 和单个 VM。若要部署体系结构，请遵循以下步骤：
 
-1. 右键单击下面的按钮，然后选择“在新选项卡中打开链接”或“在新窗口中打开链接”。[![部署到 Azure](./media/guidance-compute-single-vm-linux/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Freference-architectures%2Fmaster%2Fguidance-compute-single-vm%2Fazuredeploy.json)
+1. 右键单击下面的按钮，然后选择“在新选项卡中打开链接”或“在新窗口中打开链接”。[![部署到 Azure](./media/guidance-compute-single-vm-linux/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Freference-architectures%2Fmaster%2Fvirtual-machines%2Fsingle-vm%2Fazuredeploy.json)
 2. 链接在 Azure 门户中打开后，必须输入某些设置的值：
    
     * 参数文件中已定义了“资源组”名称，因此选择“新建”并在文本框中输入 `ra-single-vm-rg`。
@@ -164,7 +164,7 @@ RBAC 不限制已登录到 VM 的用户可以执行的操作。这些权限由�
 [data-disk]: /documentation/articles/storage-about-disks-and-vhds-windows/
 [enable-monitoring]: /documentation/articles/insights-how-to-use-diagnostics/
 [fqdn]: /documentation/articles/virtual-machines-windows-portal-create-fqdn/
-[github-folder]: http://github.com/mspnp/reference-architectures/tree/master/guidance-compute-single-vm
+[github-folder]: https://github.com/mspnp/reference-architectures/tree/master/virtual-machines/single-vm
 [group-policy]: https://technet.microsoft.com/zh-cn/library/dn595129.aspx
 [log-collector]: https://azure.microsoft.com/blog/simplifying-virtual-machine-troubleshooting-using-azure-log-collector/
 [manage-vm-availability]: /documentation/articles/virtual-machines-windows-manage-availability/

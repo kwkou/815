@@ -47,8 +47,8 @@
 
 * 下列其中一个版本的 Visual Studio：
   
-    * Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)
-    * Visual Studio 2013 [Update 4](http://www.microsoft.com/download/details.aspx?id=44921) 或 [Visual Studio 2013 Community](http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe)
+    * Visual Studio 2012 Update 4
+    * Visual Studio 2013 [Update 4](https://www.microsoft.com/download/details.aspx?id=45326) 或 [Visual Studio 2013 Community](http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe)
     * Visual Studio 2015 或 [Visual Studio 2015 Community](http://download.microsoft.com/download/0/B/C/0BC321A4-013F-479C-84E6-4A2F90B11269/vs_community.exe)
     * Visual Studio 2017（任何版本）
 

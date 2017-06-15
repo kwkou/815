@@ -39,7 +39,7 @@
 
 * Visual Studio（以下版本之一）：
   
-    * 包含 [Update 4](https://www.microsoft.com/download/details.aspx?id=44921) 的 Visual Studio 2013 Community/Professional/Premium/Ultimate
+    * 包含 [Update 4](https://www.microsoft.com/download/details.aspx?id=45326) 的 Visual Studio 2013 Community/Professional/Premium/Ultimate
   
     * Visual Studio 2015（任何版本）
 

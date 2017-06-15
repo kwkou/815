@@ -46,8 +46,8 @@ Power BI 允许以可视方式将数据显示为报表。本文档提供了如�
 
 * Visual Studio（以下版本之一）
   
-    * Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)
-    * Visual Studio 2013 [Update 4](http://www.microsoft.com/download/details.aspx?id=44921) 或 [Visual Studio 2013 Community](http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe)
+    * Visual Studio 2012 Update 4
+    * Visual Studio 2013 [Update 4](https://www.microsoft.com/download/details.aspx?id=45326) 或 [Visual Studio 2013 Community](http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe)
     * [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
     * Visual Studio 2017（任何版本）
 

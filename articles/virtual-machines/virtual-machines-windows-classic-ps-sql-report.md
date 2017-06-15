@@ -595,7 +595,6 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
   
     * [适用于 Visual Studio 2013 的 Microsoft SQL Server Data Tools-Business Intelligence](https://www.microsoft.com/download/details.aspx?id=42313)
     * [适用于 Visual Studio 2012 的 Microsoft SQL Server Data Tools-Business Intelligence](https://www.microsoft.com/download/details.aspx?id=36843)
-    * [SQL Server Data Tools 和 SQL Server Business Intelligence \(SSDT-BI\)](http://curah.microsoft.com/30004/sql-server-data-tools-ssdt-and-sql-server-business-intelligence)
 * **SQL Server Data Tools：远程**：在本地计算机上，在 SQL Server Data Tools 中创建一个包含 Reporting Services 报表的 Reporting Services 项目。将项目配置为连接到 web 服务 URL。
   
     ![SSRS 项目的 ssdt 项目属性](./media/virtual-machines-windows-classic-ps-sql-report/IC650114.gif)  

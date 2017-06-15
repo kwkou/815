@@ -302,8 +302,6 @@ Solr 仪表板是一个 Web UI，可让你通过 Web 浏览器使用 Solr。 Sol
 
         hdfs dfs -put snapshot.20150806185338855.tgz /example/data
 
-有关使用 Solr 备份和还原的详细信息，请参阅[创建和还原 SolrCores 的备份](https://cwiki.apache.org/confluence/display/solr/Making+and+Restoring+Backups+of+SolrCores)。
-
 ## <a name="next-steps"></a>后续步骤
 
 * [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-linux/)。 使用群集自定义在 HDInsight Hadoop 群集上安装 Giraph。 Giraph 可让你通过使用 Hadoop 执行图形处理，并可以在 Azure HDInsight 上使用。

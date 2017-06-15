@@ -1234,8 +1234,6 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。 Mahout 包含用于处理�
 <tr><td>tez.am.resource.memory</td><td>1536 MB（无变化）</td></tr>
 </table>
 
-有关 HDInsight 的 Hortonworks 数据平台上 YARN 和 MapReduce 使用的内存配置设置的更多信息，请参阅[确定 HDP 内存配置设置](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1-latest/bk_installing_manually_book/content/rpm-chap1-11.html)。 Hortonworks 还提供了一款工具用于计算合适的内存设置。
-
 关于 Azure PowerShell 和 HDInsight SDK 错误消息：“群集未配置 HTTP 服务访问”：
 
 * 此错误是已知的[兼容性问题](https://social.msdn.microsoft.com/Forums/azure/a7de016d-8de1-4385-b89e-d2e7a1a9d927/hdinsight-powershellsdk-error-cluster-is-not-configured-for-http-services-access?forum=hdinsight)，起因于 HDInsight SDK 或 Azure PowerShell 版本和群集版本的差异。 8 月 15 日或之后创建的群集支持虚拟网络的新配置功能。 但旧版的 SDK 或 Azure PowerShell 无法正确解释此功能。 结果造成某些作业提交操作失败。 如果你使用 HDInsight SDK API 或 Azure PowerShell cmdlet 来提交作业（**Use-AzureRmHDInsightCluster** 或 **Invoke-AzureRmHDInsightHiveJob**），这些作业可能失败并返回错误消息“群集 <clustername> 未配置 HTTP 服务访问”。 或者（根据具体的操作），你可能会收到其他错误消息，例如“无法连接到群集”。
@@ -1466,7 +1464,7 @@ SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部�
 * HDInsight 版本 3.1 使用基于 [Hortonworks 数据平台 2.1.7][hdp-2-1-7]的 Hadoop 分发版。 这是使用 2014 年 11 月 7 日之后的 Azure 门户时创建的默认 Hadoop 群集。 创建于 2014 年 11 月 7 日之前的 HDInsight 3.1 群集基于 [Hortonworks 数据平台 2.1.1][hdp-2-1-1]
 * HDInsight 版本 3.0 使用基于 [Hortonworks 数据平台 2.0][hdp-2-0-8]的 Hadoop 分发版。
 * HDInsight 版本 2.1 使用基于 [Hortonworks 数据平台 1.3][hdp-1-3-0]的 Hadoop 分发版。
-* HDInsight 版本 1.6 使用基于 [Hortonworks 数据平台 1.1][hdp-1-1-0]的 Hadoop 分发版。
+* HDInsight 版本 1.6 使用基于 Hortonworks 数据平台 1.1的 Hadoop 分发版。
 
 [hdp-2-1-7]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.7-Win/bk_releasenotes_HDP-Win/content/ch_relnotes-HDP-2.1.7.html
 

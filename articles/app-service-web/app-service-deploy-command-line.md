@@ -59,7 +59,7 @@
 [Web 部署](http://www.iis.net/downloads/microsoft/web-deploy)是用于部署到 IIS 的 Microsoft 软件，它不仅提供智能文件同步功能，还可以执行或协调许多其他与部署相关的，使用 FTP 时无法自动执行的任务。例如，Web 部署可以部署新的数据库或数据库更新以及你的 Web 应用。Web 部署还可以尽量减少更新现有站点所需的时间，因为它可以智能地仅复制更改过的文件。Microsoft Visual Studio 和 Team Foundation Server 支持内置 Web 部署，但你也可以直接从命令行使用 Web 部署自动进行部署。Web 部署命令非常强大，在学习过程中可能会遇到困难。
 
 ## 更多资源
-使用命令行自动化的另一个部署选项是使用基于云的服务，例如 [Octopus 部署](http://en.wikipedia.org/wiki/Octopus_Deploy)。有关详细信息，请参阅[将 ASP.NET Web 应用程序部署到 Azure 网站](https://octopusdeploy.com/blog/deploy-aspnet-applications-to-azure-websites)。
+使用命令行自动化的另一个部署选项是使用基于云的服务，例如 Octopus 部署。有关详细信息，请参阅[将 ASP.NET Web 应用程序部署到 Azure 网站](https://octopusdeploy.com/blog/deploy-aspnet-applications-to-azure-websites)。
 
 有关命令行工具的详细信息，请参阅以下资源：
 
