@@ -309,9 +309,5 @@ Azure 中提供的内置 RBAC 角色可确保根据环境中可用的资源授�
 
 从最新的 Build 2017 开始，Azure Cloud Shell 已推出正式版。 Azure Cloud Shell 是对 IDE 和 Azure 门户的补充。 使用此服务可以获取在 Azure 中进行身份验证和托管的基于浏览器的 shell，并且可以使用它来取代计算机上安装的 CLI。
 
-
-
-
-
-![Azure Cloud Shell](./media/role-based-access-control-create-custom-roles-for-internal-external-users/27.png)
+![Azure Cloud Shell](./media/role-based-access-control-create-custom-roles-for-internal-external-users/27.PNG)
 

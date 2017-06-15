@@ -110,16 +110,19 @@ Azure Active Directory 可配置为自动将已分配的用户和组预配到实
 3. 在此文件夹中，使用 Visual Studio 启动 FileProvisioningAgent 解决方案。
 4. 选择“工具”>“库包管理器”>“包管理器控制台”并执行以下命令，使 FileProvisioningAgent 项目解析解决方案引用：
    
-	Install-Package Microsoft.SystemForCrossDomainIdentityManagement 
-	Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory 
-	Install-Package Microsoft.Owin.Diagnostics 
-	Install-Package Microsoft.Owin.Host.SystemWeb
+        Install-Package Microsoft.SystemForCrossDomainIdentityManagement 
+        Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory 
+        Install-Package Microsoft.Owin.Diagnostics 
+        Install-Package Microsoft.Owin.Host.SystemWeb
+        
 5. 构建 FileProvisioningAgent 项目。
 6. 在 Windows 中启动命令提示符应用程序（以管理员身分），并使用 **cd** 命令将目录切换到 **\AzureAD-BYOA-Provisioning-Samples\ProvisioningAgent\bin\Debug** 文件夹。
 7. 运行以下命令，并将 <ip-address> 替换为 Windows 计算机的 IP 或域名。
    
-   FileAgnt.exe http://<ip-address>:9000 TargetFile.csv
+        FileAgnt.exe http://<ip-address>:9000 TargetFile.csv
+
 8. 在 Windows 中，于“Windows 设置”>“网络和 Internet 设置”下，选择“Windows 防火墙”>“高级设置”，然后创建允许对端口 9000 进行入站访问的“入站规则”。
+
 9. 如果 Windows 计算机位于路由器后面，则需将路由器配置为在面向 Internet 的端口 9000 与 Windows 计算机上的端口 9000 之间执行网络访问转换。 为了使 Azure AD 能够在云中访问此终结点，必须执行此操作。
 
 若要在 Azure AD 中注册示例 SCIM 终结点，请执行以下操作：

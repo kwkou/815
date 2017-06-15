@@ -125,6 +125,7 @@ OAuth 2.0 代理流适用于这样的用例：其中应用程序调用某个服�
 
 ## <a name="next-steps"></a>后续步骤
 详细了解 OAuth 2.0 协议和使用客户端凭据执行服务到服务身份验证的其他方法。
+
 - [Azure AD v2.0 中的 OAuth 2.0 客户端凭据授予](/documentation/articles/active-directory-v2-protocols-oauth-client-creds/)
 - [Azure AD v2.0 中的 OAuth 2.0](/documentation/articles/active-directory-v2-protocols-oauth-code/)
 

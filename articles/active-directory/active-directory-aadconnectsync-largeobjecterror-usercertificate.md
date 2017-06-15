@@ -64,7 +64,7 @@ LargeObject 错误可能由其他 AD 属性导致。 若要确认该错误是否
 8. 将更改导出到 Azure AD。
 9. 重新启用同步计划程序。
 
-### <a name="step-1----disable-sync-scheduler-and-verify-there-is-no-synchronization-in-progress"></a>步骤 1。    禁用同步计划程序，并验证是否没有正在进行的同步操作
+### <a name="step-1----disable-sync-scheduler-and-verify-there-is-no-synchronization-in-progress"></a>步骤 1 - 禁用同步计划程序，并验证是否没有正在进行的同步操作
 确保实现新同步规则的中途不会发生同步，以免将意外的更改导出到 Azure AD。 若要禁用内置的同步计划程序，请执行以下操作：
 
 1. 在 Azure AD Connect 服务器上启动 PowerShell 会话。
@@ -78,7 +78,7 @@ LargeObject 错误可能由其他 AD 属性导致。 若要确认该错误是否
 
 4. 转到“操作”选项卡，确认是否不存在状态为“正在进行”的操作。
 
-### <a name="step-2----find-the-existing-outbound-sync-rule-for-usercertificate-attribute"></a>步骤 2.    查找 userCertificate 属性的现有出站同步规则
+### <a name="step-2----find-the-existing-outbound-sync-rule-for-usercertificate-attribute"></a>步骤 2 - 查找 userCertificate 属性的现有出站同步规则
 应已启用并配置一个现有的同步规则用于将 User 对象的 userCertificate 属性导出到 Azure AD。 请找到此同步规则，确定其**优先顺序**和**范围筛选器**配置：
 
 1. 转到“开始”→“同步规则编辑器”，启动“同步规则编辑器”。
@@ -105,7 +105,7 @@ LargeObject 错误可能由其他 AD 属性导致。 若要确认该错误是否
     | sourceObjectType | EQUAL | User |
     | cloudMastered | NOTEQUAL | True |
 
-### <a name="step-3-create-the-outbound-sync-rule-required"></a>步骤 3. 创建所需的出站同步规则
+### <a name="step-3-create-the-outbound-sync-rule-required"></a>步骤 3 - 创建所需的出站同步规则
 新同步规则的**范围筛选器**必须与现有同步规则相同，其**优先顺序**必须高于现有同步规则。 这可以确保将新同步规则应用到与现有同步规则相同的一组对象，并重写 userCertificate 属性的现有同步规则。 若要创建同步规则，请执行以下操作：
 1. 在同步规则编辑器中，单击“添加新规则”按钮。
 2. 在“说明”选项卡下面提供以下配置：
@@ -132,11 +132,12 @@ LargeObject 错误可能由其他 AD 属性导致。 若要确认该错误是否
     
 6. 单击“添加”按钮来创建同步规则。
 
-### <a name="step-4----verify-the-new-sync-rule-on-an-existing-object-with-largeobject-error"></a>步骤 4.    验证针对出现 LargeObject 错误的现有对象实施的新同步规则
+### <a name="step-4----verify-the-new-sync-rule-on-an-existing-object-with-largeobject-error"></a>步骤 4 - 验证针对出现 LargeObject 错误的现有对象实施的新同步规则
 在将创建的同步规则应用到其他对象之前，可以执行此步骤来验证是否可对出现 LargeObject 错误的现有 AD 对象正常运行该规则：
+
 1. 在 Synchronization Service Manager 中转到“操作”选项卡。
 2. 选择最近的“导出到 Azure AD”操作，然后单击出现 LargeObject 错误的对象之一。
-3.    在“连接器空间对象属性”弹出屏幕中，单击“预览”按钮。
+3. 在“连接器空间对象属性”弹出屏幕中，单击“预览”按钮。
 4. 在“预览”弹出屏幕中选择“完全同步”，然后单击“提交预览”。
 5. 关闭“预览”屏幕和“连接器空间对象属性”屏幕。
 6. 在 Synchronization Service Manager 中转到“连接器”选项卡。
@@ -144,15 +145,16 @@ LargeObject 错误可能由其他 AD 属性导致。 若要确认该错误是否
 8. 在“运行连接器”弹出窗口中选择“导出”步骤，然后单击“确定”。
 9. 等待完成导出到 Azure AD，然后确认此特定对象未出现其他 LargeObject 错误。
 
-### <a name="step-5----apply-the-new-sync-rule-to-remaining-objects-with-largeobject-error"></a>步骤 5。    将新的同步规则应用到出现 LargeObject 错误的其余对象
+### <a name="step-5----apply-the-new-sync-rule-to-remaining-objects-with-largeobject-error"></a>步骤 5 - 将新的同步规则应用到出现 LargeObject 错误的其余对象
 添加同步规则后，需要在 AD 连接器上运行完全同步步骤：
+
 1. 在 Synchronization Service Manager 中转到“连接器”选项卡。
 2. 右键单击“AD”连接器，然后选择“运行...”
 3. 在“运行连接器”弹出窗口中选择“完全同步”步骤，然后单击“确定”。
 4. 等待完全同步步骤完成。
 5. 如果有多个 AD 连接器，请针对剩余的 AD 连接器重复上述步骤。 通常，如果有多个本地目录，则需要多个连接器。
 
-### <a name="step-6----verify-there-are-no-unexpected-changes-waiting-to-be-exported-to-azure-ad"></a>步骤 6.    验证是否没有意外的更改正在等待导出到 Azure AD
+### <a name="step-6----verify-there-are-no-unexpected-changes-waiting-to-be-exported-to-azure-ad"></a>步骤 6 - 验证是否没有意外的更改正在等待导出到 Azure AD
 1. 在 Synchronization Service Manager 中转到“连接器”选项卡。
 2. 右键单击“Azure AD”连接器，然后选择“搜索连接器空间”。
 3. 在“搜索连接器空间”弹出窗口中：
@@ -161,15 +163,17 @@ LargeObject 错误可能由其他 AD 属性导致。 若要确认该错误是否
     3. 单击“搜索”按钮，返回等待将其更改导出到 Azure AD 的所有对象。
     4. 验证是否没有意外的更改。 若要检查给定对象的更改，请双击该对象。
 
-### <a name="step-7----export-the-changes-to-azure-ad"></a>步骤 7.    将更改导出到 Azure AD
+### <a name="step-7----export-the-changes-to-azure-ad"></a>步骤 7 - 将更改导出到 Azure AD
 若要将更改导出到 Azure AD，请执行以下操作：
+
 1. 在 Synchronization Service Manager 中转到“连接器”选项卡。
 2. 右键单击“Azure AD”连接器，然后选择“运行...”
 4. 在“运行连接器”弹出窗口中选择“导出”步骤，然后单击“确定”。
 5. 等待完成导出到 Azure AD，然后确认不存在其他 LargeObject 错误。
 
-### <a name="step-8----re-enable-sync-scheduler"></a>步骤 8。    重新启用同步计划程序
+### <a name="step-8----re-enable-sync-scheduler"></a>步骤 8 - 重新启用同步计划程序
 解决问题后，请重新启用内置的同步计划程序：
+
 1. 启动 PowerShell 会话。
 2. 通过运行以下 cmdlet 来重新启用计划的同步：`Set-ADSyncScheduler -SyncCycleEnabled $true`
 

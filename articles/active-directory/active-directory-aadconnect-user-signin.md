@@ -6,6 +6,7 @@
     author="billmath"
     manager="femila"
     editor="curtand" />
+
 <tags
     ms.assetid="547b118e-7282-4c7f-be87-c035561001df"
     ms.service="active-directory"
@@ -15,7 +16,7 @@
     ms.topic="article"
     ms.date="05/09/2017"
     wacn.date="06/12/2017"
-    ms.author="billmath" />
+    ms.author="billmath"
     ms.translationtype="Human Translation"
     ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
     ms.openlocfilehash="687c8ab308db989ffc34f673e7b275f4e9b5d7a1"

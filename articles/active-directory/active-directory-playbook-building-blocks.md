@@ -130,7 +130,7 @@
 
 | 步骤 | 资源 |
 | --- | --- |
-| 在 Azure AD 管理门户中导航到“用户和组”边栏选项卡 | [Azure AD 管理门户：用户和组](https://portal.azure.cn/#blade/Microsoft_AAD_IAM/UserManagementMenuBlade/Overview/menuId/) |
+| 在 Azure AD 管理门户中导航到“用户”边栏选项卡 | Azure AD 管理门户：用户 |
 | 选择“所有用户”边栏选项卡 |  |
 | 在顶部栏中选择“多重身份验证”按钮 | Azure MFA 门户的直接 URL：https://aka.ms/mfaportal |
 | 在“用户”设置中选择 PoC 用户，并为他们启用 MFA | [Azure 多重身份验证中的用户状态](/documentation/articles/multi-factor-authentication-get-started-user-states/) |
