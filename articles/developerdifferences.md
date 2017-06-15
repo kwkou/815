@@ -241,7 +241,7 @@ AAD PowerShell Login | Connect-msolservice| Connect-msolservice -AzureEnvironmen
 AAD Login | https://login.windows.net| https://login.chinacloudapi.cn
 AAD Graph API | https://graph.windows.net| https://graph.chinacloudapi.cn
 Azure 认知服务 | https://api.projectoxford.ai/face/v1.0 | https://api.cognitive.azure.cn/face/v1.0
-SQL 数据库导入/导出服务映射端点 | | <p>1. 中国东部：[https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc) </p><p> 2. 中国北部：[https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc)</p>
+SQL 数据库导入/导出服务映射端点 | | <p>1. 中国东部：https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc </p><p> 2. 中国北部：https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc </p>
 Power BI Embedded | https://api.powerbi.com | https://api.powerbi.cn
 Power BI Embedded | https://embedded.powerbi.com | https://embedded.powerbi.cn
 O365 | https://login.microsoftonline.com | https://login.partner.microsoftonline.cn
@@ -599,7 +599,7 @@ Azure 诊断通过使用开发计算机上的本地存储或中国区 Azure 存�
     <tr>
       <td width="130" valign="top"> 视频 </td>
       <td width="180" valign="top"> 否 </td>
-      <td width="794" valign="top"> 第 9 频道的视频讨论境外服务，与优酷上的中国视频 (<a href="http://www.youku.com/playlist_show/id_19321941.html">http://www.youku.com/playlist_show/id_19321941.html</a>)相同 </td>
+      <td width="794" valign="top"> 第 9 频道的视频讨论境外服务，与优酷上的中国视频相同 </td>
     </tr>
     <tr>
       <td width="130" valign="top"> Azure 培训包 </td>

@@ -142,7 +142,7 @@ ServerName/DirectoryName 格式是此属性的首选格式，因为它可在连�
 >[AZURE.NOTE]
 从 2017 年 3 月更新开始，“全局参数”屏幕包括在删除用户的过程中删除用户的邮件数据库的选项。
 
-![删除用户的邮箱](./media/active-directory-aadconnectsync-connector-domino/AdminP.png)  
+![删除用户的邮箱](./media/active-directory-aadconnectsync-connector-domino/adminP.png)  
 
 
 #### 导入设置和方法

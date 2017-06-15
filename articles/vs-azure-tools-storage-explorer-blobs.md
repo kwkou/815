@@ -89,7 +89,7 @@ Blob 容器包含 Blob 和文件夹（其中也可能包含 Blob）。
 
 	![“粘贴 Blob 容器”上下文菜单][7]
 
-## 获取 Blob 容器的 SAS
+## 获取 Blob 容器的 SAS <a name="get-the-sas-for-a-blob-container"></a>
 [共享访问签名 (SAS)](/documentation/articles/storage-dotnet-shared-access-signature-part-1/) 用于对存储帐户中的资源进行委托访问。这意味着你可以授权客户端在指定时间段内，以一组指定权限有限地访问你的存储帐户中的对象，而不必共享你的帐户访问密钥。
 
 以下步骤演示了如何为 Blob 容器创建 SAS：

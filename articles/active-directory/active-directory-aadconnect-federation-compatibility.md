@@ -135,7 +135,6 @@ Azure Active Directory 为 Office 365 和其他 Microsoft Online 服务提供单
 | 富客户端应用程序（如 Lync、Office Subscription、CRM） |支持 |不支持 Windows 集成身份验证 |
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） |支持 |无 |
 
-有关 CA Secure Cloud 详细信息，请参阅 [CA Secure Cloud。](http://www.ca.com/us/products/security-as-a-service.aspx)
 
 ## CA SiteMinder 12.52 SP1 累积版本 4 <a name="ca-siteminder-1252-sp1-cumulative-release-4"></a>
 

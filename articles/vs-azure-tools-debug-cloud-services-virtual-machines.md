@@ -171,7 +171,6 @@ Visual Studio ASP.NET 项目提供了一个选项，让您创建可用于应用�
 10. 选择虚拟机上你想要调试的进程，然后选择“附加”。例如，如果您想要调试虚拟机上的某个 Web 应用，则可以选择 w3wp.exe 进程。有关详细信息，请参阅[在 Visual Studio 中调试一个或多个进程](https://msdn.microsoft.com/zh-cn/library/jj919165.aspx)。
 
 ## 后续步骤
-- 使用“Intellitrace”从发布服务器中收集调用和事件的日志。请参阅[使用 IntelliTrace 和 Visual Studio 调试已发布的云服务](/documentation/articles/vs-azure-tools-intellitrace-debug-published-cloud-services/)。
 - 使用“Azure 诊断”以记录在角色内运行的代码的详细信息，角色是否在开发环境或 Azure 中运行。请参阅[使用 Azure 诊断收集日志记录数据](/documentation/articles/cloud-services-dotnet-diagnostics/)。
 
 <!---HONumber=Mooncake_0320_2017-->

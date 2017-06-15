@@ -144,7 +144,7 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 
 		$sudo /usr/local/haproxy/sbin/haproxy -f /usr/local/haproxy/haproxy.cfg
 
-	这个时候访问 [http://HAProxy 的公网地址:80]() 会出错，因为它后端的两台 web server 还没有提供 web 服务。
+	这个时候访问 http://HAProxy 的公网地址:80 会出错，因为它后端的两台 web server 还没有提供 web 服务。
 
 3. 去到两台 web server 安装好 apache2 并启动。为方便下一步测试，请在安装好 apache2 之后修改主页内容以区分两台 server。例如在根目录下创建 index.html，示例如下：
 
@@ -319,11 +319,11 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 
 	![](./media/open-source-azure-virtual-machines-linux-install-and-configure-haproxy/ssl3.png)
 
-	输入 [https://HAProxy 的公网地址]() 访问也是同样效果。
+	输入 https://HAProxy 的公网地址 访问也是同样效果。
 
 	![](./media/open-source-azure-virtual-machines-linux-install-and-configure-haproxy/ssl4.png)
 
-6. 输入 [http://HAProxy 域名]()，会转向 https. 至此配置成功。
+6. 输入 http://HAProxy 域名，会转向 https. 至此配置成功。
 
 第二种配置。即在后端的 web server 配置 ssl, HAProxy 只提供负载均衡的作用。
 

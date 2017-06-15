@@ -35,7 +35,7 @@ Azure PowerShell 使用语义版本控制，这意味着如果版本 A > 版本 
 
 有关 Azure PowerShell 中语义版本控制实践的详细信息，请参阅语义版本控制规范：http://semver.org
  
-若要获取最新的 API，应使用版本 2.x。但是，如果针对版本 1.x 编写了脚本，而且不希望吸收 2.x [发行说明](https://github.com/Azure/azure-powershell/blob/dev/documentation/release-notes/migration-guide.2.0.0.md)中所述的版本 2.x 重大更改，则应安装 1.7.0。
+若要获取最新的 API，应使用版本 2.x。但是，如果针对版本 1.x 编写了脚本，而且不希望吸收 2.x 发行说明中所述的版本 2.x 重大更改，则应安装 1.7.0。
 
 如果已安装配置文件模块的最新版本，并随后加载依赖于它的某个模块的早期版本，则会导致版本不匹配。解决此问题的最简单方法是从最新的 .msi 安装。.msi 会自动清理模块的较旧版本。
  

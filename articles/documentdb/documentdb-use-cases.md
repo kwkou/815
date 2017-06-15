@@ -33,7 +33,7 @@
 - 对 Web 和移动应用程序使用 DocumentDB 有什么好处？
 
 ## <a name="introduction"></a>介绍
-[DocumentDB](/documentation/articles/documentDB-introduction/) 是 Microsoft 提供的全球分布式数据库服务。 该服务允许客户跨数目不限的地理区域弹性（独立）缩放吞吐量与存储。 DocumentDB 是当今市场中提供的第一个全球分布式数据库服务，在吞吐量、延迟、可用性和一致性方面提供全面的服务级别协议。 
+[DocumentDB](/documentation/articles/documentdb-introduction/) 是 Microsoft 提供的全球分布式数据库服务。 该服务允许客户跨数目不限的地理区域弹性（独立）缩放吞吐量与存储。 DocumentDB 是当今市场中提供的第一个全球分布式数据库服务，在吞吐量、延迟、可用性和一致性方面提供全面的服务级别协议。 
 
 DocumentDB 项目在 2011 年以“Project Florence”的名义开始解决 Microsoft 内部大型应用程序开发人员所面临的难题。 考虑到这些问题并不单纯发生在 Microsoft 的应用程序中，因此，2015 年我们决定以 [Azure DocumentDB](https://azure.microsoft.com/zh-cn/blog/documentdb-moving-to-general-availability/) 的形式向外部开发人员正式推出 DocumentDB。 该服务在 Microsoft 内部很普及，在外部，它是 Azure 开发人员使用的发展最快的服务之一。 
 

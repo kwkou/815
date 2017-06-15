@@ -210,14 +210,14 @@
 	azure vm -h
 
 <!-- IMAGES -->
-[Azure Web Site]: ./media/crossplat-cmd-tools/freetrial.png
+[Azure Web Site]: ./media/crossplat-cmd-tools/freetrial.PNG
 
 <!-- LINKS -->
 [nodejs-org]: http://nodejs.org/
 [install-node-linux]: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
 [mac-installer]: http://go.microsoft.com/fwlink/?LinkId=252249
 [windows-installer]: http://go.microsoft.com/fwlink/?LinkID=275464
-[reference-docs]: http://go.microsoft.com/fwlink/?LinkId=252246
+[reference-docs]: https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli
 [azuredotcn]: http://www.azure.cn
 
 <!---HONumber=Mooncake_0307_2016-->

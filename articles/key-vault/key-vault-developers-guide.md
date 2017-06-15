@@ -45,7 +45,7 @@
 - [使用 REST 创建和管理密钥保管库](https://docs.microsoft.com/zh-cn/rest/api/keyvault/)
 - [使用 PowerShell 创建和管理密钥保管库](/documentation/articles/key-vault-get-started/)
 - [使用 CLI 创建和管理密钥保管库](/documentation/articles/key-vault-manage-with-cli2/)
-- [通过 Azure 资源管理器模板创建密钥保管库并添加机密](/documentation/articles/resource-manager-template-keyvault/)
+- [通过 Azure 资源管理器模板创建密钥保管库并添加机密](https://docs.microsoft.com/en-us/azure/templates/microsoft.keyvault/vaults)
 
 > [AZURE.NOTE]
 > 针对密钥保管库执行的操作通过 AAD 进行身份验证并通过密钥保管库自己的访问策略（按保管库定义）进行授权。

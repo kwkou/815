@@ -510,9 +510,9 @@ Redis 支持以多种编程语言编写的客户端应用程序。如果要使�
     var customer2 = cache.Wait(task2);
 
 
-Microsoft 网站上的 [Azure Redis Cache documentation](/documentation/services/redis-cache/)（Azure Redis 缓存文档）页提供了有关如何编写可以使用 Azure Redis 缓存的客户端应用程序的详细信息。StackExchange.Redis 网站上的 [Basic usage page](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md)（基本用法）页提供了更多信息。
+Microsoft 网站上的 [Azure Redis Cache documentation](/documentation/services/redis-cache/)（Azure Redis 缓存文档）页提供了有关如何编写可以使用 Azure Redis 缓存的客户端应用程序的详细信息。
 
-同一网站上的 [Pipelines and multiplexers](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/PipelinesMultiplexers.md)（管道与多路复用器）页提供了有关使用 Redis 和 StackExchange 库执行异步操作和管道传输的详细信息。本文的下一部分“使用 Redis 缓存”提供了一些更高级技巧的示例，你可以对 Redis 缓存中保存的数据运用这些技巧。
+同一网站上的 [Pipelines and multiplexers](https://stackexchange.github.io/StackExchange.Redis/PipelinesMultiplexers)（管道与多路复用器）页提供了有关使用 Redis 和 StackExchange 库执行异步操作和管道传输的详细信息。本文的下一部分“使用 Redis 缓存”提供了一些更高级技巧的示例，你可以对 Redis 缓存中保存的数据运用这些技巧。
 
 ## 使用 Redis 缓存
 
@@ -606,7 +606,7 @@ Redis 支持对字符串值执行一系列原子性“获取和设置”操作�
 
 如果任何命令失败，其他命令仍将继续处理。如果需要验证命令是否已成功完成，必须使用相应任务的 **Result** 属性来提取命令的结果，如上述示例中所示。读取 **Result** 属性将会阻塞调用线程，直到任务完成。
 
-有关详细信息，请参阅 StackExchange.Redis 网站上的 [Redis 中的事务](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Transactions.md)页。
+有关详细信息，请参阅 StackExchange.Redis 网站上的 [Redis 中的事务](https://stackexchange.github.io/StackExchange.Redis/Transactions)页。
 
 执行批处理操作时，可以使用 StackExchange 库的 `IBatch` 接口。此接口可用于访问 `IDatabase` 接口所访问的类似一组方法，不过，所有方法是异步的。
 
@@ -915,7 +915,7 @@ Redis 提供 SUBSCRIBE 命令来让客户端应用程序订阅通道。此命令
 - Microsoft 网站上的 [Azure Redis 缓存常见问题](/documentation/articles/cache-faq/)页
 - Microsoft 网站上的 [Configuration model](http://msdn.microsoft.com/zh-cn/library/windowsazure/hh914149.aspx)（配置模型）页
 - Microsoft 网站上的 [Task-based Asynchronous Pattern](http://msdn.microsoft.com/zh-cn/library/hh873175.aspx)（基于任务的异步模式）页
-- StackExchange.Redis GitHub 存储库上的 [Pipelines and multiplexers](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/PipelinesMultiplexers.md)（管道和多路复用器）页
+- StackExchange.Redis GitHub 存储库上的 [Pipelines and multiplexers](https://stackexchange.github.io/StackExchange.Redis/PipelinesMultiplexers)（管道和多路复用器）页
 - Redis 网站上的 [Redis persistence](http://redis.io/topics/persistence)（Redis 持久性）页
 - Redis 网站上的 [Replication](http://redis.io/topics/replication)（复制）页
 - Redis 网站上的 [Redis cluster tutorial](http://redis.io/topics/cluster-tutorial)（Redis 群集教程）页

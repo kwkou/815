@@ -76,7 +76,7 @@ Microsoft Azure 存储资源管理器（预览版）是一款独立的应用，�
 
 1. 安装模拟器以后，即可创建和使用本地 Blob、队列和表。若要了解如何使用每个存储帐户类型，请在下面选择相应的链接：
 
-	- [管理 Azure Blob 存储资源](./vs-azure-tools-storage-explorer-blobs.md)
+	- [管理 Azure Blob 存储资源](/documentation/articles/vs-azure-tools-storage-explorer-blobs/)
 	- 管理 Azure 文件共享存储资源 - *即将推出*
 	- 管理 Azure 队列存储资源 - *即将推出*
 	- 管理 Azure 表存储资源 - *即将推出*
@@ -139,7 +139,7 @@ Microsoft Azure 存储资源管理器（预览版）是一款独立的应用，�
 
 ## 使用 SAS 附加存储帐户
 
-Azure 订阅管理员可以临时通过 [SAS（共享访问签名）](storage/storage-dotnet-shared-access-signature-part-1.md)授予对存储帐户的访问权限，不需提供 Azure 订阅凭据。
+Azure 订阅管理员可以临时通过 [SAS（共享访问签名）](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)授予对存储帐户的访问权限，不需提供 Azure 订阅凭据。
 
 为了说明这一点，假设 UserA 是 Azure 订阅的管理员，UserA 想要允许 UserB 在有限的时间内使用特定权限访问某个存储帐户：
 
@@ -183,7 +183,7 @@ Azure 订阅管理员可以临时通过 [SAS（共享访问签名）](storage/st
 
 在这种情况下，服务可以是 Blob 容器、队列或表。以下各节说明如何生成所列服务的 SAS：
 
-- [获取 Blob 容器的 SAS](./vs-azure-tools-storage-explorer-blobs.md#get-the-sas-for-a-blob-container)
+- [获取 Blob 容器的 SAS](/documentation/articles/vs-azure-tools-storage-explorer-blobs.md#get-the-sas-for-a-blob-container)
 - 获取文件共享的 SAS - *即将推出*
 - 获取队列的 SAS - *即将推出*
 - 获取表的 SAS - *即将推出*

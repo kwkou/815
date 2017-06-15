@@ -893,7 +893,7 @@ Azure 云服务是 Azure 的一个 PAAS 平台，同样支持多种不同的语�
 首先需安装 JDK，Eclipse，用户应有 Azure 账号，这些基础部分不再赘述。关于 Azure 账号申请，请登录官方网页或者联系 IT 相关管理人员（如果公司已购买 Azure 服务） 
 
 1.  打开 Eclipse，安装 Azure for Eclipse 插件。可使用 Eclipse 的各个不同版本或发行版本，比如 Spring Tool Suite， JBOSS IDE， Oracle IDE， IBM IDE 等，只要基于 Eclipse，安装过程大同小异。  
-2. 选择 “Install New Software", 输入 Azure 插件的[安装地址](http://dl.msopentech.com/eclipse)，选择确定，在出现软件选择时选择全部安装，接受全部条款，然后一直点击 next，直到安装完成，Eclipse 会重启一次。  
+2. 选择 “Install New Software", 输入 Azure 插件的安装地址，选择确定，在出现软件选择时选择全部安装，接受全部条款，然后一直点击 next，直到安装完成，Eclipse 会重启一次。  
 
     ![安装地址][77]
 
