@@ -185,7 +185,7 @@ Azure 移动应用后端表定义了五个特殊字段，其中四个字段可�
 * `byte[] version`：通常以字符串表示，版本也由服务器设置。
 * `boolean deleted`：指示记录已被删除，但尚未清除。  不要使用 `deleted` 作为类中的属性。
 
-`id` 字段是必填的。  `updatedAt` 字段和 `version` 字段用于脱机同步（分别用于增量同步和冲突解决）。  `createdAt` 字段是一个引用字段，客户端不会使用它。  名称是属性的“全局”名称且不可调整。  但是，可以使用 [gson][3] 库在对象与“全局”名称之间创建映射。  例如：
+`id` 字段是必填的。  `updatedAt` 字段和 `version` 字段用于脱机同步（分别用于增量同步和冲突解决）。  `createdAt` 字段是一个引用字段，客户端不会使用它。  名称是属性的“全局”名称且不可调整。  但是，可以使用 gson 库在对象与“全局”名称之间创建映射。  例如：
 
     package com.example.zumoappname;
 
@@ -625,7 +625,7 @@ ToDoItemAdapter 构造函数的第二个参数是对布局的引用。我们现�
 创建 **MobileServiceJsonTable** 的实例后，它就几乎具有与类型化编程模型所能使用的 API 相同的 API。在某些情况下，这些方法会采用非类型化参数，而不采用类型化参数。
 
 ### <a name="json_insert"></a>插入到非类型化的表
-以下代码演示了如何执行插入。 第一步是创建属于 [gson][3] 库的 [JsonObject][1]。
+以下代码演示了如何执行插入。 第一步是创建属于 gson 库的 [JsonObject][1]。
 
 	JsonObject jsonItem = new JsonObject();
 	jsonItem.addProperty("text", "Wake up");
@@ -1150,7 +1150,7 @@ Azure 应用服务身份验证和授权返回的令牌定义了一小时的生�
 
 ### <a name="conversions"></a>配置自动序列化
 
-可以使用 [gson][3] API，指定适用于每个列的转换策略。 在发送数据到 Azure 应用服务之前，Android 客户端库会在幕后使用 [gson][3] 将 Java 对象序列化为 JSON 数据。  下面的代码使用 **setFieldNamingStrategy()** 方法设置策略。 此示例删除初始字符（“m”），然后将每个字段名称的下一个字符小写。 例如，它会将“mId”变为“id”。  实现转换策略，减少在大多数字段中使用 `SerializedName()` 批注的需求。
+可以使用 gson API，指定适用于每个列的转换策略。 在发送数据到 Azure 应用服务之前，Android 客户端库会在幕后使用 gson 将 Java 对象序列化为 JSON 数据。  下面的代码使用 **setFieldNamingStrategy()** 方法设置策略。 此示例删除初始字符（“m”），然后将每个字段名称的下一个字符小写。 例如，它会将“mId”变为“id”。  实现转换策略，减少在大多数字段中使用 `SerializedName()` 批注的需求。
 
     FieldNamingStrategy namingStrategy = new FieldNamingStrategy() {
         public String translateName(File field) {
@@ -1176,7 +1176,7 @@ Azure 应用服务身份验证和授权返回的令牌定义了一小时的生�
 [Get started with authentication]: /documentation/articles/app-service-mobile-android-get-started-users/
 [身份验证入门]: /documentation/articles/app-service-mobile-android-get-started-users/
 [2]: http://hashtagfail.com/post/44606137082/mobile-services-android-serialization-gson
-[3]: http://go.microsoft.com/fwlink/p/?LinkId=290801
+
 [4]: http://go.microsoft.com/fwlink/p/?LinkId=296840
 [5]: /documentation/articles/app-service-mobile-android-get-started-push/
 [6]: /documentation/articles/notification-hubs-push-notification-overview/#integration-with-app-service-mobile-apps

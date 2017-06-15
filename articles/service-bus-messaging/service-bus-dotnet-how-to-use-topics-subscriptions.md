@@ -299,7 +299,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 	namespaceManager.DeleteSubscription("TestTopic", "HighMessages");
 
 
-## <a name="Next-steps"></a> 后续步骤
+## <a name="next-steps"></a> 后续步骤
 
 现在，你已了解有关服务总线主题和订阅的基础知识，请访问下面的链接以获取详细信息。
 

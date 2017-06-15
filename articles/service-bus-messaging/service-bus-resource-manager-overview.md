@@ -140,7 +140,7 @@ Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源
 		    }
 		}
 
-有关详细信息，请参阅[参数文件](/documentation/articles/resource-group-template-deploy/#parameters)主题。
+有关详细信息，请参阅[参数文件](/documentation/articles/resource-group-template-deploy/#parameter-files)主题。
 
 ### 登录到 Azure 并设置 Azure 订阅
 

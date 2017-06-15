@@ -72,7 +72,6 @@
 
 
 <!-- URLs. -->
-[Send email from Mobile Services with SendGrid]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts/
 
 [Send push notifications to Windows Store apps using Service Bus from a .NET back-end]: http://go.microsoft.com/fwlink/?LinkId=277073&clcid=0x409
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts/

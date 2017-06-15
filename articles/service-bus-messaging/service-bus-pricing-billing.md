@@ -22,7 +22,7 @@
 
 服务总线推出基本和标准两种层级。可以为你创建的每个服务总线服务命名空间选择一个服务层，此服务层选择将应用于该命名空间中创建的所有实体。
 
->[AZURE.NOTE] 有关当前服务总线定价的详细信息，请参阅 [Azure 服务总线定价页](/pricing/details/messaging/)和[服务总线常见问题解答](/documentation/articles/service-bus-faq/#service-bus-pricing)。
+>[AZURE.NOTE] 有关当前服务总线定价的详细信息，请参阅 [Azure 服务总线定价页](/pricing/details/messaging/)和[服务总线常见问题解答](/documentation/articles/service-bus-faq/#pricing)。
 
 服务总线将以下两种测定仪用于队列和主题/订阅：
 

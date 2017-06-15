@@ -120,7 +120,7 @@ TodoItem 类定义数据对象，并且您需要将相同属性添加到此类�
 
    	此 POST 方法现在为插入项生成新的 SAS，有效时间为 5 分钟，然后将生成的 SAS 的值分配给所返回项目的 `sasQueryString` 属性。还将 `imageUri` 属性设置为新 BLOB 的资源路径，以便在绑定时在客户端 UI 中启用图像显示。
 
-	>[AZURE.NOTE]这段代码为单个 BLOB 创建 SAS。如果需要使用同一个 SAS 将多个 Blob 上载到容器，你可以使用空 Blob 资源名称来调用 <a href="http://go.microsoft.com/fwlink/?LinkId=390455" target="_blank">generateSharedAccessSignature 方法</a>，如下所示：<pre><code>blobService.generateSharedAccessSignature(containerName, '', sharedAccessPolicy);</code></pre>
+	>[AZURE.NOTE]这段代码为单个 BLOB 创建 SAS。如果需要使用同一个 SAS 将多个 Blob 上载到容器，你可以使用空 Blob 资源名称来调用 generateSharedAccessSignature 方法，如下所示：<pre><code>blobService.generateSharedAccessSignature(containerName, '', sharedAccessPolicy);</code></pre>
 
 接下来，您将更新快速启动应用，通过使用在发生插入时生成的 SAS，添加图像上载功能。
  

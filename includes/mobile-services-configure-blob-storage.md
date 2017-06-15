@@ -79,7 +79,7 @@
 
    	这样可将当 TodoItem 表中发生插入时所调用的函数替换为新脚本。此新脚本将为插入生成新 SAS（它的有效时间为 5 分钟）并将生成的 SAS 的值分配给所返回项目的 `sasQueryString` 属性。还将 `imageUri` 属性设置为新 BLOB 的资源路径，以便在绑定时在客户端 UI 中启用图像显示。
 
-	>[AZURE.NOTE] 这段代码为单个 BLOB 创建 SAS。如果你需要使用同一个 SAS 将多个 blob 上载到容器，可以改为使用空 blob 资源名称调用 [generateSharedAccessSignature 方法](http://go.microsoft.com/fwlink/?LinkId=390455)</a>，如下所示：
+	>[AZURE.NOTE] 这段代码为单个 BLOB 创建 SAS。如果你需要使用同一个 SAS 将多个 blob 上载到容器，可以改为使用空 blob 资源名称调用 generateSharedAccessSignature 方法，如下所示：
 	>                 
 	>     blobService.generateSharedAccessSignature(containerName, '', sharedAccessPolicy);
 

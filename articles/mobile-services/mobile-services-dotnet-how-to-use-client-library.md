@@ -322,7 +322,6 @@ Windows 支持使用定期通知（提取通知）更新动态磁贴。启用定
         PeriodicUpdateRecurrence.Hour
     );
 
-选择与你的数据更新频率最匹配的 [PeriodicUpdateRecurrance](https://msdn.microsoft.com/zh-cn/library/windows/apps/windows.ui.notifications.periodicupdaterecurrence.aspx) 值。
 
 ##<a name="optimisticconcurrency"></a>如何：使用乐观并发
 

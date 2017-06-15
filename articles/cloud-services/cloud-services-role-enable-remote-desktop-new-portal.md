@@ -45,7 +45,7 @@ Azure 门户使用远程桌面扩展方法，即使在部署应用程序之后�
 
 3. 填写所需的字段：用户名、密码、到期时间和证书。
 
-    ![云服务远程桌面](./media/cloud-services-role-enable-remote-desktop-new-portal/CloudServices_Remote_Desktop_Details.png)
+    ![云服务远程桌面](./media/cloud-services-role-enable-remote-desktop-new-portal/CloudServices_Remote_Desktop_Details.PNG)
 
 
    > [AZURE.WARNING]

@@ -53,7 +53,7 @@ ms.author="adegeo"/>
     </Variable>
     
 
-## 使用 AppCmd.exe 配置 IIS 启动
+## <a name="configure-iis-startup-with-appcmdexe"></a> 使用 AppCmd.exe 配置 IIS 启动
 
 [AppCmd.exe](https://technet.microsoft.com/zh-cn/library/jj635852.aspx) 命令行工具在 Azure 上启动时可用于管理 IIS 设置。*AppCmd.exe* 提供对要在 Azure 上的启动任务中使用的配置设置的方便的命令行访问。使用 *AppCmd.exe*，可以为应用程序和站点添加、修改或删除网站设置。
 

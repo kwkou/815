@@ -477,12 +477,10 @@ HTTP GET 请求可按如下所示调用上述自定义 API 示例中的两个路
 
 下面列出了你可以通过全局 **require** 函数在脚本中利用的一些较为有用的模块：
 
-+ **azure**：公开 Azure SDK for Node.js 的功能。有关详细信息，请参阅 [Azure SDK for Node.js]。 
 + **crypto**：提供 OpenSSL 的加密功能。有关详细信息，请参阅 [Node.js 文档][crypto API]。
 + **path**：包含用于处理文件路径的实用工具。有关详细信息，请参阅 [Node.js 文档][path API]。
 + **querystring**：包含用于处理查询字符串的实用工具。有关详细信息，请参阅 [Node.js 文档][querystring API]。
 + **request**：向 Twitter 和 Facebook 等外部 REST 服务发送 HTTP 请求。有关详细信息，请参阅[发送 HTTP 请求]。
-+ **sendgrid**：使用 Azure 中的 Sendgrid 电子邮件服务发送电子邮件。有关详细信息，请参阅[使用 SendGrid 从移动服务发送电子邮件]。
 + **url**：包含用于分析和解析 URL 的实用工具。有关详细信息，请参阅 [Node.js 文档][url API]。
 + **util**：包含各种实用工具，例如字符串格式设置和对象类型检查。有关详细信息，请参阅 [Node.js 文档][util API]。 
 + **zlib**：公开压缩功能，例如 gzip 和 deflate。有关详细信息，请参阅 [Node.js 文档][zlib API]。 
@@ -1023,9 +1021,7 @@ Stream|不支持
 [Windows Phone Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-wp8/
 [iOS Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
 [Android Push]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-android/
-[Azure SDK for Node.js]: http://go.microsoft.com/fwlink/p/?LinkId=275539
 [发送 HTTP 请求]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj631641.aspx
-[使用 SendGrid 从移动服务发送电子邮件]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts/
 [身份验证入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
 [crypto API]: http://go.microsoft.com/fwlink/p/?LinkId=288802
 [path API]: http://go.microsoft.com/fwlink/p/?LinkId=288803

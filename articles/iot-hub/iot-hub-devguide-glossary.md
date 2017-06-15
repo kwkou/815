@@ -75,9 +75,9 @@
 可在 IoT 中心创建自定义[终结点](/documentation/articles/iot-hub-devguide-endpoints/)来传递由[路由规则](#routing-rules)调度的消息。 自定义终结点会直接连接到事件中心、服务总线队列或服务总线主题。
 
 ## <a name="custom-gateway"></a> 自定义网关
-网关使不能直接连接到 [IoT 中心](#iot-hub)的设备能建立连接。可以使用 [Azure IoT 网关 SDK](#azure-iot-gateway-sdk) 生成自定义网关，以便使用自定义逻辑处理消息和自定义协议转换。
+网关使不能直接连接到 [IoT 中心](#iot-hub)的设备能建立连接。可以使用 Azure IoT 网关 SDK 生成自定义网关，以便使用自定义逻辑处理消息和自定义协议转换。
 
-## <a name="data-point-message"></a>数据点消息
+## <a name="data-point-messages"></a>数据点消息
 数据点消息是指[设备到云](#device-to-cloud)的消息，其中包含[遥测](#telemetry)数据（例如风速或温度）。
 
 ## <a name="desired-configuration"></a>所需配置
@@ -216,12 +216,12 @@ Azure IoT 套件将多个 Azure 服务和预配置解决方案打包在一起。
 [Azure Resource Manager](#azure-resource-manager) 使用资源组将相关的资源组合在一起。 通过使用资源组，可以对组中的所有资源同时执行操作。
 
 ## <a name="retry-policy"></a>重试策略
-连接到云服务时使用重试策略来处理[暂时性错误]()。
+连接到云服务时使用重试策略来处理[暂时性错误][]。
 ## <a name="routing-rules"></a>路由规则
 需要在 IoT 中心配置[路由规则](/documentation/articles/iot-hub-devguide-messaging/#routing-rules)，将设备到云消息路由到[内置终结点](#built-in-endpoints)或[自定义终结点](#custom-endpoints)，以供解决方案后端处理。
 
 ## <a name="sasl-plain"></a>SASL PLAIN
-SASL PLAIN 是一种协议， [AMQP](#advanced-message-queue-protocol) 协议使用它传输安全令牌。
+SASL PLAIN 是一种协议， AMQP 协议使用它传输安全令牌。
 
 ## <a name="shared-access-signature"></a> 共享访问签名
 共享访问签名 (SAS) 是基于 SHA–256 安全哈希或 URI 的身份验证机制。SAS 身份验证有两个组件：_共享访问策略_和_共享访问签名_（通常称为令牌）。设备使用 SAS 在 IoT 中心进行身份验证。[后端应用](#back-end-app)也使用 SAS 在 IoT 中心的面向服务的终结点上进行身份验证。通常，在[连接字符串](#connection-string)中包含 SAS 令牌，应用使用此令牌建立与 IoT 中心的连接。
@@ -254,4 +254,4 @@ Azure 订阅是发生计费的地方。用户创建的每个 Azure 资源或使�
 设备可以使用 X.509 证书在 [IoT 中心](#iot-hub)进行身份验证。 使用 X.509 证书是使用 [SAS 令牌](#shared-access-signature)的替代方案。
 
 
-[暂时性错误]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
+[暂时性错误]:  https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx

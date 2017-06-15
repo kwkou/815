@@ -691,7 +691,6 @@ Sencha Touch 存储可用于存储用作 Touch 组件的源的数据记录（模
 
 然后，深入了解有关 Sencha Touch Extensions for Azure 的详细信息：
 
-  * 示例应用程序[演练](http://docs.sencha.com/touch-azure/1.0.0/#!/guide/data_filters)
   * 在 [Sencha 论坛](http://www.sencha.com/forum)中获得帮助
   * 浏览 [Sencha 文档](http://docs.sencha.com/)
 

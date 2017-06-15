@@ -290,7 +290,7 @@
 
 7. 单击**“确定”**。
 
-8. 现在必须配置新 Web 应用的 Azure 资源。请按照[配置新 Web 应用的 Azure 资源](/documentation/articles/app-service-web-get-started-dotnet/#configure-azure-resources-for-a-new-web-app)一节中的所有步骤操作。然后，返回到本教程并继续执行下一步。
+8. 现在必须配置新 Web 应用的 Azure 资源。请按照[配置新 Web 应用的 Azure 资源](/documentation/articles/app-service-web-get-started-dotnet/)一节中的所有步骤操作。然后，返回到本教程并继续执行下一步。
 
 5.  在解决方案资源管理器中，右键单击“模型”，再单击“添加”，然后单击“类”。在“名称”框中，键入名称 **Product.cs**。然后单击“添加”。
 
@@ -477,7 +477,7 @@
 
 ## 将 ProductsPortal 项目部署到 Azure Web 应用
 
-下一步是将 **ProductsPortal** 前端转换为 Azure Web 应用。首先，部署 **ProductsPortal** 项目，请按照[将 Web 项目部署到 Azure Web 应用](/documentation/articles/app-service-web-get-started-dotnet/#deploy-the-web-project-to-the-azure-web-app)一节中的所有步骤操作。部署完成后，返回到本教程并继续执行下一步。
+下一步是将 **ProductsPortal** 前端转换为 Azure Web 应用。首先，部署 **ProductsPortal** 项目，请按照[将 Web 项目部署到 Azure Web 应用](/documentation/articles/app-service-web-get-started-dotnet/)一节中的所有步骤操作。部署完成后，返回到本教程并继续执行下一步。
 
 复制已部署 Web 应用的 URL，因为你在下一个步骤中需要用到该 URL。你也可以从 Visual Studio 的“Azure App Service 活动”窗口中获取此 URL：
 

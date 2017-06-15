@@ -392,7 +392,7 @@ IoT 中心开发人员指南中的其他参考主题包括：
 [lnk-event-hubs-consuming-events]: /documentation/articles/event-hubs-programming-guide/#event-consumers
 [lnk-management-portal]: https://portal.azure.cn
 [lnk-servicebus]: /documentation/services/service-bus/
-[lnk-eventhub-partitions]: /documentation/articles/event-hubs-overview/#partitions
+[lnk-eventhub-partitions]: /documentation/articles/event-hubs-what-is-event-hubs/#partitions
 [lnk-portal]: /documentation/articles/iot-hub-create-through-portal/
 [lnk-getstarted-eh]: /documentation/articles/event-hubs-dotnet-standard-getstarted-send/
 [lnk-getstarted-queue]: /documentation/articles/service-bus-dotnet-get-started-with-queues/

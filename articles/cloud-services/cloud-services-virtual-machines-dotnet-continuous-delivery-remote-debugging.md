@@ -25,7 +25,6 @@
 
     * [用于 Visual Studio 2017 的远程工具](https://go.microsoft.com/fwlink/?LinkId=746570)
     * [用于 Visual Studio 2015 的远程工具](https://go.microsoft.com/fwlink/?LinkId=615470)
-    * [用于 Visual Studio 2013 Update 5 的远程工具](https://www.microsoft.com/download/details.aspx?id=48156)
 
     或者，也可以从装有 Visual Studio 的系统复制远程调试二进制文件。
 

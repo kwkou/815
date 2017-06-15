@@ -381,9 +381,6 @@
 
 现在，你已能够通过将移动服务与 Blob 服务集成安全地上载图片，请查看一些其他的后端服务和集成主题：
 
-+ [使用 SendGrid 从移动服务发送电子邮件]
- 
-	了解如何使用 SendGrid 电子邮件服务为你的移动服务添加电子邮件功能。本主题演示如何添加服务器端脚本，以使用 SendGrid 发送电子邮件。
 
 + [移动服务服务器脚本参考]
 
@@ -403,7 +400,6 @@
 
 
 <!-- URLs. -->
-[使用 SendGrid 从移动服务发送电子邮件]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts/
 
 [Send push notifications to Windows Store apps using Service Bus from a .NET back-end]: http://go.microsoft.com/fwlink/?LinkId=277073&clcid=0x409
 [移动服务服务器脚本参考]: /documentation/articles/mobile-services-how-to-use-server-scripts/

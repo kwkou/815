@@ -223,7 +223,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一�
 [事件中心入门]: /documentation/articles/event-hubs-java-ephjava-getstarted/
 [Azure 存储可缩放性指导原则]: /documentation/articles/storage-scalability-targets/
 [Azure Block Blobs]: https://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx
-[事件中心]: /documentation/articles/event-hubs-overview/
+[事件中心]: /documentation/articles/event-hubs-what-is-event-hubs/
 [Event Hubs Programming Guide]: https://github.com/Azure/azure-event-hubs/blob/master/java/readme.md
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 
