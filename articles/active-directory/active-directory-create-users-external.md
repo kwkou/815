@@ -68,7 +68,7 @@
 - **Azure 经典管理门户**：允许身为多个目录的管理员的外部用户管理这些目录。
 - **SharePoint Online**：如果启用外部共享，则允许外部用户访问 SharePoint Online 的已授权资源。
 - **Dynamics CRM**：如果用户通过 PowerShell 获得许可，则允许外部用户访问 Dynamics CRM 中的已授权资源。
-- **Dynamics AX**：如果用户通过 PowerShell 获得许可，则允许外部用户访问 Dynamics AX 中的已授权资源。 适用于 [Azure AD 外部用户](#known-limitations-of-azure-ad-external-users) 的限制同样适用于 Dynamics AX 中的外部用户。
+- **Dynamics AX**：如果用户通过 PowerShell 获得许可，则允许外部用户访问 Dynamics AX 中的已授权资源。 适用于 [Azure AD 外部用户](#external-user-management-and-limitations) 的限制同样适用于 Dynamics AX 中的外部用户。
 
 ## <a name="next-steps"></a>后续步骤
 - [向 Azure Active Directory 添加新用户](/documentation/articles/active-directory-create-users/)

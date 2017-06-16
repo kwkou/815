@@ -69,7 +69,7 @@ Azure Active Directory 无缝单一登录（Azure AD 无缝 SSO）为登录到�
 
 ## <a name="how-does-azure-ad-seamless-sso-work"></a>Azure AD 无缝 SSO 的工作原理
 
-可按[下面](#how-to-enable-azure-ad-seamless-sso?)所示在 Azure AD Connect 中启用无缝 SSO。 启用此功能后，将在本地 Active Directory (AD) 中创建名为 AZUREADSSOACCT 的计算机帐户，并与 Azure AD 安全共享其 Kerberos 解密密钥。 此外，将创建两个 Kerberos 服务主体名称 (SPN) 来表示 Azure AD 登录期间使用的两个服务 URL。
+可按[下面](#how-to-enable-azure-ad-seamless-sso)所示在 Azure AD Connect 中启用无缝 SSO。 启用此功能后，将在本地 Active Directory (AD) 中创建名为 AZUREADSSOACCT 的计算机帐户，并与 Azure AD 安全共享其 Kerberos 解密密钥。 此外，将创建两个 Kerberos 服务主体名称 (SPN) 来表示 Azure AD 登录期间使用的两个服务 URL。
 
 >[AZURE.NOTE]
 > 需要在与 Azure AD 同步（通过 Azure AD Connect）且要为其用户启用无缝 SSO 的每个 AD 林中创建计算机帐户和 Kerberos SPN。 如果 AD 林具有计算机帐户的组织单位 (OU)，在启用无缝 SSO 功能后，请将 AZUREADSSOACCT 计算机帐户移到一个 OU，以确保它不会被删除，并且与其他计算机帐户以相同方式进行管理。

@@ -30,7 +30,7 @@ DocumentDB 支持使用核心 MongoDB API 函数来创建、读取、更新和�
 
 性能保留在集合级别应用，使应用程序可以调整系统中数据容器的最低级别性能。因此，集合的价格由集合的预配吞吐量（以每秒的请求单位数来度量）和总占用存储空间（以千兆字节为单位）决定。可以在集合的整个生命周期内调整设置的吞吐量，以适应不断变化的应用程序的处理需求和访问模式。有关详细信息，请参阅 [DocumentDB performance levels](/documentation/articles/documentdb-performance-levels/)（DocumentDB 性能级别）。
 
-默认情况下，具有 MongoDB 协议支持的 DocumentDB 集合是以 1,000 RU/秒的预配吞吐量在标准定价层创建的。可以根据 [Changing performance levels using the Azure Portal](/documentation/articles/documentdb-performance-levels/#changing-performance-levels-using-the-azure-portal/)（使用 Azure 门户更改性能级别）中所述调整每个集合的预配吞吐量。
+默认情况下，具有 MongoDB 协议支持的 DocumentDB 集合是以 1,000 RU/秒的预配吞吐量在标准定价层创建的。
 
 ## CRUD 操作
 

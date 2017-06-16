@@ -35,7 +35,7 @@
 3. 在“默认一致性”边栏选项卡中，选择新的一致性级别并单击“保存”。
     ![默认一致性会话][5]
 
-## <a id="keys"></a>查看、复制和重新生成访问密钥
+## <a id="keys"></a><a name="a-idkeysaview-copy-and-regenerate-access-keys"></a>查看、复制和重新生成访问密钥
 当创建 DocumentDB 帐户时，服务生成两个主访问密钥，用于访问 DocumentDB 帐户时的身份验证。 DocumentDB 提供两个访问密钥是为了让你在不中断 DocumentDB 帐户连接的情况下重新生成密钥。 
 
 在 [Azure 门户](https://portal.azure.cn/)中，从“DocumentDB 帐户”边栏选项卡上的资源菜单访问“密钥”边栏选项卡，查看、复制和重新生成用于访问 DocumentDB 帐户的访问密钥。

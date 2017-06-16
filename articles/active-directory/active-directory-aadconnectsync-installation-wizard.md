@@ -31,7 +31,7 @@
 
 ![列出其他任务的页面](./media/active-directory-aadconnectsync-installation-wizard/additionaltasks.png)
 
-如果已使用 Azure AD Connect 安装 ADFS，则会有更多选项。[ADFS management](/documentation/articles/active-directory-aadconnect-federation-management/#ad-fs-management/)（ADFS 管理）中介绍了其他 ADFS 选项。
+如果已使用 Azure AD Connect 安装 ADFS，则会有更多选项。[ADFS management](/documentation/articles/active-directory-aadconnect-federation-management/#manage-ad-fs/)（ADFS 管理）中介绍了其他 ADFS 选项。
 
 请选择其中一项任务，然后单击“下一步”继续。
 

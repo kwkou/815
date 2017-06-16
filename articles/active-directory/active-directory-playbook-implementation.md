@@ -29,7 +29,7 @@
 
 | 方案 | 构建基块| 
 | --- | --- |  
-| [将本地标识扩展到云](#extending-your-on-premises-identity-to-the-cloud) | [目录同步 - 密码哈希同步](/documentation/articles/active-directory-playbook-building-blocks/#directory-synchronization---password-hash-sync-phs---new-installation/) <br/>**注意**：如果已安装 DirSync/ADSync 或旧版的 Azure AD Connect，则此步骤是可选的。 本指南中的某些方案可能需要更新版本的 Azure AD Connect。
+| [将本地标识扩展到云](#extending-your-on-premises-identity-to-the-cloud) | [目录同步 - 密码哈希同步](/documentation/articles/active-directory-playbook-building-blocks/#directory-synchronization--password-hash-sync-phs--new-installation/) <br/>**注意**：如果已安装 DirSync/ADSync 或旧版的 Azure AD Connect，则此步骤是可选的。 本指南中的某些方案可能需要更新版本的 Azure AD Connect。
 
 ### <a name="extending-your-on-premises-identity-to-the-cloud"></a>将本地标识扩展到云 
 

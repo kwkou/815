@@ -104,7 +104,7 @@
 此命令可更新 DocumentDB 数据库帐户属性。 这包括一致性策略和数据库帐户所在的位置。
 
 > [AZURE.NOTE]
-> 此命令可添加和删除区域，但不可修改故障转移优先级。 若要修改故障转移优先级，请参阅[以下内容](#modify-failover-priority-powershell)。
+> 此命令可添加和删除区域，但不可修改故障转移优先级。 若要修改故障转移优先级，请参阅[以下内容](#modify-failover-priority-cli)。
 
     Arguments
         --name -n           [Required]: Name of the DocumentDB database account.

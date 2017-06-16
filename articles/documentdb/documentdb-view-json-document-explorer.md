@@ -25,7 +25,7 @@
 
 # <a name="view-edit-create-and-upload-json-documents"></a>查看、编辑、创建和上传 JSON 文档 
 
-本文概述了在门户中创建、编辑和查询文档的两种方式：[文档资源管理器](#launch-document-explorer)和[数据资源管理器（预览版）](#data-explorer)。
+本文概述了在门户中创建、编辑和查询文档的两种方式：[文档资源管理器](#launch-document-explorer)和数据资源管理器（预览版）。
 
 > [AZURE.NOTE]
 > 具有 MongoDB 协议支持的 DocumentDB 帐户未启用文档资源管理器。 启用此功能后，此页将更新。

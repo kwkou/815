@@ -69,14 +69,14 @@
 |---|---|---|
 |网络安全性|使用 IP 防火墙是用于保护数据库的第一个保护层。 DocumentDB 支持使用基于 IP 的策略驱动访问控制来提供入站防火墙支持。 基于 IP 的访问控制类似于传统数据库系统使用的防火墙规则，但已经过扩展，确保只能通过获批准的一组计算机或云服务访问 DocumentDB 数据库帐户。 <br><br>使用 DocumentDB 可以启用特定的 IP 地址 (168.61.48.0)、IP 范围 (168.61.48.0/8) 以及 IP 和范围的组合。 <br><br>从此允许列表外部的计算机发出的所有请求将被 DocumentDB 阻止。 从获批准计算机和云服务发出的请求必须完成身份验证过程才能获得资源的访问控制权。<br><br>可以在 [DocumentDB 防火墙支持](/documentation/articles/documentdb-firewall-support/)中了解详细信息。|
 |授权|DocumentDB 使用基于哈希的消息身份验证代码 (HMAC) 进行授权。 <br><br>每个请求将使用机密帐户密钥进行哈希处理，后续的 base-64 编码哈希将连同每个调用发送到 DocumentDB。 若要验证请求，DocumentDB 服务需使用正确的机密密钥和属性生成哈希值，然后将该值与请求中的值进行比较。 如果两个值匹配，将成功为操作授权并处理请求，否则，会发生授权失败并拒绝请求。<br><br>可以使用[主密钥](/documentation/articles/documentdb-secure-access-to-data/#master-keys/)或[资源令牌](/documentation/articles/documentdb-secure-access-to-data/#resource-tokens/)对文档等资源进行精细访问。<br><br>可以在[保护对 DocumentDB 资源的访问](/documentation/articles/documentdb-secure-access-to-data/)中了解详细信息。|
-|用户和权限|使用帐户的[主密钥](#master-key)可为每个数据库创建用户资源和权限资源。 [资源令牌](#resource-token)与数据库中的权限相关联，确定用户是否对数据库中的应用程序资源拥有访问权限（读写、只读或无访问权限）。 应用程序资源包括集合、文档、附件、存储过程、触发器和 UDF。 然后，在身份验证期间，将使用资源令牌来允许或拒绝访问资源。<br><br>可以在[保护对 DocumentDB 资源的访问](/documentation/articles/documentdb-secure-access-to-data/)中了解详细信息。|
+|用户和权限|使用帐户的主密钥可为每个数据库创建用户资源和权限资源。 资源令牌与数据库中的权限相关联，确定用户是否对数据库中的应用程序资源拥有访问权限（读写、只读或无访问权限）。 应用程序资源包括集合、文档、附件、存储过程、触发器和 UDF。 然后，在身份验证期间，将使用资源令牌来允许或拒绝访问资源。<br><br>可以在[保护对 DocumentDB 资源的访问](/documentation/articles/documentdb-secure-access-to-data/)中了解详细信息。|
 |Active Directory 集成 (RBAC)| 还可以在 Azure 门户中使用访问控制 (IAM) 来提供对数据库帐户的访问权限。 IAM 提供基于角色的访问控制并与 Active Directory 集成。 对于个人和组，可如下图中所示使用内置角色或自定义角色。<br><br>![Azure 门户中的访问控制 (IAM) - 演示数据库安全性](./media/documentdb-nosql-database-security/nosql-database-security-identity-access-management-iam-rbac.png)|
 |全局复制|DocumentDB 提供全面的全局分发。只需单击一个按钮，就能将数据复制到 Azure 的任何一个全球数据中心。 全局复制可以实现全局缩放，以较低的延迟访问全球各地的数据。<br><br>从安全的上下文来看，全局复制可确保数据受到保护，防范区域性故障。<br><br>在[全局分发数据](/documentation/articles/documentdb-distribute-data-globally/)中了解详细信息。|
 |区域性故障转移|如果已将数据复制到多个数据中心，当区域数据中心脱机时，DocumentDB 会自动切换你的操作。 可以使用数据复制到的区域创建故障转移区域的优先级列表。 <br><br>可以在 [DocumentDB 中的区域性故障转移](/documentation/articles/documentdb-regional-failovers/)中了解详细信息。|
 |本地复制|即使是在单个数据中心内，DocumentDB 也会自动复制数据来实现高可用性，并允许选择[一致性级别](/documentation/articles/documentdb-consistency-levels/)。 这可以保证 99.99% 运行时间的可用性 SLA 并附带财务保证 - 其他数据库服务无法提供这样的保证。|
 |自动联机备份|DocumentDB 数据库将定期备份并存储在异地冗余的存储中。 <br><br>可以在[使用 DocumentDB 进行自动联机备份和还原](/documentation/articles/documentdb-online-backup-and-restore/)中了解详细信息。|
 |还原已删除的数据|可以使用自动联机备份来恢复大约 30 天内意外删除的数据。 <br><br>可以在[使用 DocumentDB 进行自动联机备份和还原](/documentation/articles/documentdb-online-backup-and-restore/)中了解详细信息|
-|保护和隔离敏感数据|[新增功能？](#whats-new)中列出的区域中的所有数据现已处于静态加密状态。<br><br>可将 PII 和其他机密数据隔离到特定的集合，并限制为只能由特定的用户进行读写或只读访问。|
+|保护和隔离敏感数据|新增功能中列出的区域中的所有数据现已处于静态加密状态。<br><br>可将 PII 和其他机密数据隔离到特定的集合，并限制为只能由特定的用户进行读写或只读访问。|
 |监视攻击|使用审核日志和活动日志，可以监视帐户中的正常和异常活动。 可以查看针对资源执行了哪些操作、操作是谁发起的、操作是何时发生的、操作的状态，等等。<br><br>![DocumentDB 的活动日志](./media/documentdb-nosql-database-security/nosql-database-security-application-logging.png)|
 |响应攻击|联系 Azure 支持部门举报潜在的攻击行为后，将启动由 5 个步骤构成的事件响应过程。 该 5 步骤过程的目的是在检测到问题并启动调查后，尽快将服务安全性和操作恢复正常。<br><br>在[云中的 Azure 安全响应](https://aka.ms/securityresponsepaper)中了解详细信息。|
 |地域隔离|DocumentDB 确保符合主权区域（例如德国、中国和美国政府）的数据监管与符合性要求。|

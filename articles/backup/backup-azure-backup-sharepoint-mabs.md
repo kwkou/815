@@ -229,7 +229,7 @@ MABS 以 LocalSystem 帐户的形式运行。 若要备份 SQL Server 数据库�
 4. 单击 MABS“恢复”选项卡中显示的 SharePoint 对象，以获取内容数据库结构。 右键单击相应的项，然后单击“**恢复**”。
 
     ![MABS SharePoint 保护 13](./media/backup-azure-backup-sharepoint/dpm-sharepoint-protection15.png)
-5. 此时，请按照[本文前面介绍的恢复步骤](#restore-a-sharepoint-item-from-disk-using-dpm)，从磁盘恢复 Sharepoint 内容数据库。
+5. 此时，请按照[本文前面介绍的恢复步骤](#restore-a-sharepoint-database-from-azure-by-using-dpm)，从磁盘恢复 Sharepoint 内容数据库。
 
 ## <a name="faqs"></a>常见问题
 问：如果使用 SQL AlwaysOn（使用磁盘上保护）配置了 SharePoint，我是否能将 SharePoint 项恢复到原始位置？<br>

@@ -29,7 +29,7 @@
 
 提到 IETF RFC 时，本文档使用 (RFC [RFC 编号]/[RFC 文档中的部分]) 格式，例如：(RFC 4512/4.3)。你可以在 http://tools.ietf.org/html/rfc4500 上找到详细信息（需要以正确的 RFC 编号替换 4500）。
 
-## 泛型 LDAP 连接器概述
+## 泛型 LDAP 连接器概述 <a name="overview-of-the-generic-ldap-connector"></a>
 使用泛型 LDAP 连接器可将同步服务与 LDAP v3 服务器集成。
 
 IETF RFC 中未指定某些操作和架构元素，例有关要执行增量导入的项目。对于这些操作，仅支持显式指定的 LDAP 目录。
@@ -142,7 +142,7 @@ True/False 筛选器通常不被报告为受 LDAP 目录支持，并且可能出
 
 - 服务器之间的 LDAP 路由 (RFC 4511/4.1.10)
 
-## 创建新连接器
+## 创建新连接器 <a name="create-a-new-connector"></a>
 若要创建泛型 LDAP 连接器，请在“同步服务”中选择“管理代理”和“创建”。选择“泛型 LDAP (Microsoft)”连接器。
 
 ![CreateConnector](./media/active-directory-aadconnectsync-connector-genericldap/createconnector.png)

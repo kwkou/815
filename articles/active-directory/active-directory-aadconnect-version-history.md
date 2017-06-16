@@ -211,7 +211,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
   - 选择要包含在同步中的新 OU 时不需要完全密码同步。
   - 启用已禁用的用户时密码不会同步。
   - 密码重试队列是无限的，以前实施的 5,000 个对象限制已停用且已被删除。
-  - [改进了故障排除](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#troubleshooting-password-synchronization/)。
+  - [改进了故障排除](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#troubleshoot-password-synchronization/)。
 - 无法连接到具有 Windows Server 2016 林功能级别的 Active Directory。
 - 初始安装后，无法更改用于组筛选的组。
 - 对于在启用密码写回的情况下执行密码更改的每个用户，不再能够在 Azure AD Connect 服务器上创建新的用户配置文件。

@@ -204,7 +204,7 @@ Batch cmdlet 可以利用 PowerShell 管道在 cmdlet 之间发送数据。 这�
 可以在[使用 Azure 批处理应用程序包部署应用程序](/documentation/articles/batch-application-packages/)中找到有关应用程序包的详细信息。
 
 > [AZURE.IMPORTANT]
-> 若要使用应用程序包，必须 [将 Azure 存储帐户链接](#linked-storage-account-autostorage) 到 Batch 帐户。
+> 若要使用应用程序包，必须将 Azure 存储帐户链接到 Batch 帐户。
 > 
 > 
 

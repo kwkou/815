@@ -43,7 +43,7 @@
 |:---:| --- |
 | 联合单一登录 |[排查基于 SAML 的单一登录问题](/documentation/articles/active-directory-saml-debugging/) |
 | 基于密码的单一登录 | Internet Explorer 访问面板扩展疑难解答 |
-| 本地 AD 与 Azure AD 之间的单一登录 |[排查密码同步问题](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#troubleshooting-password-synchronization/)|
+| 本地 AD 与 Azure AD 之间的单一登录 |[排查密码同步问题](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#troubleshoot-password-synchronization/)|
 
 ## <a name="single-sign-on-sso"></a>单一登录 (SSO)
 ### <a name="federated-single-sign-on-sign-into-many-apps-using-one-identity"></a>联合单一登录：使用一个标识登录多个应用程序

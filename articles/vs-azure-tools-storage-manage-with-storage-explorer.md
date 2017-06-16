@@ -40,7 +40,7 @@ Microsoft Azure 存储资源管理器（预览版）是一款独立的应用，�
 - [使用 SAS 附加存储帐户](#attach-storage-account-using-sas) - 使用 SAS 管理属于另一 Azure 订阅的存储资源。
 - [使用 SAS 附加服务](#attach-service-using-sas) - 使用 SAS 管理属于另一 Azure 订阅的特定存储服务（Blob 容器、队列或表）。
 
-## 连接到 Azure 订阅
+## 连接到 Azure 订阅 <a name="connect-to-an-azure-subscription"></a>
 
 > [AZURE.NOTE] 如果没有 Azure 帐户，可以[注册免费试用帐户](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F)，或者[激活 Visual Studio 订户权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)。
 
@@ -60,8 +60,7 @@ Microsoft Azure 存储资源管理器（预览版）是一款独立的应用，�
 
 	![选择的 Azure 订阅][4]
 
-## 使用本地开发存储
-
+## 使用本地开发存储 <a name="work-with-local-development-storage"></a>
 使用存储资源管理器（预览版），你可以通过 Azure 存储模拟器对本地存储进行操作。因此，你不需要在 Azure 上部署存储帐户就可以针对存储编写代码并对存储进行测试（因为存储帐户是通过 Azure 存储模拟器进行模拟的）。
 
 >[AZURE.NOTE] 目前仅 Windows 支持 Azure 存储模拟器。
@@ -81,7 +80,7 @@ Microsoft Azure 存储资源管理器（预览版）是一款独立的应用，�
 	- 管理 Azure 队列存储资源 - *即将推出*
 	- 管理 Azure 表存储资源 - *即将推出*
 
-## 附加或分离外部存储帐户
+## 附加或分离外部存储帐户 <a name="attach-or-detach-an-external-storage-account"></a>
 
 可以通过存储资源管理器（预览版）附加到外部存储帐户，因此可以轻松共享存储帐户。本部分介绍如何附加到外部存储帐户（以及如何从其分离）。
 
@@ -137,7 +136,7 @@ Microsoft Azure 存储资源管理器（预览版）是一款独立的应用，�
 
 1.	确认消息框出现时，选择“是”确认从外部存储帐户中分离。
 
-## 使用 SAS 附加存储帐户
+## 使用 SAS 附加存储帐户 <a name="attach-storage-account-using-sas"></a>
 
 Azure 订阅管理员可以临时通过 [SAS（共享访问签名）](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)授予对存储帐户的访问权限，不需提供 Azure 订阅凭据。
 
@@ -175,7 +174,7 @@ Azure 订阅管理员可以临时通过 [SAS（共享访问签名）](/documenta
 
 	![使用 SAS 附加到帐户的结果][17]
 
-## 使用 SAS 附加服务
+## 使用 SAS 附加服务 <a name="attach-service-using-sas"></a>
 
 [使用 SAS 附加存储帐户](#attach-storage-account-using-sas)部分演示了 Azure 订阅管理员如何为存储帐户生成（和共享）SAS，从而授予用户对存储帐户的临时访问权限。同样可以在存储帐户中为特定服务（Blob 容器、队列或表）生成 SAS。
 

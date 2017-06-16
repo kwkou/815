@@ -65,6 +65,6 @@
 - 使用 .[NET](/documentation/articles/documentdb-mongodb-application/) 生成第一个 MongoDB 的 API Web 应用。
 - 使用 [Robomongo](/documentation/articles/documentdb-mongodb-robomongo/) 连接到 MongoDB 的 API 帐户。
 - 了解你的操作将多少 RU 用于 [GetLastRequestStatistics 命令和 Azure 门户指标](/documentation/articles/documentdb-request-units/#GetLastRequestStatistics/)。
-- 了解如何[配置全局分布的应用的读取首选项](/documentation/articles/documentdb-distribute-data-globally/#ReadPreferencesAPIforMongoDB/)。
+- 了解如何[配置全局分布的应用的读取首选项](/documentation/articles/documentdb-distribute-data-globally/)。
 
 <!---Update_Description: wording update -->

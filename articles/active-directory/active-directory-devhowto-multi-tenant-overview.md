@@ -97,7 +97,7 @@ Web 应用程序和 Web API 接收并验证来自 Azure AD 的令牌。
 
 现在，让我们看看用户登录多租户应用程序时的体验。
 
-## 了解用户和管理员同意
+## 了解用户和管理员同意 <a name="understanding-user-and-admin-consent"></a>
 若要让用户登录 Azuer AD 中的某个应用程序，必须以用户租户的形式表示该应用程序。这样，组织便可以采取一些措施，例如，当其租户中的用户登录应用程序时应用唯一策略。对于单租户应用程序，此注册过程相当简单，也就是在 [Azure 经典管理门户][AZURE-classic-portal]中注册应用程序所采用的同一个过程。
 
 对于多租户应用程序，应用程序的初始注册过程是在开发人员使用的 Azure AD 租户中进行的。当来自不同租户的用户首次登录应用程序时，Azure AD 将要求他们同意应用程序所请求的权限。如果他们同意，系统将在用户的租户中创建一个称为*服务主体*的应用程序表示形式，然后登录可继续进行。系统还会在记录用户对应用程序的同意意向的目录中创建委托。有关应用程序的 Application 和 ServicePrincipal 对象的详细信息，请参阅 [Application Objects and Service Principal Objects][AAD-App-SP-Objects]（应用程序对象和服务主体对象）。

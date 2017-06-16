@@ -28,7 +28,7 @@ Azure AD 为企业中的诸多方面提供标识和访问解决方案。 我们�
 
 - [ 多个应用，一个标识](/documentation/articles/active-directory-playbook-implementation/#theme---lots-of-apps-one-identity/) 
 - [提高安全性](/documentation/articles/active-directory-playbook-implementation/#theme---increase-your-security/) 
-- [使用自助服务进行缩放](/documentation/articles/active-directory-playbook-implementation/#theme---scale-with-self-service/) 
+
 
 定义一个用于限定 PoC 范围的主题有助于将工作重心放在如何与业务目标产生共鸣上，这通常是概念证明的前导需求触发器。 
 

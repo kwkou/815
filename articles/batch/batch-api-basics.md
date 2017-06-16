@@ -198,7 +198,7 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层。 它们提供大规
 - [启动任务](#start-task)
 - [作业管理器任务](#job-manager-task)
 - [作业准备和释放任务](#job-preparation-and-release-tasks)
-- [多实例任务 (MPI)](#multi-instance-tasks)
+- [多实例任务 (MPI)](#multi-instance-task)
 - [任务依赖项](#task-dependencies)
 
 ### <a name="start-task"></a>启动任务

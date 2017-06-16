@@ -25,8 +25,6 @@
 # <a name="how-to-create-an-azure-documentdb-collection-and-database-using-the-azure-portal"></a>如何使用 Azure 门户创建 DocumentDB 集合和数据库
 若要使用 DocumentDB，必须拥有 [DocumentDB 帐户](/documentation/articles/documentdb-create-account/)、数据库、集合和文档。 本主题说明如何在 Azure 门户中创建 DocumentDB 集合。
 
-不确定集合是什么？ 请参阅[什么是 DocumentDB 集合？](#what-is-a-documentdb-collection)。
-
 可采用两种方式在门户中创建集合：使用“添加集合”按钮，或使用[数据资源管理器（预览版）](#data-explorer)。
 
 ## <a name="create-a-colletion-using-add-collection-button"></a>使用“添加集合”按钮创建集合
@@ -50,7 +48,7 @@
 
     如需预配除 10 GB 或 250 GB 以外的容量，则将存储容量设置为“自定义”  。 DocumentDB 规模几近无限，因此请在支持请求中提供请求的存储大小和吞吐量值。
 
-6. 在“分区键”框中，输入集合的分区键。此项对已分区集合必需，对单区集合可选。选择正确的分区键对于创建高性能集合而言很重要。有关选择分区键的详细信息，请参阅[设计分区](/documentation/articles/documentdb-partition-data/#designing-for-partitioning/)。
+6. 在“分区键”框中，输入集合的分区键。此项对已分区集合必需，对单区集合可选。选择正确的分区键对于创建高性能集合而言很重要。
 7. 在“数据库”边栏选项卡中，创建新数据库或使用现有数据库。 `/ \ # ?` 或尾随空格。 若要验证名称，请单击文本框外部。 验证名称后，框中会出现一个绿色的复选标记。
 8. 单击屏幕底部的“确定”，以创建新的集合。
 9. 新集合现在会出现在“概览”边栏选项卡上的“集合”可重用功能区中。

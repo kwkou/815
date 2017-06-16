@@ -139,7 +139,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 - [如何更新自己的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)
 
-#### <a name="connect--sync-engine-that-extends-on-premises-directories-to-azure-active-directory"></a>Connect（将本地目录扩展到 Azure Active Directory 的同步引擎）
+#### <a name="connect-sync-engine-that-extends-on-premises-directories-to-azure-active-directory"></a>Connect（将本地目录扩展到 Azure Active Directory 的同步引擎）
 **类型：** 常用功能
 
 **可用性：**

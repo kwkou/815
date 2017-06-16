@@ -62,7 +62,7 @@
 - [Visual Studio](https://www.visualstudio.com/zh-cn/downloads/)，安装了 C++ 语言组件。
 
 ## <a name="step-1-create-an-azure-documentdb-account"></a>步骤 1：创建 DocumentDB 帐户
-创建一个 DocumentDB 帐户。 如果已经有想要使用的帐户，可以跳到 [安装 C++ 应用程序](#SetupNode)。
+创建一个 DocumentDB 帐户。 如果已经有想要使用的帐户，可以跳到 [安装 C++ 应用程序](#SetupC++)。
 
 [AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 

@@ -75,7 +75,7 @@
 | 针对还原操作指定的存储帐户类型不处于在线状态 - 请确保在还原操作中指定的存储帐户处于在线状态 |Azure 存储中出现暂时性错误或中断时，可能会发生这种情况。 请选择另一个存储帐户。 |
 | 已达到资源组配额限制 - 请从 Azure 门户中删除某些资源组，或者与 Azure 支持部门联系，请求他们提高限制。 |无 |
 | 所选子网不存在 - 请选择已存在的子网 |无 |
-| 备份服务没有权限访问订阅中的资源。 |若要解决此问题，请先使用[选择 VM 还原配置](/documentation/articles/backup-azure-restore-vms/#choosing-a-vm-restore-configuration/)的**还原已备份磁盘**部分中提到的步骤还原磁盘。 之后，使用[基于还原的磁盘创建 VM](/documentation/articles/backup-azure-vms-automation/#create-a-vm-from-restored-disks/) 中提到的 PowerShell 步骤基于还原的磁盘创建完整的 VM。 |
+| 备份服务没有权限访问订阅中的资源。 |若要解决此问题，请先使用[选择 VM 还原配置](/documentation/articles/backup-azure-restore-vms/)的**还原已备份磁盘**部分中提到的步骤还原磁盘。 之后，使用[基于还原的磁盘创建 VM](/documentation/articles/backup-azure-vms-automation/#create-a-vm-from-restored-disks/) 中提到的 PowerShell 步骤基于还原的磁盘创建完整的 VM。 |
 
 ## <a name="backup-or-restore-taking-time"></a>备份或还原需要一定时间
 如果发现备份（超过 12 小时）或还原（超过 6 小时）耗时过长，请确保遵循[备份最佳实践](/documentation/articles/backup-azure-vms-introduction/#best-practices/)。 此外，请确保应用程序[以最佳方式使用 Azure 存储](/documentation/articles/backup-azure-vms-introduction/#total-vm-backup-time/)进行备份。 

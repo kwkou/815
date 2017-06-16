@@ -142,7 +142,7 @@ Azure AD Connect 是 DirSync 的后继产品。 你将在本主题中了解可�
 
 成功导出设置后，可以退出 DirSync 服务器上的 Azure AD Connect 向导。 继续执行下一步，[在不同的服务器上安装 Azure AD Connect](#installation-of-azure-ad-connect-on-separate-server)。
 
-### <a name="install-azure-ad-connect-on-separate-server"></a>在不同的服务器上安装 Azure AD Connect
+### <a name="installation-of-azure-ad-connect-on-separate-server"></a>在不同的服务器上安装 Azure AD Connect
 在新的服务器上安装 Azure AD Connect 时，假设用户想要运行 Azure AD Connect 的全新安装。 由于要使用 DirSync 配置，因此还需要执行一些额外的步骤：
 
 1. 运行 Azure AD Connect 安装程序 (MSI)。

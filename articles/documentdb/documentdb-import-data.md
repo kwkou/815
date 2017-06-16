@@ -77,7 +77,7 @@
 - [DocumentDB 集合](#DocumentDBSource)
 - [HBase](#HBaseSource)
 - [DocumentDB 批量导入](#DocumentDBBulkImport)
-- [DocumentDB 顺序记录导入](#DocumentDSeqTarget)
+- [DocumentDB 顺序记录导入](#DocumentDBSeqTarget)
 
 
 ## <a id="JSON"></a>导入 JSON 文件
@@ -338,7 +338,7 @@ HBase Stargate 连接字符串的格式为︰
 
     dt.exe /s:HBase /s.ConnectionString:ServiceURL=<server-address>;Username=<username>;Password=<password> /s.Table:Contacts /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:hbaseimport
 
-## <a id="DocumentDBBulkTarget"></a>导入到 DocumentDB（批量导入）
+## <a id="DocumentDBBulkImport"></a>导入到 DocumentDB（批量导入）
 借助 DocumentDB 批量导入程序，可以使用 DocumentDB 存储的过程从所有可用的源选项导入，以提高效率。 该工具支持导入到一个单分区 DocumentDB 集合，并支持分片导入，通过这种方法可跨多个单分区 DocumentDB 集合对数据进行分区。 有关数据分区的详细信息，请参阅 [ DocumentDB 中的分区和扩展](/documentation/articles/documentdb-partition-data/)。 该工具将创建、执行，然后删除目标集合中存储的过程。  
 
 ![DocumentDB 批量选项的屏幕截图](./media/documentdb-import-data/documentdbbulk.png)

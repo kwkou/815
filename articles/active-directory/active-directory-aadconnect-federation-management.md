@@ -43,7 +43,7 @@
 ## <a name="manage-ad-fs"></a>管理 AD FS
 使用 Azure AD Connect 向导，可以在最少的用户干预的 Azure AD Connect 中执行各种 AD FS 相关任务。 在通过运行向导来完成安装 Azure AD Connect 后，可以再次运行向导，以执行其他任务。
 
-## 修复信任 <a name=repairthetrust></a>
+## 修复信任 <a name="repairthetrust"></a>
 可以使用 Azure AD Connect 检查 AD FS 和 Azure AD 信任的当前运行状况并采取适当措施来修复信任。 请按照以下步骤修复 Azure AD 和 AD FS 信任。
 
 1. 从其他任务列表中选择“修复 AAD 和 ADFS 信任”。
@@ -69,7 +69,7 @@
 > [AZURE.NOTE]
 > Azure AD Connect 只能对自签名的证书进行修复或采取措施。 Azure AD Connect 无法修复第三方证书。
 
-## 使用 AlternateID 与 Azure AD 进行联合<a name=alternateid></a>
+## 使用 AlternateID 与 Azure AD 进行联合<a name="alternateid"></a>
 建议使本地用户主体名称 (UPN) 和云用户主体名称保持相同。 如果本地 UPN 使用不可路由的域（例如 Contoso.local），或由于本地应用程序依赖关系而无法更改，建议设置备用登录 ID。 备用登录 ID 允许配置登录体验，用户可以使用其 UPN 以外的属性（如邮件）登录。 用于 Azure AD Connect 中用户主体名称的属性默认为 Active Directory 中的 userPrincipalName 属性。 如果为用户主体名称选择任何其他属性，并使用 AD FS 进行联合，则 Azure AD Connect 将为备用登录 ID 配置 AD FS。 以下是为用户主体名称选择其他属性的一个示例：
 
 ![备用 ID 属性选择](./media/active-directory-aadconnect-federation-management/attributeselection.png)
@@ -192,12 +192,12 @@
 > [AZURE.NOTE]
 > *TargetName* 参数是必填参数。 随 AD FS 一起发布的默认主题名为“默认”。
 
-## 添加登录说明 <a name=addsignindescription></a>
+## 添加登录说明 <a name="addsignindescription"></a>
 若要将登录页说明添加到“登录”页，请使用以下 Windows PowerShell cmdlet 和语法。
 
     Set-AdfsGlobalWebContent -SignInPageDescriptionText "<p>Sign-in to Contoso requires device registration. Click <A href='http://fs1.contoso.com/deviceregistration/'>here</A> for more information.</p>"
 
-## 修改 AD FS 声明规则 <a name=modclaims></a>
+## 修改 AD FS 声明规则 <a name="modclaims"></a>
 AD FS 支持丰富的声明语言，让你用来创建自定义声明规则。 有关详细信息，请参阅[声明规则语言的作用](https://technet.microsoft.com/zh-cn/library/dd807118.aspx)。
 
 以下部分详细介绍了如何针对与 Azure AD 和 AD FS 联合身份验证有关的某些情况编写自定义规则。

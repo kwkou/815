@@ -160,7 +160,7 @@ Azure AD 登录页列出了针对本地 Active Directory 定义的 UPN 后缀，
 | 未验证 |在这种情况下，Azure AD Connect 将发出提示，并提供有关如何在后面的阶段验证域的相应详细信息。 |
 | 已验证 |在这种情况下，可以继续进行配置，而不需要采取任何进一步的操作。 |
 
-## <a name="changing-the-user-sign-in-method"></a>更改用户登录方法
+## <a name="changing-user-sign-in-method"></a>更改用户登录方法
 可以在使用向导完成 Azure AD Connect 的初始配置后，使用 Azure AD Connect 中的可用任务在“联合”、“密码同步”或“直通身份验证”之间更改用户的登录方法。 再次运行 Azure AD Connect 向导，随后将看到可执行的任务列表。 在任务列表中选择“更改用户登录”。
 
 ![更改用户登录](./media/active-directory-aadconnect-user-signin/changeusersignin.png)

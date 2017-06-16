@@ -35,7 +35,7 @@
 - [Azure Batch 帐户](/documentation/articles/batch-account-create-portal/)
 - [Azure 存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account/)
   
-  若要暂留 Batch 诊断日志，必须创建一个将用来存储日志的 Azure 存储帐户。 可以在为 Batch 帐户[启用诊断日志记录](#enable-diagnostic-logging)时指定此存储帐户。 启用日志收集时指定的存储帐户与[应用程序包](/documentation/articles/batch-application-packages/)和[任务输出暂留](/documentation/articles/batch-task-output/)文章中所提到的链接存储帐户不是同一个。
+  若要暂留 Batch 诊断日志，必须创建一个将用来存储日志的 Azure 存储帐户。 可以在为 Batch 帐户启用诊断日志记录时指定此存储帐户。 启用日志收集时指定的存储帐户与[应用程序包](/documentation/articles/batch-application-packages/)和[任务输出暂留](/documentation/articles/batch-task-output/)文章中所提到的链接存储帐户不是同一个。
 
 ## <a name="service-logs"></a>服务日志
 Azure Batch 服务日志包含 Azure Batch 服务在 Batch 资源（诸如池或任务）的生命周期内生成的事件。 Batch 生成的每个事件都采用 JSON 格式存储在指定的存储帐户中。 例如，下面是一个**池创建事件**样本的正文：
