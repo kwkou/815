@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
 	ms.date="11/18/2016"
-    wacn.date="05/22/2017"
+    wacn.date="06/16/2017"
 	ms.author="tarcher" />
 
 # 存储资源管理器（预览版）入门
@@ -42,7 +42,7 @@ Microsoft Azure 存储资源管理器（预览版）是一款独立的应用，�
 
 ## 连接到 Azure 订阅 <a name="connect-to-an-azure-subscription"></a>
 
-> [AZURE.NOTE] 如果没有 Azure 帐户，可以[注册免费试用帐户](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F)，或者[激活 Visual Studio 订户权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F)。
+> [AZURE.NOTE] 如果没有 Azure 帐户，可以[注册试用帐户](https://www.azure.cn/pricing/1rmb-trial)。
 
 1. 在存储资源管理器（预览版）中，选择“Azure 帐户设置”。
 
@@ -88,15 +88,15 @@ Microsoft Azure 存储资源管理器（预览版）是一款独立的应用，�
 
 若要共享外部存储帐户，首先必须由该帐户的所有者获取该帐户的凭据（帐户名称和密钥），然后将该信息共享给想要附加到该（外部）帐户的人员。可以使用以下步骤通过 Azure 门户获取存储帐户凭据：
 
-1.	登录到 [Azure 门户](https://portal.azure.com)。
-1.	选择“浏览”。
-1.	选择“存储帐户”。
-1.	在“存储帐户”边栏选项卡中，选择所需的存储帐户。
-1.	在所选存储帐户的“设置”边栏选项卡中，选择“访问密钥”。
+1.	登录到 [Azure 门户](https://portal.azure.cn)。
+2.	选择“浏览”。
+3.	选择“存储帐户”。
+4.	在“存储帐户”边栏选项卡中，选择所需的存储帐户。
+5.	在所选存储帐户的“设置”边栏选项卡中，选择“访问密钥”。
 
 	![“访问密钥”选项][5]
 	
-1.	在“访问密钥”边栏选项卡中，复制“存储帐户名称”和“密钥 1”的值，以便在附加到存储帐户时使用这些值。
+6.	在“访问密钥”边栏选项卡中，复制“存储帐户名称”和“密钥 1”的值，以便在附加到存储帐户时使用这些值。
 
 	![访问密钥][6]
 
@@ -182,7 +182,7 @@ Azure 订阅管理员可以临时通过 [SAS（共享访问签名）](/documenta
 
 在这种情况下，服务可以是 Blob 容器、队列或表。以下各节说明如何生成所列服务的 SAS：
 
-- [获取 Blob 容器的 SAS](/documentation/articles/vs-azure-tools-storage-explorer-blobs.md#get-the-sas-for-a-blob-container)
+- [获取 Blob 容器的 SAS](/documentation/articles/vs-azure-tools-storage-explorer-blobs#get-the-sas-for-a-blob-container)
 - 获取文件共享的 SAS - *即将推出*
 - 获取队列的 SAS - *即将推出*
 - 获取表的 SAS - *即将推出*
@@ -214,7 +214,7 @@ Azure 订阅管理员可以临时通过 [SAS（共享访问签名）](/documenta
 若要清除搜索，请在“搜索”框中选择“x”按钮。
 
 ## 后续步骤
-- [使用存储资源管理器（预览版）管理 Azure Blob 存储资源](./vs-azure-tools-storage-explorer-blobs.md)
+- [使用存储资源管理器（预览版）管理 Azure Blob 存储资源](/documentation/articles/vs-azure-tools-storage-explorer-blobs/)
 
 [0]: ./media/vs-azure-tools-storage-manage-with-storage-explorer/settings-icon.png
 [1]: ./media/vs-azure-tools-storage-manage-with-storage-explorer/add-account-link.png
