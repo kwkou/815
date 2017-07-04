@@ -1,31 +1,31 @@
 ## 使用 Apache Storm 接收消息
 
-[**Apache Storm**](https://storm.incubator.apache.org) 是一个分布式实时计算系统，它简化了对未绑定的数据流进行可靠处理的过程。 本节演示如何使用事件中心 Storm 喷口从事件中心接收事件。 使用 Apache Storm, 可以在承载于不同节点的多个进程间拆分事件。 事件中心与 Storm 集成后，通过使用风暴的 Zookeeper 安装以透明方式对事件使用进度执行检查点操作、管理持久检查点以及从事件中心并行接收，简化了事件使用。
+[**Apache Storm**](https://storm.incubator.apache.org) 是一个分布式实时计算系统，它简化了对未绑定的数据流进行可靠处理的过程。本节演示如何使用事件中心 Storm 喷口从事件中心接收事件。使用 Apache Storm，可以在承载于不同节点的多个进程间拆分事件。事件中心与 Storm 集成后，通过使用风暴的 Zookeeper 安装以透明方式对事件使用进度执行检查点操作、管理持久检查点以及从事件中心并行接收，简化了事件使用。
 
-有关事件中心接收模式的详细信息，请参阅[事件中心概述]。
+有关事件中心接收模式的详细信息，请参阅[事件中心概述][]。
 
-本教程使用 [HDInsight Storm] 安装，该安装带有已经可用的事件中心喷管。
+本教程使用安装的 [HDInsight Storm][]，其中随附了现成可用的事件中心 Spout。
 
-1. 请遵循 [HDInsight Storm - 入门](http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-storm-getting-started) 过程创建新 HDInsight 群集，并通过远程桌面连接该群集。
+1. 请按照 [HDInsight Storm - 入门](/documentation/articles/hdinsight-storm-overview/)过程创建新 HDInsight 群集，并通过远程桌面连接该群集。
 
-2. 将`%STORM_HOME%\examples\eventhubspout\eventhubs-storm-spout-0.9-jar-with-dependencies.jar`文件复制到本地开发环境。其中包含 events-storm-spout。
+2. 将 `%STORM_HOME%\examples\eventhubspout\eventhubs-storm-spout-0.9-jar-with-dependencies.jar` 文件复制到本地开发环境。其中包含 events-storm-spout。
 
-3. 使用以下命令将程序包安装到您的本地 Maven 存储中。这样，在后面的步骤中，您便可以在 Storm 项目中将它添加为引用。
+3. 使用以下命令将程序包安装到本地 Maven 存储中。这样，在后面的步骤中，您便可以在 Storm 项目中将它添加为引用。
 
 		mvn install:install-file -Dfile=target\eventhubs-storm-spout-0.9-jar-with-dependencies.jar -DgroupId=com.microsoft.eventhubs -DartifactId=eventhubs-storm-spout -Dversion=0.9 -Dpackaging=jar
 
-4. 在 Eclipse 中，创建一个新的 Maven 项目（依次单击"文件"、"新建"和"项目"）。
+4. 在 Eclipse 中创建一个新的 Maven 项目（依次单击“文件”、“新建”、“项目”）。
 
    	![][12]
 
-5. 选择"使用默认工作区位置"，然后单击"下一步"
+5. 选择“使用默认工作区位置”，然后单击“下一步”
 
-6. 选择"maven-archetype-quickstart"原型，然后单击"下一步"
+6. 选择 **maven-archetype-quickstart** archetype，然后单击“下一步”
 
-7. 插入 **GroupId** 和 **ArtifactId**，然后单击"完成"
+7. 插入 **GroupId** 和 **ArtifactId**，然后单击“完成”
 
-8. 在 **pom.xml** 中，在"<依赖项>"节点中添加以下依赖项。
-		
+8. 在 **pom.xml** 中的 `<dependency>` 节点内添加以下依赖项。
+
 		<dependency>
 			<groupId>org.apache.storm</groupId>
 			<artifactId>storm-core</artifactId>
@@ -220,13 +220,14 @@
 	此类创建新事件中心喷管，并使用配置文件中的属性对它进行实例化。请务必注意：此示例创建喷管的数量与事件中心中分区的数量相同，以便使用该事件中心允许的最大并行度。
 
 <!-- Links -->
-[事件中心概述]: http://msdn.microsoft.com/zh-cn/library/azure/dn821413.aspx
-[HDInsight Storm]: http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-storm-overview/
-[HDInsight 传感器分析教程]: http://www.windowsazure.cn/zh-cn/documentation/articles/hdinsight-storm-sensor-data-analysis/
+[事件中心概述]: /documentation/articles/event-hubs-what-is-event-hubs/
+[HDInsight Storm]: /documentation/articles/hdinsight-storm-overview/
+[HDInsight 传感器分析教程]: /documentation/articles/hdinsight-storm-sensor-data-analysis/
 
 <!-- Images -->
 
 [12]: ./media/service-bus-event-hubs-getstarted/create-storm1.png
 [13]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp1.png
 [14]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
-<!--HONumber=41-->
+
+<!---HONumber=Mooncake_0104_2016-->

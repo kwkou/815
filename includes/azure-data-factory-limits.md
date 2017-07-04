@@ -27,6 +27,6 @@
 
 ### Web 服务调用限制
 
-Azure 资源管理器限制 API 调用。你可以根据 <!--[-->Azure 资源管理器 API 限制<!--](/documentation/articles/azure-subscription-service-limits#resource-group-limits)-->中规定的频率执行 API 调用。
+Azure 资源管理器限制 API 调用。你可以根据 <!--[-->Azure 资源管理器 API 限制<!--](/documentation/articles/azure-subscription-service-limits/#resource-group-limits)-->中规定的频率执行 API 调用。
 
 <!---HONumber=71-->

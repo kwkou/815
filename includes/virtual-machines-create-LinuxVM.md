@@ -1,42 +1,47 @@
-1. 使用[从 Azure CLI 连接到 Azure](/documentation/articles/xplat-cli-connect) 中列出的步骤登录到你的 Azure 订阅。
+<!-- need to be verified -->
 
-2. 请使用以下命令你确保处于服务管理模式下：
+
+1. 使用[从 Azure CLI 连接到 Azure 1.0](/documentation/articles/xplat-cli-connect/)中列出的步骤登录到 Azure 订阅。
+
+2. 确保使用经典部署模式，如下所示：
 
         azure config mode asm
 
-3. 从可用映像中找出你想要加载的 Linux 映像：
+3. 从可用映像中找出你想要加载的 Linux 映像，如下所示：
 
         azure vm image list | grep "Linux"
 
-4. 利用上述列表中的 Linux 映像，使用 `azure vm create` 创建新的虚拟机。此步骤将创建新的云服务以及新的存储帐户。你还可通过 `-c` 选项将此虚拟机连接到现有云服务。其还通过 `-e` 选项创建 SSH 终结点以登录到 Linux 虚拟机。
+    在 Windows 的命令行窗口，使用“find”代替“grep”。
+   
+4. 使用 `azure vm create`通过上一列表中的 Linux 映像创建 VM。此步骤将创建云服务和存储帐户。你还可通过 `-c` 选项将此 VM 连接到现有云服务。使用 `-e` 选项创建 SSH 终结点以登录到 Linux 虚拟机。以下示例使用位于 `China North` 的 `Ubuntu-14_04_3-LTS` 映像创建名为 `myVM` 的 VM，并添加用户名 `ops`：
 
-        ~$ azure vm create "MyTestVM" b4590d9e3ed742e4a1d46e5424aa335e__suse-opensuse-13.1-20141216-x86-64 "adminUser" -z "Small" -e -l "West US"
+        azure vm create myVM \
+            b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_3-LTS-amd64-server-20160516-en-us-30GB \
+            -g ops -p P@ssw0rd! -z "Small" -e -l "China North"
+
+    输出类似于以下示例：
+
         info:    Executing command vm create
-        + Looking up image b4590d9e3ed742e4a1d46e5424aa335e__suse-opensuse-13.1-20141216-x86-64
-        Enter VM 'adminUser' password:*********
-        Confirm password: *********
+        + Looking up image b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_3-LTS-amd64-server-20160516-en-us-30GB
         + Looking up cloud service
-        info:    cloud service MyTestVM not found.
+        info:    cloud service myVM not found.
         + Creating cloud service
         + Retrieving storage accounts
-        + Creating a new storage account 'mytestvm1437604756125'
         + Creating VM
         info:    vm create command OK
 
-    >[AZURE.NOTE]对于 Linux 虚拟机，你必须提供在 `vm create` 中提供 `-e` 选项；不能在创建虚拟机后启用 SSH。有关 SSH 的详细信息，请参阅[如何在 Azure 中将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-use-ssh-key)。
+    > [AZURE.NOTE]
+    对于 Linux 虚拟机，必须在 `vm create` 中提供 `-e` 选项。在创建虚拟机后便无法启用 SSH。有关 SSH 的详细信息，请参阅[如何在 Azure 中将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。
 
-    请注意，映像 *b4590d9e3ed742e4a1d46e5424aa335e\_\_suse-opensuse-13.1-20141216-x86-64* 是我们在上述步骤中从映像列表中选择的映像。*MyTestVM* 是我们的新虚拟机的名称，*adminUser* 是我们将 SSH 用于虚拟机的用户名。你可以根据你的要求来替换这些变量。有关此命令的更多详细信息，请访问[使用 Azure 服务管理的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools)。
+5. 可以通过使用 `azure vm show` 命令验证 VM 的属性。以下示例列出名为 `myVM` 的 VM 的信息：
 
-5. 新创建的 Linux 虚拟机将显示在由以下命令生成的列表中：
+        azure vm show myVM
 
-        azure vm list
+6. 使用 `azure vm start` 命令启动 VM，如下所示：
 
-6. 可以通过使用以下命令来验证虚拟机的属性：
+        azure vm start myVM
 
-        azure vm show MyTestVM
+## 后续步骤
+有关所有这些 Azure CLI 1.0 虚拟机命令的详细信息，请参阅[使用经典部署 API 的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools/)。
 
-7. 使用 `azure vm start` 命令即可启动新创建的虚拟机。
-
-有关所有这些 Azure CLI 虚拟机命令的详细信息，请参阅[使用服务管理 API 的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools)。
-
-<!---HONumber=70-->
+<!---HONumber=Mooncake_1212_2016-->

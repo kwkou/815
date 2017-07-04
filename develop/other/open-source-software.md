@@ -1,6 +1,6 @@
 <properties 
-pageTitle="Windows Azure 开发人员中心：开源软件" 
-description="" 
+pageTitle="Azure 开发人员中心：开源软件" 
+description="Azure 开发人员中心：开源软件" 
 services="" 
 documentationCenter="Develop" 
 authors="" 
@@ -13,15 +13,15 @@ editor="Eric Chen" />
 
 #开源软件 
 
-得益于 Microsoft 与开源社区之间的协作，Windows Azure 支持多种开源应用程序、框架和语言，并且其数量还在不断增加。我们清楚开发人员希望使用最符合其经验、技能和应用程序需求的工具，我们的目标是提供合适的工具供开发人员选择。
+得益于 Microsoft 与开源社区之间的协作，Azure 支持多种开源应用程序、框架和语言，并且其数量还在不断增加。我们清楚开发人员希望使用最符合其经验、技能和应用程序需求的工具，我们的目标是提供合适的工具供开发人员选择。
 
-使用 .NET、PHP 和 Node.js 的开发人员可以使用这些语言版本的免费 SDK 快速入门，并充分利用 Windows Azure 服务。其他编程语言的 SDK 也即将推出。使用任何语言的开发人员都可以使用基于 REST 和 HTTP 等成熟标准以及 AMQP 和 OData 等新兴标准的 Windows Azure 服务。
+使用 .NET、PHP 和 Node.js 的开发人员可以使用这些语言版本的免费 SDK 快速入门，并充分利用 Azure 服务。其他编程语言的 SDK 也即将推出。使用任何语言的开发人员都可以使用基于 REST 和 HTTP 等成熟标准以及 AMQP 和 OData 等新兴标准的 Azure 服务。
 
-开源社区还提供可供开发人员用来在 Windows Azure 上构建的多种技术。本页列出了一些目前可在 Windows Azure 上使用的最常用开源软件，未来将不断有更多软件名列其中。
+开源社区还提供可供开发人员用来在 Azure 上构建的多种技术。本页列出了一些目前可在 Azure 上使用的最常用开源软件，未来将不断有更多软件名列其中。
 
 ###<a id="Ant"></a>Apache Ant
 
-Apache Ant 是一个 Java 库和命令行工具，用于驱动可在生成文件中描述为目标和任务的流程。Ant 提供了程序员用于编译、组装、测试和运行 Java 应用程序的许多内置任务；还可使用它高效构建用 Java 以外的语言（例如 C 或 C++）编写的应用程序。Windows Azure Starter Kit for Java (wastarterkit4java.codeplex.com) 提供了一个用于构建 Windows Azure 包的 Ant 任务扩展。
+Apache Ant 是一个 Java 库和命令行工具，用于驱动可在生成文件中描述为目标和任务的流程。Ant 提供了程序员用于编译、组装、测试和运行 Java 应用程序的许多内置任务；还可使用它高效构建用 Java 以外的语言（例如 C 或 C++）编写的应用程序。Azure Starter Kit for Java (wastarterkit4java.codeplex.com) 提供了一个用于构建 Azure 包的 Ant 任务扩展。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253286&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a><a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253784&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a>
 
@@ -40,14 +40,14 @@ BlogEngine.NET 是使用 ASP.NET 开发的一个创新的开放源博客平台�
 
 ###CentOS
 
-CentOS 是派生自著名北美企业 Linux 供应商免费提供给公众的源代码的企业级 Linux 发行版本。它受 Windows Azure 虚拟机的支持。
+CentOS 是派生自著名北美企业 Linux 供应商免费提供给公众的源代码的企业级 Linux 发行版本。它受 Azure 虚拟机的支持。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253287&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="/manage/linux/how-to-guides/prepare-a-linux-distribution/" target="_blank" class="_know-more-link">如何使用</a>
 
 
 ###Chef
 
-Chef 是开放源代码系统集成框架，利用它，可以轻松地创建一流的全自动基础结构。Chef 可用于实现 Windows Azure 上的 Linux 虚拟机的配置和部署的自动化。
+Chef 是开放源代码系统集成框架，利用它，可以轻松地创建一流的全自动基础结构。Chef 可用于实现 Azure 上的 Linux 虚拟机的配置和部署的自动化。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253778&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253787&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a>
 
@@ -81,7 +81,7 @@ Doctrine 项目是一组可提供持久性服务、对象关系映射和相关�
 
 ###<a id="DotNetNuke"></a>DotNetNuke
 
-DotNetNuke 既是一个基于 .NET 的开放源内容管理系统，又是一个可快速轻松地部署到 Windows Azure 网站的 Web 开发框架。
+DotNetNuke 既是一个基于 .NET 的开放源内容管理系统，又是一个可快速轻松地部署到 Azure 网站的 Web 开发框架。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253780&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>
 
@@ -95,7 +95,7 @@ Drupal 是一个基于 PHP 的开放源内容管理系统，常用于知识管�
 
 ###<a id="Eclipse"></a>Eclipse
 
-Eclipse 是一个带有可扩展的插件体系结构的开放源集成开发环境 (IDE)，它提供了对多种语言（包括 Java、C、C++、PHP 和 Python）的支持。Windows Azure Plugin for Eclipse with Java 简化了构建 Java 应用程序并将其部署到 Windows Azure 的过程。
+Eclipse 是一个带有可扩展的插件体系结构的开放源集成开发环境 (IDE)，它提供了对多种语言（包括 Java、C、C++、PHP 和 Python）的支持。Azure Plugin for Eclipse with Java 简化了构建 Java 应用程序并将其部署到 Azure 的过程。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253291&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253792&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a>
 
@@ -109,7 +109,7 @@ EHCache 是一个基于标准的开放源缓存，可用于增强性能和提高
 
 ###<a id="Git"></a>Git
 
-Git 是免费的开放源代码分布式版本控制系统 (DVCS)，常用于管理包括一至数千名开发人员的开放源代码项目。Windows Azure 网站支持通过 Git 推送协议部署应用程序。
+Git 是免费的开放源代码分布式版本控制系统 (DVCS)，常用于管理包括一至数千名开发人员的开放源代码项目。Azure 网站支持通过 Git 推送协议部署应用程序。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253293&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253794&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a>
 
@@ -130,7 +130,7 @@ Hibernate 是面向 Java 开发人员的开放源代码对象关系映射 (ORM) 
 
 ###<a id="JBoss"></a>JBoss
 
-JBoss 是支持 Java 的任何操作系统（包括 Windows Azure）的开放源代码 Java EE 应用程序服务器。它提供了对 JSP、servlets、JDBC、SOAP、缓存、群集和许多其他功能的支持。
+JBoss 是支持 Java 的任何操作系统（包括 Azure）的开放源代码 Java EE 应用程序服务器。它提供了对 JSP、servlets、JDBC、SOAP、缓存、群集和许多其他功能的支持。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253296&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>
 
@@ -144,7 +144,7 @@ Jetty 既是一个开放源 Web 服务器，又是 Java servlet 容器，具有�
 
 ###<a id="Joomla"></a>Joomla
 
-Joomla 是使用 PHP 编写的易于使用的可扩展开放源代码内容管理系统 (CMS) 和博客创建平台，它使用 MySQL 存储数据。它可从 Windows Azure 网站库中立即进行安装。
+Joomla 是使用 PHP 编写的易于使用的可扩展开放源代码内容管理系统 (CMS) 和博客创建平台，它使用 MySQL 存储数据。它可从 Azure 网站库中立即进行安装。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253298&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>
 
@@ -176,13 +176,13 @@ mojoPortal 是用于运行网站的免费的开放源代码 Web 内容管理软�
 
 ###<a id="MongoDB"></a>MongoDB
 
-MongoDB 是可缩放的高性能开源 NoSQL 数据库，具有面向文档的存储、复制、高可用性、自动分片等功能。MongoDB 可通过简单、免费的安装程序部署至 Windows Azure。
+MongoDB 是可缩放的高性能开源 NoSQL 数据库，具有面向文档的存储、复制、高可用性、自动分片等功能。MongoDB 可通过简单、免费的安装程序部署至 Azure。
 
 <a id="_know-more-color" href="http://www.mongodb.org/" target="_blank" class="_know-more-link">了解更多</a>
 
 ###<a id="MySQL"></a>MySQL
 
-MySQL 是全球最常用的开放源代码数据库，可提供高性能、高可靠性和易用性。MySQL 可部署到 Windows Azure on Linux 或 Windows 虚拟机上。
+MySQL 是全球最常用的开放源代码数据库，可提供高性能、高可靠性和易用性。MySQL 可部署到 Azure on Linux 或 Windows 虚拟机上。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253304&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253805&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a>
 
@@ -206,19 +206,19 @@ OpenSSO 是启用单一登录的开放源代码项目。它使用一个标识模
 
 ###OpenSUSE
 
-openSUSE 项目是免费的受 Windows Azure 虚拟机支持的开放源代码 Linux 发行版本。
+openSUSE 项目是免费的受 Azure 虚拟机支持的开放源代码 Linux 发行版本。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253308&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253809&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a>
 
 ###<a id="Orchard"></a>Orchard
 
-Orchard 是一个开放源代码内容管理系统 (CMS)，它包含 ASP.NET 应用程序的共享组件以及利用这 ﻿些组件的应用程序。它可从 Windows Azure 网站库中立即进行安装。
+Orchard 是一个开放源代码内容管理系统 (CMS)，它包含 ASP.NET 应用程序的共享组件以及利用这 ﻿些组件的应用程序。它可从 Azure 网站库中立即进行安装。
 
 <a id="_know-more-color" href="http://orchard.codeplex.com/" target="_blank" class="_know-more-link">了解更多</a>
 
 ###<a id="phpBB"></a>phpBB
 
-phpBB 是免费的开源公告栏软件平台，具有用户创建的修改和样式的庞大数据库，并可用于快速部署自定义论坛。它可从 Windows Azure 网站库中立即进行安装。
+phpBB 是免费的开源公告栏软件平台，具有用户创建的修改和样式的庞大数据库，并可用于快速部署自定义论坛。它可从 Azure 网站库中立即进行安装。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253309&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>
 
@@ -236,7 +236,7 @@ SpringSource 是企业 Java 开发人员常用的一个编程模型和应用程�
 
 ###<a id="SLES"></a>SUSE Linux Enterprise Server
 
-SLES (SUSE Linux Enterprise Server) 是由 Novell 开发的 Linux 发行版，它具有出色的稳定性。它是 Windows Azure 虚拟机支持的操作系统之一。
+SLES (SUSE Linux Enterprise Server) 是由 Novell 开发的 Linux 发行版，它具有出色的稳定性。它是 Azure 虚拟机支持的操作系统之一。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253781&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a> <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253813&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a>
 
@@ -254,19 +254,19 @@ Tomcat 是 Java Servlet 和 JavaServer Pages 技术的开放源代码实现，�
 
 ###<a id="Ubuntu"></a>Ubuntu
 
-Ubuntu 是 Canonical Ltd. 赞助的基于 Debian 的开放源代码 Linux 发行版本。它受 Windows Azure 虚拟机支持。
+Ubuntu 是 Canonical Ltd. 赞助的基于 Debian 的开放源代码 Linux 发行版本。它受 Azure 虚拟机支持。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253314&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>  <a id="_know-more-color" style="margin-left: 20px;" href="http://go.microsoft.com/fwlink/?linkid=253816&amp;clcid=0x409" target="_blank" class="_know-more-link">如何使用</a>
 
 ###<a id="Umbraco"></a>Umbraco
 
-Umbraco 是使用 C# 编写的常用的开放源代码 CMS，它可通过 ASP.NET 母版页、XSLT 和C#/.NET 开发进行自定义。它可从 Windows Azure 网站库中立即进行安装。
+Umbraco 是使用 C# 编写的常用的开放源代码 CMS，它可通过 ASP.NET 母版页、XSLT 和C#/.NET 开发进行自定义。它可从 Azure 网站库中立即进行安装。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253315&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>
 
 ###<a id="WordPress"></a>WordPress
 
-WordPress 是基于 PHP 和 MySQL 的受欢迎的开源博客创建平台和 CMS。它可从 Windows Azure 网站库中立即进行安装。
+WordPress 是基于 PHP 和 MySQL 的受欢迎的开源博客创建平台和 CMS。它可从 Azure 网站库中立即进行安装。
 
 <a id="_know-more-color" href="http://go.microsoft.com/fwlink/?linkid=253316&amp;clcid=0x409" target="_blank" class="_know-more-link">了解更多</a>
 

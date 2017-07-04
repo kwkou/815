@@ -13,10 +13,10 @@
 
 	请注意应用程序启动后从移动服务加载从上一步中保存的数据。
  
-4. 返回管理门户，单击“数据”选项卡，然后单击 **TodoItem** 表。
+4. 返回 [Azure 经典管理门户](https://manage.windowsazure.cn/)，单击“数据”选项卡，然后单击“TodoItems”表。
 
    	这使您可以浏览此应用插入表中的数据。
 
    	![](./media/mobile-services-javascript-backend-run-app/mobile-data-browse.png)
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

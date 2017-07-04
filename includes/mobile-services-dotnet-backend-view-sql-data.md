@@ -1,14 +1,16 @@
 
-本教程的最后可选步骤是在与移动服务关联的 SQL 数据库 中检查和复审所存储的数据。 
+本教程的最后可选步骤是在与移动服务关联的 SQL 数据库中检查和复审所存储的数据。
 
-1. 在 Azure 管理门户中，单击与移动服务关联的数据库对应的"管理"。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，单击与移动服务关联的数据库对应的“管理”。
  
-	![sign-in to manage SQL 数据库](./media/mobile-services-dotnet-backend-view-sql-data/manage-sql-azure-database.png)
+	![登录以管理 SQL 数据库](./media/mobile-services-dotnet-backend-view-sql-data/manage-sql-azure-database.png)
 
-2. 在管理门户中，执行查询以查看 Windows Store 应用所做的更改。您的查询类似于以下查询，但是使用数据库名称而不是 <code>todolist</code>。</p>
+2. 在门户中，执行查询以查看 Windows Store 应用所做的更改。你的查询应类似于以下查询，不过，请使用你的数据库名称而不是 <code>todolist</code>。</p>
 
         SELECT * FROM [todolist].[todoitems]
 
-    ![query SQL 数据库 for stored items](./media/mobile-services-dotnet-backend-view-sql-data/sql-azure-query.png)
+    ![在 SQL 数据库中查询存储项](./media/mobile-services-dotnet-backend-view-sql-data/sql-azure-query.png)
 
-	请注意，该表包含 Id、\__createdAt、\__updatedAt 和\__ Version 列。这些列支持脱机数据同步并在 [EntityData](https://msdn.microsoft.com/zh-CN/library/microsoft.windowsazure.mobile.service.entitydata.aspx) 基类中实施。有关更多信息，请参阅[脱机数据同步入门]。
+	请注意，该表包含 Id、\_\_createdAt、\_\_updatedAt 和 \_\_Version 列。这些列支持脱机数据同步并在 [EntityData](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mobile.service.entitydata.aspx) 基类中实现。有关详细信息，请参阅 [脱机数据同步入门]。
+
+<!---HONumber=Mooncake_0118_2016-->

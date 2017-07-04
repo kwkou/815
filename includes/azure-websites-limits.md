@@ -1,185 +1,40 @@
-<table cellspacing="0" border="1">
-<tr>
-   <th align="left" valign="middle">资源</th>
-   <th align="left" valign="middle">免费</th>
-   <th align="left" valign="middle">共享（预览）</th>
-   <th align="left" valign="middle">基本</th>
-   <th align="left" valign="middle">标准</th>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/services/web-sites/">网站</a><sup>1</sup> 每个 <a href="http://azure.microsoft.com/documentation/articles/web-sites-web-hosting-plan-overview/">Web 托管计划</a></p></td>
-   <td valign="middle"><p>10</p></td>
-   <td valign="middle"><p>100</p></td>
-   <td valign="middle"><p>500<sup>2</sup></p></td>
-   <td valign="middle"><p>500<sup>2</sup></p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Web 托管计划</a><sup>3</sup></p></td>
-   <td valign="middle"><p>每个区域 1 个</p></td>
-   <td valign="middle"><p>最多 10 个</p></td>
-   <td valign="middle"><p>最多 10 个</p></td>
-   <td valign="middle"><p>最多 10 个<sup>3</sup></p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>计算实例类型<sup>4</sup></p></td>
-   <td valign="middle"><p>共享</p></td>
-   <td valign="middle"><p>共享</p></td>
-   <td valign="middle"><p>专用</p></td>
-   <td valign="middle"><p>专用</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/web-sites-scale/">扩大</a>（最大实例数）</p></td>
-   <td valign="middle"><p>1 个共享</p></td>
-   <td valign="middle"><p>1 个共享</p></td>
-   <td valign="middle"><p>3 个专用</p></td>
-   <td valign="middle"><p>10 个专用<sup>4</sup></p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>存储<sup>5</sup></p></td>
-   <td valign="middle"><p>1 GB</p></td>
-   <td valign="middle"><p>1 GB</p></td>
-   <td valign="middle"><p>10 GB</p></td>
-   <td valign="middle"><p>50 GB<sup>5</sup></p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>CPU 时间（天）<sup>6</sup></p></td>
-   <td valign="middle"><p>60 分钟</p></td>
-   <td valign="middle"><p>240 分钟</p></td>
-   <td valign="middle"><p>无限制，按标准费率付费</p></td>
-   <td valign="middle"><p>无限制，按标准费率付费</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>内存（1 小时）<sup>7</sup></p></td>
-   <td valign="middle"><p>1024 MB<sup>7</sup></p></td>
-   <td valign="middle"><p>1024 MB</p></td>
-   <td valign="middle"><p>不适用</p></td>
-   <td valign="middle"><p>不适用</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>带宽</p></td>
-   <td valign="middle"><p>165 MB</p></td>
-   <td valign="middle"><p>无限制，按标准费率付费</p></td>
-   <td valign="middle"><p>无限制，按标准费率付费</p></td>
-   <td valign="middle"><p>无限制，按标准费率付费</p></td>
-</tr><tr>
-   <td valign="middle"><p>应用程序体系结构</p></td>
-   <td valign="middle"><p>32 位</p></td>
-   <td valign="middle"><p>32 位</p></td>
-   <td valign="middle"><p>32 位/64 位</p></td>
-   <td valign="middle"><p>32 位/64 位</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Web 套接字<sup>8</sup></p></td>
-   <td valign="middle"><p>5</p></td>
-   <td valign="middle"><p>35</p></td>
-   <td valign="middle"><p>350</p></td>
-   <td valign="middle"><p>不受限制</p></td>
-</tr><tr>
-   <td valign="middle"><p>每个应用程序的并发<a href="http://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/">调试器连接数</a></p></td>
-   <td valign="middle"><p>1</p></td>
-   <td valign="middle"><p>1</p></td>
-   <td valign="middle"><p>1</p></td>
-   <td valign="middle"><p>5</p></td>
-</tr><tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/web-sites-configure-ssl-certificate/">FTP/S 和 SSL 的 azurewebsites.net 子域</a></p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>X</p></td>
-</tr><tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/web-sites-custom-domain-name/">自定义域</a>支持</p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>X</p></td>
-</tr><tr>
-   <td valign="middle"><p>自定义域<a href="http://azure.microsoft.com/documentation/articles/web-sites-configure-ssl-certificate/"> SSL 支持</a><sup>9</sup></p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>包含 5 个 SNI SSL 和 1 个 IP SSL 连接</p></td>
-</tr><tr>
-   <td valign="middle"><p>集成负载平衡器</p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>X</p></td>
-</tr><tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/web-sites-configure/">始终打开</a></p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>X</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/web-sites-backup/">备份</a></p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p>X</p></td>
-</tr><tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/web-sites-scale/">自动扩展</a></p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>X</p></td>
-</tr><tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/web-sites-create-web-jobs/">WebJobs</a><sup>10</sup></p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>X</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/services/scheduler/">Azure 计划程序</a>支持</p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>X</p></td>
-</tr><tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/web-sites-monitor/">终结点监视</a></p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p>X</p></td>
-   <td valign="middle"><p>X</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/web-sites-staged-publishing/">过渡槽（预览）</a></p></td>
-   <td valign="middle"><p>0</p></td>
-   <td valign="middle"><p>0</p></td>
-   <td valign="middle"><p>1</p></td>
-   <td valign="middle"><p>5</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>SLA</p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p></p></td>
-   <td valign="middle"><p>99.9%</p></td>
-   <td valign="middle"><p>99.9%</p></td>
-</tr>
-</table>
+资源|免费|共享（预览）|基本|标准|高级（预览）</th>
+---|---|---|---|---|---
+每个 [App Service 计划](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/)的 [Web 应用、移动应用或 API 应用](/home/features/app-service/)数<sup>1</sup>|10|100|无限制<sup>2</sup>|无限制<sup>2</sup>|无限制<sup>2</sup>
+[App Service 计划](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/)|每个区域 1 个|每个资源组 10 个|每个资源组 100 个|每个资源组 100 个|每个资源组 100 个
+计算实例类型|共享|共享|专用<sup>3</sup>|专用<sup>3</sup>|专用<sup>3</sup></p>
+[横向扩展](/documentation/articles/web-sites-scale/)（最大实例数）|1 个共享|1 个共享|3 个专用<sup>3</sup>|10 个专用<sup>3</sup>|20 个专用<sup>3,4</sup>
+存储<sup>5</sup>|1 GB<sup>5</sup>|1 GB<sup>5</sup>|10 GB<sup>5</sup>|50 GB<sup>5</sup>|250 GB<sup>4,5</sup></p>
+CPU 时间（5 分钟）<sup>6</sup>|3 分钟|3 分钟|无限制，按标准[费率](/pricing/details/app-service/)</a>付费|无限制，按标准费率付费|无限制，按标准费率付费
+CPU 时间（天）<sup>6</sup>|60 分钟|240 分钟|无限制，按标准[费率](/pricing/details/app-service/)</a>付费|无限制，按标准费率付费|无限制，按标准费率付费
+内存（1 小时）|每个 App Service 计划 1024 MB|每个应用 1024 MB|不适用|不适用|不适用
+带宽|165 MB|无限制，收取[数据传输费率](/pricing/details/data-transfer/)|无限制，收取数据传输费率|无限制，收取数据传输费率|无限制，收取数据传输费率
+应用程序体系结构|32 位|32 位|32 位/64 位|32 位/64 位|32 位/64 位
+每个实例的 Web 套接字数<sup>7</sup>|5|35|350|不受限制|不受限制
+[带 FTP/S 和 SSL 的 chinacloudsites.cn 子域](/documentation/articles/web-sites-configure-ssl-certificate/)|X|X|X|X|X
+[自定义域](/documentation/articles/web-sites-custom-domain-name/)支持||X|X|X|X
+自定义域 [SSL 支持](/documentation/articles/web-sites-configure-ssl-certificate/)|||不受限制|无限制，包含 5 个 SNI SSL 和 1 个 IP SSL 连接|无限制，包含 5 个 SNI SSL 和 1 个 IP SSL 连接
+集成负载均衡器||X|X|X|X
+[始终打开](/documentation/articles/web-sites-configure/)|||X|X|X
+[计划备份](/documentation/articles/web-sites-backup/)||||每天一次|每天 50 次<sup>8</sup>
+[自动扩展](/documentation/articles/web-sites-scale/)|||X|X|X
+[WebJobs](/documentation/articles/web-sites-create-web-jobs/)<sup>9</sup>|X|X|X|X|X
+[Azure 计划程序](/home/features/scheduler/)支持||X|X|X|X
+[终结点监视](/documentation/articles/web-sites-monitor/)|||X|X|X
+[过渡槽（预览）](/documentation/articles/web-sites-staged-publishing/)||||5|20
+每个应用的自定义域数</a>||500|500|500|500
+SLA||<p>  
+|99\.9%|99\.95%<sup>10</sup>|99\.95%<sup>10</sup>
 
-<sup>1</sup>除非特别说明，否则网站和存储器配额依据的是每个 Web 托管计划。
+<sup>1</sup>除非特别说明，否则应用和存储配额依每个 App Service 计划为准。  
+<sup>2</sup>你可以在这些计算机上托管的应用的实际数目取决于应用的活动、计算机实例的大小和相应的资源利用率。  
+<sup>3</sup>专用实例可有不同的大小。有关更多详细信息，请参阅 [App Service 定价](/pricing/details/app-service/)。  
+<sup>4</sup>高级层在使用 App Service 环境时最多允许 50 个计算实例（取决于可用性）和 500 GB 的磁盘空间，否则为 20 个计算实例和 250 GB 的存储。然而，Azure 中国目前暂时还不支持 App Service 环境。  
+<sup>5</sup>存储限制是跨相同 App Service 计划中所有应用的内容总大小。  
+<sup>6</sup>这些资源受到专用实例上的物理资源（实例大小和实例数）的限制。  
+<sup>7</sup>如果你将基本层的某个应用扩展为两个实例，则其中每个实例有 350 个并发连接。  
+<sup>8</sup>使用 App Service 环境时，高级层允许将备份间隔下调为最多每隔 5 分钟，否则为每天 50 次。然而，Azure 中国目前暂时还不支持 App Service 环境。  
+<sup>9</sup>按需、按计划或作为 App Service 实例内的后台任务连续运行自定义可执行文件和/或脚本。连续执行 WebJob 需要使用“始终打开”。计划的 WebJob 需要使用 Azure 计划程序免费或标准版。可以在应用服务实例中运行的 WebJob 的数量没有预定义的限制，但是存在实际限制，这些限制取决于应用程序代码尝试执行的任务。  
+<sup>10</sup>向使用多个实例和为故障转移配置的 Azure 流量管理器的部署提供 99.95% 的 SLA。
 
-<sup>2</sup>基本和标准站点在专用计算机上运行。你可以在这些计算机上托管的站点的实际数目取决于站点的活动、计算机实例的大小和相应的资源利用率。
-
-<sup>3</sup>除免费层以外，Web 托管计划的限制针对的是每个资源组。请注意在标准层上，应请求提供其他 Web 托管计划。
-
-<sup>4</sup>专用的实例可以是小型、中型或大型实例。有关详细信息，请参阅 [Azure 网站定价][websitespricing]页面。可通过提出支持请求获得其他实例。
-
-<sup>5</sup>所有 Web 站点都共享用于站点内容的相同存储资源。因此，存储限制是所有站点上的总大小，而不是针对每个网站。可以通过提出支持请求增加存储限制。
-
-<sup>6</sup>虽然基本和标准层没有 CPU 或内存配额，但这些资源受到专用实例（实例大小和实例数）上的物理资源的限制。
-
-<sup>7</sup>在 Web 托管计划中，免费层的内存限制各站点在所有免费站点上共享。共享层的内存限制针对的是站点。
-
-<sup>8</sup>此值表示每个网站实例的并发 Web 套接字连接。例如，如果将基本网站扩大到两个实例，你将有效地获得 700 个并发连接 (350 x 2)。
-
-<sup>9</sup>对于基本层，标准 [SSL 定价][sslpricing]适用。
-
-<sup>10</sup>按需、按计划或作为网站实例内的后台任务连续运行自定义可执行文件和/或脚本。连续执行 WebJob 需要使用“始终打开”。计划的 WebJob 需要使用 Azure 计划程序免费或标准版。
-
-  [websitespricing]: http://azure.microsoft.com/pricing/details/web-sites/
-  [sslpricing]: http://azure.microsoft.com/pricing/details/web-sites/#ssl-connections
-
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1114_2016-->

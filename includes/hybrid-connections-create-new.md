@@ -1,5 +1,5 @@
 
-1. 在本地计算机上，登录到 [Azure 管理门户](http://manager.windowsazure.cn)（这是旧门户）。
+1. 在本地计算机上，登录到 [Azure 经典管理门户](http://manage.windowsazure.cn)。
 
 2. 在导航窗格的底部，选择“+新建”>“应用程序服务”>“BizTalk 服务”>“自定义创建”。
 

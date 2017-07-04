@@ -1,4 +1,4 @@
-﻿### 检索连接字符串
+### 检索连接字符串
 可以使用 **CloudStorageAccount** 类型来表示你的存储帐户信息。如果你正在使用 Azure 项目模板，及/或引用 Microsoft.WindowsAzure.CloudConfigurationManager 命名空间，则可以使用 **CloudConfigurationManager** 类型从 Azure 服务配置中检索存储连接字符串和存储帐户信息：
 
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -9,6 +9,6 @@
 	using System.Configuration;
 	...
 	CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-		ConfigurationManager.ConnectionStrings["StorageConnectionString"].ConnectionString);
+		ConfigurationManager.AppSettings["StorageConnectionString"]);
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_0405_2016-->

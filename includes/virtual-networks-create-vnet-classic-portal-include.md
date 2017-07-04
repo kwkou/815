@@ -1,11 +1,11 @@
-## 如何在 Azure 门户中创建 VNet
+## 如何在 Azure 经典管理门户中创建 VNet
 
 若要基于上述方案创建 VNet，请执行下面的步骤。
 
 1. 从浏览器导航到 http://manage.windowsazure.cn，如有必要，请使用 Azure 帐户登录。
 2. 单击**“新建”**>**“网络服务”**>**“虚拟网络”**>**“自定义创建”**，如下图所示。
 
-	![在门户中创建 VNet](./media/virtual-networks-create-vnet-classic-portal-include/vnet-create-portal-figure1.gif)
+	![在经典管理门户中创建 VNet](./media/virtual-networks-create-vnet-classic-portal-include/vnet-create-portal-figure1.gif)
 
 3. 在**“虚拟网络详细信息”**页上，键入 VNet 的**名称**，选择其**位置**，然后单击页面右下角的箭头以转到步骤 2。下图显示了我们的方案设置。
 

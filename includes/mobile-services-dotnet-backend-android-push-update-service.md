@@ -28,8 +28,8 @@
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
 
-    这段代码可在插入 Todo 项之后发送推送通知（包含所插入项的文本）。在发生错误的情况下，这段代码将添加一个错误日志条目，该条目可在管理门户中的移动服务的"日志"选项卡上查看。
+    这段代码可在插入 Todo 项之后发送推送通知（包含所插入项的文本）。在发生错误的情况下，这段代码将添加一个错误日志条目，该条目可在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中的移动服务的“日志”选项卡上查看。
 
 3. 将移动服务项目重新发布到 Azure。
 
-<!---HONumber=56-->
+<!---HONumber=Mooncake_0118_2016-->

@@ -1,11 +1,8 @@
-﻿按照以下步骤操作可在运行 CentOS Linux 的虚拟机上安装和运行 MongoDB。
+按照以下步骤操作可在运行 CentOS Linux 的虚拟机上安装和运行 MongoDB。
 
-<div class="dev-callout">
-<b>警告</b>
-<p>默认情况下，不启用 MongoDB 安全功能，例如身份验证和 IP 地址绑定。在将 MongoDB 部署到生产环境之前，应启用安全功能。有关详细信息，请参阅<a href="http://www.mongodb.org/display/DOCS/Security+and+Authentication">安全性和身份验证</a>。</p>
-</div>
+> [AZURE.WARNING]默认情况下，不启用 MongoDB 安全功能，例如身份验证和 IP 地址绑定。在将 MongoDB 部署到生产环境之前，应启用安全功能。有关详细信息，请参阅[安全性和身份验证](http://www.mongodb.org/display/DOCS/Security+and+Authentication)。
 
-1. 配置程序包管理系统 (YUM) 以便能够安装 MongoDB。创建 */etc/yum.repos.d/10gen.repo* 文件以保存有关您的存储库的信息并添加以下内容：
+1. 配置程序包管理系统 (YUM) 以便能够安装 MongoDB。创建 */etc/yum.repos.d/10gen.repo* 文件以保存有关你的存储库的信息并添加以下内容：
 
 		[10gen]
 		name=10gen Repository
@@ -23,7 +20,7 @@
 
 	下载和安装 MongoDB 时，请等待。
 
-4. 创建数据目录。默认情况下，MongoDB 将数据存储在 */data/db* 目录中，但您必须创建该目录。若要创建它，请运行：
+4. 创建数据目录。默认情况下，MongoDB 将数据存储在 */data/db* 目录中，但你必须创建该目录。若要创建它，请运行：
 
 		$ sudo mkdir -p /srv/datadrive/data
 		$ sudo chown `id -u` /srv/datadrive/data
@@ -50,17 +47,23 @@
 
 	通过 insert 创建数据库。
 
-7. 在安装 MongoDB 后，您必须配置终结点才能远程访问 MongoDB。在"管理门户"中，依次单击"虚拟机"、您的新虚拟机的名称和"终结点"。
+7. 在安装 MongoDB 后，您必须配置终结点才能远程访问 MongoDB。在“经典管理门户”中，依次单击“虚拟机”、你的新虚拟机的名称和“终结点”。
 	
 	![终结点][Image7]
 
-8. 单击页面底部的"添加终结点"。
+8. 单击页面底部的“添加终结点”。
 	
 	![终结点][Image8]
 
-9. 添加名为"Mongo"的终结点、协议 **TCP**，并将"公用"和"专用"端口均设置为"27017"。这将允许对 MongoDB 进行远程访问。
-	
-	![终结点][Image9]
+9. 添加一个具有下列设置的终结点：
+
+ - **名称**：Mongo
+ - **协议**：TCP
+ - **公用端口**：27017
+ - **专用端口**：27017
+ 
+ 这将允许对 MongoDB 进行远程访问。
+
 
 
 [QuickStartUnix]: http://www.mongodb.org/display/DOCS/Quickstart+Unix
@@ -68,5 +71,5 @@
 
 [Image7]: ./media/install-and-run-mongo-on-centos-vm/LinuxVmAddEndpoint.png
 [Image8]: ./media/install-and-run-mongo-on-centos-vm/LinuxVmAddEndpoint2.png
-[Image9]: ./media/install-and-run-mongo-on-centos-vm/LinuxVmAddEndpoint3.png
-<!--HONumber=41-->
+
+<!---HONumber=Mooncake_1207_2015-->

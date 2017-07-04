@@ -1,28 +1,29 @@
 ﻿## 将消息发送到事件中心
-在本节中，我们将编写用于将事件发送到事件中心的 Java 控制台应用。我们将从 [Apache Qpid 项目](http://qpid.apache.org)中利用 JMS AMQP 提供程序。这类似于通过 Java 将服务总线队列和主题与 AMQP 配合使用，如[此处](http://www.windowsazure.cn/zh-cn/documentation/articles/service-bus-java-how-to-use-jms-api-amqp)所示。有关详细信息，请参阅 [Qpid JMS 文档](http://qpid.apache.org/releases/qpid-0.30/programming/book/QpidJMS.html)和 [Java 消息服务](http://www.oracle.com/technetwork/java/jms/index.html)。
+在本部分中，我们将编写用于将事件发送到事件中心的 Java 控制台应用。我们将从 [Apache Qpid 项目](http://qpid.apache.org/)利用 JMS AMQP 提供者。这类似于通过 Java 将服务总线队列和主题与 AMQP 配合使用，如[此处](/documentation/articles/service-bus-java-how-to-use-jms-api-amqp/)所示。有关详细信息，请参阅 [Qpid JMS 文档](http://qpid.apache.org/releases/qpid-0.30/programming/book/QpidJMS.html)。
 
-1. 在 Eclipse 中，创建一个名为 **Sender** 的新 Java 项目。
+1. 在 Eclipse 中，安装 [Azure Toolkit for Eclipse](/documentation/articles/azure-toolkit-for-eclipse-installation/)。这包括 Qpid JMS AMQP 客户端库。
 
-2. 从[此处](http://qpid.apache.org/components/qpid-jms/index.html)下载 **Qpid JMS AMQP 1.0** 库的最新版本。
+2. 在 Eclipse 中，创建一个名为 **Sender** 的新 Java 项目。
 
-3. 从存档中提取文件，并将以下 jar 从存档  `qpid-amqp-1-0-client-jms&lt;version>\lib` 目录复制到您的 Eclipse **Sender** 项目。
-
-4. 在 Eclipse 程序包资源管理器中，右键单击 **Sender** 项目，然后选择"属性"。在对话框的左侧窗格中，依次单击"Java 生成路径"、"库"选项卡和"添加 JAR"按钮。选择以前已复制的所有 jar，然后单击"确定"。
+3. 在 Eclipse 包资源管理器中，右键单击该 **Sender** 项目并选择“属性”。在对话框的左窗格中，单击“Java 生成路径”，然后单击“库”选项卡，然后单击“添加库”按钮。选择“Apache Qpid JMS 客户端包(由 MS Open Tech 开发)”，单击“下一步”，然后单击“完成”。
 
 	![][8]
 
-5. 在 **Sender** 项目的根目录中，创建一个名为 **servicebus.properties** 的文件，其内容如下。请记得替换事件中心名称和命名空间名称（后者通常为 `{event hub name}-ns`)）的值。还必须为之前创建的 **SendRule** 替换密钥的 URL 编码版本。可以在[此处](http://www.w3schools.com/tags/ref_urlencode.asp)对它进行 URL 编码。.
+4. 在 **Sender** 项目的根目录中，创建一个名为 **servicebus.properties** 的文件，其内容如下。请记得替换以下值：
+	- 事件中心名称。
+	- 命名空间名称（后者通常是 `{event hub name}-ns`）。
+	- URL 编码的 **SendRule** 键（你在创建事件中心时已经记下了此键）。可以在[此处](http://www.w3schools.com/tags/ref_urlencode.asp)对它进行 URL 编码。
 
-		# servicebus.properties - sample JNDI configuration
-
-		# Register a ConnectionFactory in JNDI using the form:
-		# connectionfactory.[jndi_name] = [ConnectionURL]
-		connectionfactory.SBCF = amqps://SendRule:{Send Rule key}@{namespace name}.servicebus.chinacloudapi.cn/?sync-publish=false
-
-		# Register some queues in JNDI using the form
-		# queue.[jndi_name] = [physical_name]
-		# topic.[jndi_name] = [physical_name]
-		queue.EventHub = {event hub name}
+    		# servicebus.properties - sample JNDI configuration
+    
+    		# Register a ConnectionFactory in JNDI using the form:
+    		# connectionfactory.[jndi_name] = [ConnectionURL]
+    		connectionfactory.SBCF = amqps://SendRule:{Send Rule key}@{namespace name}.servicebus.chinacloudapi.cn/?sync-publish=false
+    
+    		# Register some queues in JNDI using the form
+    		# queue.[jndi_name] = [physical_name]
+    		# topic.[jndi_name] = [physical_name]
+    		queue.EventHub = {event hub name}
 
 5. 创建名为 **Sender** 的新类。添加以下  `import` 语句：
 
@@ -43,7 +44,7 @@
 		import javax.naming.InitialContext;
 		import javax.naming.NamingException; 
 
-8. 然后，向其中添加以下代码：
+6. 然后，给它添加以下代码：
 
 		public static void main(String[] args) throws NamingException,
 				JMSException, IOException, InterruptedException {
@@ -87,10 +88,7 @@
 
 
 
-<!-- Links -->
-[Azure 管理门户]: https://manage.windowsazure.cn/
-
-
 <!-- Images -->
 [8]: ./media/service-bus-event-hubs-getstarted/create-sender-java1.png
-<!--HONumber=41-->
+
+<!---HONumber=Mooncake_1207_2015-->

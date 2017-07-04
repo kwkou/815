@@ -1,48 +1,30 @@
 
 <!--
-includes/sql-database-include-ip-address-22-v12portal.md
+../includes/sql-database-include-ip-address-22-v12portal.md
 
-Latest Freshness check:  2015-09-04 , GeneMi.
+Latest Freshness check:  2016-03-21 , daleche.
 
 As of circa 2015-09-04, the following topics might include this include:
-articles/sql-database/sql-database-configure-firewall-settings.md
-articles/sql-database/sql-database-connect-query.md
+/documentation/articles/sql-database-configure-firewall-settings/
+/documentation/articles/sql-database-connect-query/
 
 
 ## Server-level firewall rules
 
-### Manage server-level firewall rules through the new Azure portal
+### Add a server-level firewall rule through the new Azure portal
 -->
 
 
-1. 通过 [Azure 管理门户](https://manage.windowsazure.cn/)（网址为 https://manage.windowsazure.cn/） 登录。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)（网址为 http://manage.windowsazure.cn/）。
 
-2. 在左侧的横幅中，单击“浏览全部”。此时会显示“浏览”边栏选项卡。
+2. 滚动并单击“SQL 数据库”。
 
-3. 滚动并单击“SQL Server”。此时会显示“SQL Server”边栏选项卡。
+3. 单击顶部显示的“服务器”，
 
-	![在门户中找到你的 Azure SQL 数据库服务器][b21-FindServerInPortal]
+4. 单击“配置”。 
 
-4. 为方便起见，可单击以前的“浏览”边栏选项卡上的最小化控件。
-
-5. 在筛选器文本框中，开始键入你的服务器的名称。此时会显示你的行。
-
-6. 单击服务器所对应的行。此时会显示服务器的边栏选项卡。
-
-7. 在服务器边栏选项卡上单击“设置”。此时会显示“设置”边栏选项卡。
-
-8. 单击“防火墙”。此时会显示“防火墙设置”边栏选项卡。
-
-	![单击“设置”>“防火墙”][b31-SettingsFirewallNavig]
-
-9. 单击“添加客户端 IP”。在第一个文本框中键入新规则的名称。
-
-10. 键入你想要启用的范围的下限和上限 IP 地址值。
- - 为方便起见，可以让下限值以 **.0** 结尾，让上限值以 **.255** 结尾。 
-
-	![添加允许的 IP 地址范围][b41-AddRange]
-
-11. 单击“保存”。
+5. 在“允许的 IP 地址”部分添加你想要启用的范围的下限和上限 IP 地址值。
+	- 为方便起见，可以让下限值以 **.0** 结尾，让上限值以 **.255** 结尾。
 
 
 
@@ -59,8 +41,8 @@ articles/sql-database/sql-database-connect-query.md
 <!--
 These includes/ files are a sequenced set, but you can pick and choose:
 
-includes/sql-database-include-ip-address-22-v12portal.md
-? includes/sql-database-include-ip-address-*.md
+../includes/sql-database-include-ip-address-22-v12portal.md
+? ../includes/sql-database-include-ip-address-*.md
 -->
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0503_2016-->

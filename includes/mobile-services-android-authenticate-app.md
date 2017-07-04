@@ -1,4 +1,3 @@
-
 1. 在 Android Studio 的“项目资源管理器”中，打开 ToDoActivity.java 文件，然后添加以下 import 语句。
 
 		import java.util.concurrent.ExecutionException;
@@ -16,7 +15,7 @@
 		private void authenticate() {
 	    // Login using the Google provider.
 	    
-			ListenableFuture<MobileServiceUser> mLogin = mClient.login(MobileServiceAuthenticationProvider.Google);
+			ListenableFuture<MobileServiceUser> mLogin = mClient.login(MobileServiceAuthenticationProvider.WindowsAzureActiveDirectory);
 
     		Futures.addCallback(mLogin, new FutureCallback<MobileServiceUser>() {
     			@Override
@@ -34,9 +33,9 @@
 		}
 
 
-	这将会创建一个用于处理身份验证过程的新方法。将使用 Google 登录对用户进行身份验证。此时将出现一个对话框，其中显示了已经过身份验证的用户的 ID。如果未正常完成身份验证，您将无法继续操作。
+	这将会创建一个用于处理身份验证过程的新方法。将使用 Azure Active Directory 登录对用户进行身份验证。此时将出现一个对话框，其中显示了已经过身份验证的用户的 ID。如果未正常完成身份验证，您将无法继续操作。
 
-    > [AZURE.NOTE]如果使用的标识提供者不是 Google，请将传递给上述 **login** 方法的值更改为下列其中一项：_MicrosoftAccount_、_Facebook_、_Twitter_ 或 _windowsazureactivedirectory_。
+    > [AZURE.NOTE]请根据你使用的身份提供者将传递给上述 **login** 方法的值更改为下列其中一项：MicrosoftAccount 或 WindowsAzureActiveDirectory。
 
 3. 在 **OnCreate** 方法中，在实例化 `MobileServiceClient` 对象的代码后面添加以下代码行。
 

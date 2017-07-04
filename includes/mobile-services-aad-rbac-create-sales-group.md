@@ -1,9 +1,9 @@
-﻿在本节中，将两个新用户添加到您的目录以及新销售组。其中一个用户将被授予销售组成员身份。另一个用户将不会被授予该组成员身份。 
+在本节中，将两个新用户添加到您的目录以及新销售组。其中一个用户将被授予销售组成员身份。另一个用户将不会被授予该组成员身份。 
 
 ### 创建用户
 
 
-1. 在 [Azure 管理门户] 中，浏览到你先前完成 [身份验证入门] 教程时为身份验证配置的目录。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn)中，导航到你前面在完成有关向应用添加身份验证的教程时为身份验证配置的目录。
 2. 单击页面顶部的“用户”。然后单击底部的“添加用户”按钮。 
 3. 完成“新建用户”对话框，该对话框创建来创建名为 **Bob** 的用户。请注意用户的临时密码。 
 4. 创建名为 **Dave** 的另一个用户。请注意用户的临时密码。
@@ -28,13 +28,13 @@
 
     ![](./media/mobile-services-aad-rbac-create-sales-group/group-membership.png)
 
-3. 在“销售”组页上单击“属性”，然后复制页面底部的销售组“对象 ID”。
+2. 在“销售”组页上单击“属性”，然后复制页面底部的销售组“对象 ID”。
 
    
     ![](./media/mobile-services-aad-rbac-create-sales-group/sales-group-id.png)
 
-4. 导航回到移动服务配置页，并添加该对象 ID 作为名为 **AAD\_SALES\_GROUP\_ID** 的应用设置。本教程使用组的对象 ID 作为应用设置，而不是基于组名称查找 ID。这是因为组名称可能会更改，而 ID 会保持相同。
+3. 导航回到移动服务配置页，并添加该对象 ID 作为名为 **AAD\_SALES\_GROUP\_ID** 的应用设置。本教程使用组的对象 ID 作为应用设置，而不是基于组名称查找 ID。这是因为组名称可能会更改，而 ID 会保持相同。
 
     ![](./media/mobile-services-aad-rbac-create-sales-group/sales-group-id-app-setting.png)
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0118_2016-->

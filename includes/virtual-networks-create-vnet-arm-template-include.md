@@ -1,8 +1,10 @@
+<!-- ARM: tested -->
+
 ## 下载并了解 ARM 模板
 
 可以从 github 下载用于创建 VNet 和两个子网的现有 ARM 模板，进行任何所需的更改，然后重用该模板。为此，请执行以下步骤。
 
-1. 导航到 https://github.com/Azure/azure-quickstart-templates/tree/master/101-two-subnets。
+1. 导航到[示例模板页](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vnet-two-subnets)。
 2. 单击 **azuredeploy.json**，然后单击 **RAW**。
 3. 将该文件保存到你计算机上的本地文件夹。
 4. 如果你熟悉 ARM 模板，则跳到步骤 7。
@@ -18,7 +20,7 @@
 	| **subnet2Name** | 第二个 VNet 的名称 |
 	| **subnet2Prefix** | 第二个子网的 CIDR 块 |
 
-	>[AZURE.IMPORTANT]在 github 中维护的 ARM 模板可能随着时间的推移发生变化。请确保在使用该模板之前对其进行检查。
+	>[AZURE.IMPORTANT] 在 github 中维护的 ARM 模板可能随着时间的推移发生变化。请确保在使用该模板之前对其进行检查。
 	
 6. 查看 **resources** 下的内容，并注意以下项：
 
@@ -26,7 +28,7 @@
 	- **name**。资源的名称。请注意使用 **[parameters('vnetName')]**，这意味着在部署过程中将由用户或参数文件作为输入提供该名称。
 	- **properties**。资源的属性列表。此模板在 VNet 创建期间使用地址空间和子网属性。
 
-7. 导航回 https://github.com/Azure/azure-quickstart-templates/tree/master/101-two-subnets。
+7. 导航回[示例模板页](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vnet-two-subnets)。
 8. 单击 **azuredeploy-paremeters.json**，然后单击 **RAW**。
 9. 将该文件保存到你计算机上的本地文件夹。
 10. 打开刚保存的文件并编辑参数的值。使用以下值来部署我们的方案中所述的 VNet。
@@ -56,6 +58,5 @@
 		}
 
 11. 保存文件。
-  
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_0418_2016-->

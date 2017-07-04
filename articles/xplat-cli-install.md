@@ -1,155 +1,134 @@
 <properties
-	pageTitle="安装 Azure 命令行界面 | Windows Azure"
-	description="安装适用于 Mac、Linux 和 Windows 的 Azure CLI 即可使用 Azure 服务"
-	editor=""
-	manager="timlt"
-	documentationCenter=""
-	authors="dlepow"
-	services=""
-	tags="azure-resource-manager,azure-service-management"/>
-
+    pageTitle="安装 Azure 命令行界面 | Azure"
+    description="安装适用于 Mac、Linux 和 Windows 的 Azure 命令行接口 (CLI) 即可使用 Azure 服务"
+    editor=""
+    manager="timlt"
+    documentationcenter=""
+    author="squillace"
+    services="virtual-machines-linux,virtual-network,storage,azure-resource-manager"
+    tags="azure-resource-manager,azure-service-management" />
 <tags
-	ms.service="multiple"
-	ms.date="09/18/2015"
-	wacn.date="11/12/2015"/>
+    ms.assetid="bdb776c8-7a76-4f3a-887c-236b4fffee10"
+    ms.service="multiple"
+    ms.workload="multiple"
+    ms.tgt_pltfrm="command-line-interface"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/21/2017"
+    wacn.date="03/31/2017"
+    ms.author="rasquill" />
 
 # 安装 Azure CLI
+> [AZURE.SELECTOR]
+- [PowerShell](/documentation/articles/powershell-install-configure/)
+- [Azure CLI](/documentation/articles/xplat-cli-install/)
 
-本文介绍如何安装 Azure 命令行界面 (Azure CLI)。Azure CLI 提供一组基于 shell 的开源命令，用于在 Windows Azure 中创建和管理资源。
+快速安装 Azure 命令行接口 (Azure CLI)，以便使用一组基于 shell 的开源命令在 Azure 中创建和管理资源。在计算机上安装这些跨平台工具时有多个选项：
 
-[AZURE.INCLUDE [了解部署模型](../includes/learn-about-deployment-models-include.md)]本文介绍如何使用资源管理器部署模型或经典部署模型来创建和管理资源。
+- **npm 包**：运行 npm（JavaScript 的包管理器）将最新的 Azure CLI 包安装到 Linux 分发版或操作系统上。计算机上需要有 node.js 和 npm。
+- **安装程序**：下载安装程序，在 Mac 或 Windows 上轻松地执行安装。
+- **Docker 容器**：在已经准备好运行的 Docker 容器中开始使用的最新 CLI。计算机上需要有 Docker 主机。
 
-Azure CLI 以 JavaScript 编写，并且需要 [Node.js](https://nodejs.org)。它是使用 [Azure SDK for Node](https://github.com/azure/azure-sdk-for-node) 实现的，并根据 Apache 2.0 许可证发布。项目存储库位于 [https://github.com/azure/azure-xplat-cli](https://github.com/azure/azure-xplat-cli)。
+有关更多选项和背景信息，请参阅 [GitHub](https://github.com/azure/azure-xplat-cli) 上的项目存储库。
 
-> [AZURE.NOTE]如果你已安装 Azure CLI，可将其与你的 Azure 资源连接。有关详细信息，请参阅[如何连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/#configure)。
+安装 Azure CLI 之后，[将它连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)，从命令行接口（Bash、终端、命令提示符等）运行 **azure** 命令来使用 Azure 资源。
 
-<a id="install">
-## 如何安装 Azure CLI
+## 选项 1：安装 npm 包
+若要从 npm 包安装 CLI，请确保已下载并安装[最新的 Node.js 和 npm](https://nodejs.org/en/download/package-manager/)。然后，运行 **npm install** 以安装 azure-cli 包：
 
-可通过多种方式来安装 Azure CLI。
-
-1. 使用安装程序
-2. 安装 Node.js 和 npm，然后使用 **npm install** 命令。
-3. 以 Docker 容器方式运行 Azure CLI
-
-安装了 Azure CLI 之后，你将可以从命令行界面（Bash、终端、命令提示符等）使用 **azure** 命令访问 Azure CLI 命令。
-
-## 使用安装程序
-
-提供以下安装程序包：
-
-* [Windows 安装程序][windows-installer]
-
-* [OS X 安装程序](http://go.microsoft.com/fwlink/?LinkId=252249)
-
-* [Linux 安装程序][linux-installer]
-
-
-## 安装和使用 Node.js 与 npm
-
-如果 Node.js 已安装在你的系统上，则使用以下命令安装 Azure CLI：
-
-	npm install azure-cli -g
-
-> [AZURE.NOTE]在 Linux 分发中，你可能需要使用 `sudo` 才能成功运行 __npm__ 命令。
-
-### 在使用 [dpkg](http://zh.wikipedia.org/wiki/Dpkg) 包管理的 Linux 分发上安装 node.js 和 npm
-在这些分发中，最常使用[高级打包工具 (apt)](http://zh.wikipedia.org/wiki/Advanced_Packaging_Tool) 或基于 `.deb` 包格式的其他工具。示例包括 Ubuntu 和 Debian。
-
-这些分发的较新版本大多要求安装 **nodejs-legacy**，目的是对 **npm** 工具进行适当的配置以安装 Azure CLI。以下代码所示命令可将 **npm** 正确安装在 Ubuntu 14.04 上。
-
-	sudo apt-get install nodejs-legacy
-	sudo apt-get install npm
-	sudo npm install -g azure-cli
-
-某些较旧的分发（如 Ubuntu 12.04）要求安装 node.js 的最新二进制分发。以下代码显示了如何通过安装和使用 **curl** 来实现这一点。
-
->[AZURE.NOTE]此处的命令摘自 Joyent 安装说明，详情请访问[此链接](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)。不过，在使用 **sudo** 作为管道目标时，应始终检查所要安装的脚本，确保其执行的功能与你预期的一致，然后再通过 **sudo** 运行它们。强大的功能意味着重大的责任。
-
-	sudo apt-get install curl
-	curl -sL https://deb.nodesource.com/setup | sudo bash -
-	sudo apt-get install -y nodejs
-	sudo npm install -g azure-cli
-
-### 将 node.js 和 npm 安装在使用 [rpm](http://zh.wikipedia.org/wiki/RPM_Package_Manager) 包管理的 Linux 分发上
-
-在基于 RPM 的分发上安装 node.js 需要启用 EPEL 存储库。以下代码显示了在 CentOS 7 上进行安装所需遵循的最佳实践。（请注意，在下面的第一行中，“-”（连字符）很重要！）
-
-	su -
-	yum update [enter]
-	yum upgrade –y [enter]
-	yum install epel-release [enter]
-	yum install nodejs [enter]
-	yum install npm [enter]
-	npm install -g azure-cli  [enter]
-
-### 在 Windows 和 Mac OS X 上安装 node.js 和 npm
-
-你可以使用 [Nodejs.org](https://nodejs.org/download/) 中的安装程序在 Windows 和 OS X 上安装 node.js 和 npm。你可能需要重新启动计算机来完成安装。打开命令窗口并键入相应命令，查看 node 和 npm 是否已正确安装
-
-	npm -v
-
-如果显示 npm 版本已安装，你可以继续操作并安装 Azure CLI
+bash
 
 	npm install -g azure-cli
 
-在安装结束时，你应该会看到如下内容：
 
-	azure-cli@0.8.0 ..\node_modules\azure-cli
-	|-- easy-table@0.0.1
-	|-- eyes@0.1.8
-	|-- xmlbuilder@0.4.2
-	|-- colors@0.6.1
-	|-- node-uuid@1.2.0
-	|-- async@0.2.7
-	|-- underscore@1.4.4
-	|-- tunnel@0.0.2
-	|-- omelette@0.1.0
-	|-- github@0.1.6
-	|-- commander@1.0.4 (keypress@0.1.0)
-	|-- xml2js@0.1.14 (sax@0.5.4)
-	|-- streamline@0.4.5
-	|-- winston@0.6.2 (cycle@1.0.2, stack-trace@0.0.7, async@0.1.22, pkginfo@0.2.3, request@2.9.203)
-	|-- kuduscript@0.1.2 (commander@1.1.1, streamline@0.4.11)
-	|-- azure@0.7.13 (dateformat@1.0.2-1.2.3, envconf@0.0.4, mpns@2.0.1, mime@1.2.10, validator@1.4.0, xml2js@0.2.8, wns@0.5.3, request@2.25.0)
+在 Linux 分发版中，可能需要使用 **sudo** 才能成功运行 **npm** 命令，如下所示：
 
->[AZURE.NOTE]对于 Linux 系统，你还可以通过从[源](http://go.microsoft.com/fwlink/?linkid=253472&clcid=0x409)进行构建的方式来安装 Azure CLI。有关从源代码生成的详细信息，请参阅存档中随附的 INSTALL 文件。
+bash
 
-## 使用 Docker 容器
+	sudo npm install -g azure-cli
 
-在 Docker 主机中，运行：
-```
+> [AZURE.NOTE]
+如果需要在 Linux 分发版或操作系统上安装或更新 Node.js 和 npm，我们建议安装最新的 Node.js LTS 版本 (4.x)。如果你使用旧版本，可能会遇到安装错误。
+
+如果喜欢，也可以将 npm 包的最新 Linux [tar 文件][linux-installer]下载到本地。然后，按照以下步骤安装下载的 npm 包（在 Linux 分发版上可能需要使用 **sudo**）：
+
+bash
+
+	npm install -g <path to downloaded tar file>
+
+## 选项 2：使用安装程序
+如果使用 Mac 或 Windows 计算机，以下 CLI 安装程序可供下载：
+
+- [Mac OS X 安装程序][mac-installer]
+- [Windows MSI][windows-installer]
+
+> [AZURE.TIP]
+在 Windows 上，还可以下载 [Web 平台安装程序](https://go.microsoft.com/?linkid=9828653)来安装 CLI。借助此安装程序，可选择在安装 CLI 后再安装其他 Azure SDK 和命令行工具。
+
+## 选项 3：使用 Docker 容器
+如果将计算机设置为 [Docker](https://docs.docker.com/engine/understanding-docker/) 主机，则可以在 Docker 容器中运行最新的 Azure CLI。运行以下命令（在 Linux 分发版中，可能需要使用 **sudo**）：
+
+bash
+
 	docker run -it microsoft/azure-cli
-```
 
-## 执行 Azure CLI 命令
+## 运行 Azure CLI 命令
+安装 Azure CLI 之后，请从命令行用户界面（Bash、终端、命令提示符等）运行 **azure** 命令。例如，若要运行帮助命令，请键入以下命令：
 
-安装了 Azure CLI 之后，你将可以从命令行用户界面（Bash、终端、命令提示符等）使用 **azure** 命令访问 Azure CLI 命令。例如，若要在 Windows 中执行 help 命令，请启动命令窗口并键入以下命令：
+azurecli
 
-```
-	c:> azure help
-```
+	azure help
 
-你现在已准备就绪！ 接下来你可以[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)并开始使用 **azure** 命令。
+> [AZURE.NOTE]
+在某些 Linux 分发版中，可能会收到类似于“`/usr/bin/env: ‘node’: No such file or directory`”的错误。此错误来自最近安装在 /usr/bin/nodejs 中的 Node.js 安装。若要解决此错误，请运行以下命令创建 /usr/bin/node 的符号链接：
 
+bash
 
-<a id="additional-resources">
-## 其他资源
+	sudo ln -s /usr/bin/nodejs /usr/bin/node
 
-* [将 Azure CLI 与资源管理命令配合使用][cliarm]
+若要查看安装的 Azure CLI 版本，请键入以下命令：
 
-* [将 Azure CLI 与服务管理（经典）命令配合使用][cliasm]
+azurecli
 
-* 若要了解有关 Azure CLI、下载源代码、报告问题或贡献项目的详细信息，请访问[适用于 Azure CLI 的 GitHub 存储库](https://github.com/azure/azure-xplat-cli)。
+	azure --version
 
-* 如果你在使用 Azure CLI 或 Azure 时遇到问题，请访问 [Azure 论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home)。
+你现在已准备就绪！ 若要访问所有 CLI 命令来使用自己的资源，请[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
 
+> [AZURE.NOTE]
+首次使用 Azure CLI 时，会看到一条消息，询问是否允许 Microsoft 收集使用情况信息。参与为自愿性质。如果选择参与，通过运行 `azure telemetry --disable` 即可随时停止参与。若要随时启用参与，请运行 `azure telemetry --enable`。
 
+## 更新 CLI
+Microsoft 会频繁发布 Azure CLI 的更新版本。使用适用于操作系统的安装程序来重新安装 CLI，或运行最新的 Docker 容器。如果已安装最新的 Node.js 和 npm，请键入以下命令（在 Linux 分发版上可能需要使用 **sudo**）进行更新。
 
-[mac-installer]: http://go.microsoft.com/fwlink/?LinkId=252249
-[windows-installer]: http://go.microsoft.com/?linkid=9828653&clcid=0x409
-[linux-installer]: http://go.microsoft.com/fwlink/?linkid=253472
-[cliasm]: /documentation/articles/virtual-machines-command-line-tools
-[cliarm]: /documentation/articles/xplat-cli-azure-resource-manager
+bash
 
-<!---HONumber=79-->
+	npm update -g azure-cli
+
+## 启用 tab 自动补全
+Mac 和 Linux 支持 tab 自动补全 CLI 命令。
+
+如要在 zsh 中启用，运行：
+
+bash
+
+	echo '. <(azure --completion)' >> .zshrc
+
+若要在 bash 中启用，运行：
+
+bash
+
+	azure --completion >> ~/azure.completion.sh
+	echo 'source ~/azure.completion.sh' >> ~/.bash_profile
+
+## 后续步骤
+- [从 CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)以创建和管理 Azure 资源。
+- 若要了解有关 Azure CLI、下载源代码、报告问题或贡献项目的详细信息，请访问[适用于 Azure CLI 的 GitHub 存储库](https://github.com/azure/azure-xplat-cli)。
+- 如果在使用 Azure CLI 或 Azure 方面有疑问，请访问 [Azure 论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=azurescripting)。
+- 如果想要，也可以试用基于 Python 的 [Azure CLI 2.0 预览版](https://github.com/azure/azure-cli)。
+
+[mac-installer]: http://aka.ms/mac-azure-cli
+[windows-installer]: http://aka.ms/webpi-azure-cli
+[linux-installer]: http://aka.ms/linux-azure-cli
+
+<!---HONumber=Mooncake_0320_2017-->
+<!-- Update_Description: wording update -->

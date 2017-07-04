@@ -2,7 +2,7 @@
 
 ### 注册 Pusher 帐户
 
-1. 登录到 [Azure 管理门户][]。
+1. 登录到 [Azure 经典管理门户][]。
 
 2. 在该管理门户的下方窗格中，单击"新建"。
 
@@ -65,7 +65,7 @@
 
 <!--Links-->
 
-[Azure 管理门户]: https://manage.windowsazure.cn
+[Azure 经典管理门户]: https://manage.windowsazure.cn
 [了解 Pusher]: http://pusher.com/docs
 
 <!--HONumber=41-->

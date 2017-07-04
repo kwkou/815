@@ -1,8 +1,8 @@
-## 如何在 Azure 门户中使用网络配置文件创建 VNet
+## <a name="how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal"></a> 如何在 Azure 经典管理门户中使用网络配置文件创建 VNet
 
 Azure 使用 xml 文件定义可用于订阅的所有 VNet。可以下载此文件，然后编辑它以修改或删除现有 VNet 并创建新 VNet。在本文档中，你将了解如何下载此文件（称为网络配置（或 netcgf）文件），并编辑它以创建新 VNet。查看 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)以了解有关网络配置文件的详细信息。
 
-若要通过 Azure 门户使用 netcfg 文件创建 VNet，请执行下面的步骤。
+若要通过 Azure 经典管理门户使用 netcfg 文件创建 VNet，请执行下面的步骤。
 
 1. 从浏览器导航到 http://manage.windowsazure.cn，如有必要，请使用 Azure 帐户登录。
 2. 向下滚动服务列表，并单击**“网络”**，如下所示。
@@ -33,7 +33,7 @@ Azure 使用 xml 文件定义可用于订阅的所有 VNet。可以下载此文�
 		</VirtualNetworkSite>
 
 8.  保存网络配置文件。
-9.  在 Azure 门户中的页面左下角单击**“新建”**，然后依次单击**“网络服务”**、**“虚拟网络”**、**“导入配置”**，如下图所示。
+9.  在 Azure 经典管理门户中的页面左下角单击**“新建”**，然后依次单击**“网络服务”**、**“虚拟网络”**、**“导入配置”**，如下图所示。
 
 	![导入配置](./media/virtual-networks-create-vnet-classic-portal-xml-include/vnet-create-portal-netcfg-figure3.gif)
 

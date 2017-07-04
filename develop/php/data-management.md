@@ -1,7 +1,7 @@
 <properties 
   pageTitle="Php-数据管理 - Azure 微软云"
   metakeywords="" 
-  description="" 
+  description="Php-数据管理 - Azure 微软云" 
   services="" 
   documentationCenter="php" 
   authors="" 
@@ -9,7 +9,7 @@
   editor="EricChen"/>
 <tags ms.service=""
     ms.date=""
-    wacn.date="04/11/2015"
+    wacn.date="08/11/2016"
     />
 
 
@@ -18,7 +18,7 @@
 <!--
 <h3>功能指南：<a href="/documentation/articles/store-php-create-mysql-database/">MySQL–as-a-service</a></h3>
 <p>MySQL 由 ClearDB 作为一项服务提供，可通过 Azure 应用商店获得。了解如何在 Azure 数据中心中设置 MySQL 数据库并从任何应用程序连接到该数据库。</p>-->
-<h3>如何：<a href="/documentation/articles/sql-database-php-how-to-use/">从 PHP 访问 Azure SQL 数据库</a></h3>
+<h3>如何：<a href="/documentation/articles/sql-database-libraries/">从 PHP 访问 Azure SQL 数据库</a></h3>
 <p>对于需要功能完备的关系型数据库即服务的应用程序，Azure 提供了 SQL 数据库（以前称为 SQL Azure 数据库）。SQL 数据库 提供高级别互操作性，允许客户利用众多主要开发框架来构建应用程序。</p>
 <!--
 <h2 id="header-1">NoSQL</h2>

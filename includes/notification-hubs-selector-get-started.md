@@ -1,9 +1,9 @@
 > [AZURE.SELECTOR]
-- [Windows Phone](/documentation/articles/notification-hubs-windows-phone-get-started)
-- [iOS](/documentation/articles/notification-hubs-ios-get-started)
-- [Android](/documentation/articles/notification-hubs-android-get-started)
-- [Kindle](/documentation/articles/notification-hubs-kindle-get-started)
-- [Baidu](/documentation/articles/notification-hubs-baidu-get-started)
-- [Xamarin.iOS](/documentation/articles/partner-xamarin-notification-hubs-ios-get-started)
-- [Xamarin.Android](/documentation/articles/partner-xamarin-notification-hubs-android-get-started)
-- [Chrome](/documentation/articles/notification-hubs-chrome-get-started)
+- [百度](/documentation/articles/notification-hubs-baidu-china-android-notifications-get-started/)
+- [iOS](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/)
+- [Kindle](/documentation/articles/notification-hubs-kindle-amazon-adm-push-notification/)
+- [Windows Phone Silverlight 8.x](/documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns/)
+- [Windows 通用平台](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/)
+- [Xamarin.iOS](/documentation/articles/xamarin-notification-hubs-ios-push-notification-apns-get-started/)
+
+<!---HONumber=Mooncake_1017_2016-->

@@ -1,23 +1,8 @@
-<table cellspacing="0" border="1">
-<tr>
-   <th align="left" valign="middle">资源</th>
-   <th align="left" valign="middle">默认限制</th>
-   <th align="left" valign="middle">最大限制</th>
-</tr>
-<tr>
-   <td valign="middle"><p>每个云服务的<a href="/services/virtual-machines">虚拟机数</a><sup>1</sup></p></td>
-   <td valign="middle"><p>50</p></td>
-   <td valign="middle"><p>50</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>每个云服务的输入终结点数<sup>2</sup></p></td>
-   <td valign="middle"><p>150</p></td>
-   <td valign="middle"><p>150</p></td>
-</tr>
-</table>
+| 资源 | 默认限制 | 最大限制 |
+| --- | --- | --- |
+| 每个云服务的[虚拟机数](/documentation/articles/virtual-machines-linux-azure-overview/)<sup>1</sup> |50 |50 |
+| 每个云服务的输入终结点数<sup>2</sup> |150 |150 |
 
-<sup>1</sup>当你在 Azure 资源组外部创建一个虚拟机时，系统会自动创建一个云服务来包含该虚拟机。然后可以在该相同的云服务中添加多个虚拟机。
+<sup>1</sup>在服务管理（而不是资源管理器）中创建的虚拟机会自动存储在云服务中。 你可以向该云服务添加更多虚拟机以获得负载均衡和可用性。 请参阅[如何将虚拟机连接到虚拟网络或云服务](/documentation/articles/virtual-machines-linux-classic-connect-vms/)。
 
-<sup>2</sup>输入终结点用于允许包含云服务的到外部虚拟机的通信。同一个云服务中的虚拟机自动允许所有 UDP 和 TCP 端口之间的通信，以实现内部通信。
-
-<!---HONumber=HO63-->
+<sup>2</sup>输入终结点允许从某个虚拟机的云服务外部与该虚拟机通信。 位于同一云服务或虚拟网络中的虚拟机可以自动相互通信。 请参阅[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。

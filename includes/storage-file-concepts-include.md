@@ -1,6 +1,6 @@
 ## 什么是 Azure 文件存储？
 
-文件存储使用标准 SMB 2.1 或 SMB 3.0 协议为应用程序提供共享存储。Microsoft Azure 虚拟机和云服务可通过装载的共享在应用程序组件之间共享文件数据，本地应用程序可通过文件存储 API 来访问共享中的文件数据。
+文件存储使用标准 SMB 2.1 或 SMB 3.0 协议为应用程序提供共享存储。Azure 虚拟机和云服务可通过装载的共享在应用程序组件之间共享文件数据，本地应用程序可通过文件存储 API 来访问共享中的文件数据。
 
 在 Azure 虚拟机或云服务中运行的应用程序可以装载文件存储共享以访问文件数据，就像桌面应用程序可以装载典型 SMB 共享一样。任意数量的 Azure 虚拟机或角色可以同时装载并访问文件存储共享。
 
@@ -19,7 +19,7 @@
 
 ![files-concepts][files-concepts]
 
--   **存储帐户：**对 Azure 存储服务的所有访问都要通过存储帐户来完成。有关存储帐户容量的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](http://msdn.microsoft.com/zh-cn/library/azure/dn249410.aspx)。
+-   **存储帐户：**对 Azure 存储服务的所有访问都要通过存储帐户来完成。有关存储帐户容量的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
 
 -   **共享：**文件存储共享是 Azure 中的 SMB 文件共享。所有目录和文件都必须在父共享中创建。一个帐户可以包含无限数量的共享，一个共享可以存储无限数量的文件，直到达到文件共享的 5TB 总容量限制为止。
 
@@ -27,8 +27,8 @@
 
 -	**文件：**共享中的文件。文件大小最大可以为 1 TB。
 
--   **URL 格式：**可使用以下 URL 格式对文件寻址：https://`<storage
-    account>`.file.core.chinacloudapi.cn/`<share>`/`<目录/目录>`/`<file>`
+-   **URL 格式：**可使用以下 URL 格式对文件寻址：  
+	https://<storage account\>.file.core.chinacloudapi.cn/<share\>/<directory/directories>/<file\>
     
     可使用以下示例 URL 寻址上图中的文件：`http://samples.file.core.chinacloudapi.cn/logs/CustomLogs/Log1.txt`
 
@@ -36,4 +36,4 @@
 
 [files-concepts]: ./media/storage-file-concepts-include/files-concepts.png
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_0307_2016-->

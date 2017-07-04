@@ -4,7 +4,7 @@
 
 1. 安装 [WindowsAzure.MobileServices.Backend.Security NuGet 包](https://www.nuget.org/packages/WindowsAzure.MobileServices.Backend.Security)。
 
-2. 在 Visual Studio 中，展开 App\_Start 并打开 WebApiConfig.cs。在顶部添加以下 `using` 语句：
+2. 在 Visual Studio 中，展开 App_Start 并打开 WebApiConfig.cs。在顶部添加以下 `using` 语句：
 
         using Microsoft.WindowsAzure.Mobile.Service.Security.Providers;
 

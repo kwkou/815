@@ -8,6 +8,5 @@
 	- 能够通过端口 5671 连接到 Azure。
 	- 能够访问运行 SQL Server 实例的计算机的*主机名*:*端口号*。  
 
-	有关详细信息，请参阅[混合连接概述](/documentation/articles//integration-hybrid-connection-overview)。
 
 <!---HONumber=71-->

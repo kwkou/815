@@ -1,6 +1,6 @@
 ## <a name="register-app-aad"></a>向 Azure Active Directory 注册你的客户端应用
 
-1. 在 [Azure 管理门户]中浏览到“Active Directory”，然后单击你的目录。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中浏览到“Active Directory”，然后单击你的目录。
 
 	![](./media/mobile-services-dotnet-adal-register-client/mobile-services-select-aad.png)
 
@@ -28,7 +28,4 @@
 
 现在，将在 AAD 中配置你的移动服务，以接收你的应用程序发出的单一登录请求。
 
-
-[Azure 管理门户]: https://manage.windowsazure.cn/
-
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0118_2016-->

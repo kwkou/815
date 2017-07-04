@@ -1,7 +1,7 @@
 <properties 
   pageTitle="Ruby-数据服务 - Azure 微软云"
   metakeywords="" 
-  description="" 
+  description="Ruby-数据服务 - Azure 微软云" 
   services="" 
   documentationCenter="ruby" 
   authors="" 
@@ -9,7 +9,7 @@
   editor="EricChen"/>
 <tags ms.service=""
     ms.date=""
-    wacn.date="04/11/2015"
+    wacn.date="01/11/2016"
     />
 
 
@@ -21,6 +21,6 @@
 <p>表为需要存储大量非结构化数据的应用程序提供 NoSQL 容量。表是经 ISO 27001 认证的托管服务，可自动扩展以存储多达 100 TB 的数据。几乎可从任何位置通过 REST 和托管 API 访问这些表。</p>
 <h3>如何： <a href="/documentation/articles/storage-custom-domain-name/">将自定义域用于 Blob 存储</a></h3>
 <p>将存储帐户配置为将自定义域映射到 Blob 服务终结点，以便让用户在应用程序的 URL 中看到域名。</p>
-<h2 id="header-1">基础</h2>
+<!--<h2 id="header-1">基础</h2>
 <h3>指南： <a href="/documentation/articles/fundamentals-data-management-business-analytics/">数据管理和业务分析</a></h3>
-<p>了解 Azure 中可帮助您使用关系和非关系数据的技术。</p>
+<p>了解 Azure 中可帮助您使用关系和非关系数据的技术。</p>-->

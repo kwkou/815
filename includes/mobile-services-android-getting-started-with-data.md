@@ -52,9 +52,9 @@
 9. 找到文件底部的 *ProgressFilter* 类，并取消其注释。当 *MobileServiceClient* 运行网络操作时，此类显示“正在加载”指示器。
 
 
-10. 在管理门户中单击“移动服务”，然后单击你刚刚创建的移动服务。
+10. 在 **Azure 经典管理门户**中单击“移动服务”，然后单击你刚刚创建的移动服务。
 
-11. 单击“仪表板”选项卡并记下“站点 URL”中的值，然后单击“管理密钥”并记下“应用程序密钥”中的值。
+11. 单击“仪表板”选项卡并记下“移动服务 URL”中的值，然后单击“管理密钥”并记下“应用程序密钥”中的值。
 
    	![](./media/download-android-sample-code/mobile-dashboard-tab.png)
 
@@ -160,5 +160,6 @@
 		
 
 <!-- URLs. -->
-[移动服务 Android SDK]: http://aka.ms/Iajk6q
-<!---HONumber=71-->
+[Mobile Services Android SDK]: http://aka.ms/Iajk6q
+
+<!---HONumber=Mooncake_0118_2016-->

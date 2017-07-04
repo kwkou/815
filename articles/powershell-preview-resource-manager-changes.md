@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure PowerShell 1.0 预览版资源管理器更改 | Windows Azure"
+	pageTitle="Azure PowerShell 1.0 预览版资源管理器更改 | Azure"
 	description="介绍针对 Azure PowerShell 1.0 预览版设计的资源管理器 cmdlet 所发生的更改。"
 	services="azure-resource-manager"
 	documentationCenter="na"
@@ -85,6 +85,6 @@
 
 ##策略 cmdlet
 
-我们已添加对 Azure 资源管理器的策略支持。此版本中已添加可用于管理策略的 PowerShell cmdlet。<!--有关策略的详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy)。-->
+我们已添加对 Azure 资源管理器的策略支持。此版本中已添加可用于管理策略的 PowerShell cmdlet。
 
 <!---HONumber=79-->

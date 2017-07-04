@@ -1,6 +1,6 @@
 <properties
-	pageTitle="多租户 Web 应用程序模式 | Microsoft Azure"
-	description="查找介绍如何在 Azure 中实现多租户 Web 应用程序的体系结构概述和设计模式。"
+	pageTitle="多租户 Web 应用模式 | Azure"
+	description="查找介绍如何在 Azure 中实现多租户 Web 应用的体系结构概述和设计模式。"
 	services=""
 	documentationCenter=".net"
 	authors="wadepickett" 
@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
 	ms.date="06/05/2015"
-	wacn.date="10/3/2015"/>
+	wacn.date="01/21/2016"
+	ms.author="wpickett"/>
 
 # Azure 中的多租户应用程序
 
@@ -40,8 +45,8 @@ Azure 提供了许多功能，使你能够解决在设计多租户系统时遇�
 
 **隔离**
 
-- 按使用或不使用 SSL 通信的主机头对网站租户进行分段
-- 按查询参数对网站租户进行分段
+- 按使用或不使用 SSL 通信的主机头对 Web 应用租户进行分段
+- 按查询参数对 Web 应用租户进行分段
 - 辅助角色中的 Web 服务
 	- 通常在应用程序后端处理数据的辅助角色。
 	- 通常充当应用程序前端的 Web 角色。
@@ -65,8 +70,8 @@ Azure 提供了许多功能，使你能够解决在设计多租户系统时遇�
 Azure 提供了一些联网服务，它们支持身份验证且提高了托管应用程序的可管理性。这些服务包括：
 
 - 利用 Azure 虚拟网络，你可以设置和管理 Azure 中的虚拟专用网 (VPN)，并将其与内部部署的 IT 基础结构安全链接。
-- 利用虚拟网络流量管理器，你可以跨多项 Azure 托管服务对传入流量进行负载平衡，无论这些服务运行在同一数据中心内，还是运行在全球的不同数据中心内。
-- Azure Active Directory (Azure AD) 是一项基于 REST 的新型服务，它可为你的云应用程序提供标识管理和访问控制功能。可对应用程序资源使用 Azure AD - Azure AD 不仅允许将身份验证和授权功能从代码中分离出来，而且还提供对用户进行身份验证和授权以获取对 Web 应用程序和服务的访问权限的简便方法。
+- 利用虚拟网络流量管理器，你可以跨多项 Azure 托管服务对传入流量进行负载均衡，无论这些服务运行在同一数据中心内，还是运行在全球的不同数据中心内。
+- Azure Active Directory (Azure AD) 是一项基于 REST 的新型服务，它可为你的云应用程序提供标识管理和访问控制功能。可对应用程序资源使用 Azure AD - Azure AD 不仅允许将身份验证和授权功能从代码中分离出来，而且还提供对用户进行身份验证和授权以获取对 Web 应用和服务的访问权限的简便方法。
 - Azure Service Bus 为分布式应用程序和混合应用程序提供了安全消息传送和数据流功能，例如在 Azure 托管的应用程序与本地应用程序和服务之间进行通信，而不需要复杂的防火墙和安全基础结构。可对应用程序资源使用 Service Bus 中继 - 公开为终结点的服务可能属于租户（例如托管在系统之外的服务，如本地服务），也可能是专门为租户配置的服务（因为特定于租户的敏感数据通过这些服务传输）。
 
 

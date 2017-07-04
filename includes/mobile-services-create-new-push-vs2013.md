@@ -25,6 +25,5 @@
 <!-- URLs. -->
 [Get started with Mobile Services]: /zh-cn/documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
 [Get started with data]: /zh-cn/documentation/articles/mobile-services-windows-store-dotnet-get-started-data/
-[Import your publishsettings file in Visual Studio 2013]: /zh-cn/documentation/articles/mobile-services-windows-how-to-import-publishsettings/
 
-<!---HONumber=74-->
+<!---HONumber=82-->

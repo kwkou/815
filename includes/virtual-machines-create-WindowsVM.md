@@ -1,35 +1,61 @@
-1. 登录到 [Azure 门户](http://manage.windowsazure.cn)。如果你尚未获取订阅，请查看[试用](/pricing/1rmb-trial/)优惠产品。
+1. 登录 [Azure 门户](https://portal.azure.cn)。
 
-2. 在窗口底部的命令栏上，单击“新建”。
+2. 首先在左上角单击“新建”>“计算”>“Windows Server 2016 Datacenter”。
 
-3. 在“计算”下，单击“虚拟机”，然后单击“从库中”。
+    ![导航到门户中的 Azure VM 映像](./media/virtual-machines-common-portal-create-fqdn/marketplace-new.png)  
 
-	![在命令栏中导航到“从库中”](./media/virtual-machines-create-WindowsVM/fromgallery.png)
+3. 在 Windows Server 2016 Datacenter 中，选择“经典”部署模型。单击“创建”。
 
-4. 随后出现的第一个屏幕可让你从可用映像列表中为虚拟机**选择映像**。（可用映像可能各不相同，具体取决于您使用的订阅。）
+    ![显示在门户中可用的 Azure VM 映像的屏幕截图](./media/virtual-machines-common-portal-create-fqdn/deployment-classic-model.png)  
 
-5. 第二个屏幕可让你选择计算机名称、大小和管理用户名与密码。使用所需的层和大小运行你的应用或工作负载。下面是一些提示：
+## 1\.“基本信息”边栏选项卡
 
-	- “新用户名”指用于管理服务器的管理帐户。请为此帐户创建唯一密码，并请务必记住该密码。**你需要使用用户名和密码登录到虚拟机**。
+“基本信息”边栏选项卡会请求虚拟机的管理信息。
 
-	- 虚拟机的大小会影响其使用成本，还会影响某些配置选项，例如，可以附加的数据磁盘数。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-size-specs)。
+1. 输入虚拟机的**名称**。在示例中，_HeroVM_ 是虚拟机的名称。名称必须为 1-15 个字符，不能包含特殊字符。
 
-6. 第三个屏幕可让你配置网络资源、存储和可用性。下面是一些提示：
+2. 输入用于在 VM 上创建本地帐户的**用户名**和强**密码**。该本地帐户用于登录和管理 VM。在示例中，_azureuser_ 是用户名。
 
-	- “云服务 DNS 名称”是全局 DNS 名称，是用于联系虚拟机的 URI 的一部分。你需要指定自己的云服务名称，因为该名称在 Azure 中必须唯一。对于使用[多个虚拟机](/documentation/articles/cloud-services-connect-virtual-machine)的方案而言，云服务非常重要。
+    密码的长度必须为 8 到 123 个字符，并且必须符合以下四个复杂性要求中的三个要求：1 个小写字符、1 个大写字符、1 个数字和 1 个特殊字符。查看有关[用户名和密码要求](/documentation/articles/virtual-machines-windows-faq/)的更多信息。
 
-	- 对于“区域/地缘组/虚拟网络”，请使用适合你所在位置的区域。您也可以选择指定一个虚拟网络。
+3. “订阅”是可选的。一个常用设置是“即用即付”。
 
-	>[AZURE.NOTE]如果你希望虚拟机使用虚拟网络，则**必须**在创建虚拟机时指定虚拟网络。创建虚拟机后，不能将它加入虚拟网络。有关详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview)。
-	>
-	> 有关配置终结点的详细信息，请参阅[如何设置虚拟机的终结点](/documentation/articles/virtual-machines-set-up-endpoints)。
+4. 选择现有的**资源组**，或键入新资源组的名称。在示例中，_HeroVMRG_ 是资源组的名称。
 
-7. 第四个配置屏幕可让你安装 VM 代理，以及配置某些可用的扩展。
+5. 选择要在其中运行 VM 的 Azure 数据中心**位置**。在示例中，位置为**中国东部**。
 
-	>[AZURE.NOTE]VM 代理为你提供安装扩展的环境，可帮助你与虚拟机交互或管理虚拟机。有关详细信息，请参阅[关于 VM 代理和扩展](/documentation/articles/virtual-machines-extensions-agent-about)。
+6. 完成后，单击“下一步”转到下一边栏选项卡。
 
-8. 创建虚拟机之后，门户将在“虚拟机”下列出新虚拟机。此外，还会创建相应的云服务和存储帐户，并将其列在这些部分中。虚拟机和云服务都会自动启动，其状态将显示为“正在运行”。
+    ![显示用于配置 Azure VM 的“基本信息”边栏选项卡上的设置的屏幕截图](./media/virtual-machines-common-portal-create-fqdn/basics-blade-classic.png)  
 
-	![配置虚拟机的 VM 代理和终结点](./media/virtual-machines-create-WindowsVM/vmcreated.png)
+## 2\.“大小”边栏选项卡
 
-<!---HONumber=79-->
+“大小”边栏选项卡标识了 VM 的配置详细信息，列出了各种选项，其中包括：OS、处理器数、磁盘存储类型、估计的每月使用费用。
+
+选择 VM 大小，然后单击“选择”继续。在此示例中，_DS1_\__V2 Standard_ 是 VM 大小。
+
+![显示可以选择的 Azure VM 大小的“大小”边栏选项卡的屏幕截图](./media/virtual-machines-common-portal-create-fqdn/vm-size-classic.png)  
+
+## 3\.“设置”边栏选项卡
+
+“设置”边栏选项卡可请求存储和网络选项。可以接受默认设置。Azure 可根据需要创建适当的条目。
+
+如果选择了支持它的虚拟机大小，则可以通过选择“磁盘类型”中的“高级(SSD)”来试用 Azure 高级存储。
+
+完成更改后，单击“确定”。
+
+## 4\.“摘要”边栏选项卡
+
+“摘要”边栏选项卡列出了在以前的边栏选项卡中指定的设置。准备好制作映像时，请单击“确定”。
+
+![“摘要”边栏选项卡报告，提供虚拟机的指定设置](./media/virtual-machines-common-portal-create-fqdn/summary-blade-classic.png)  
+
+<!--  deleted 2/16/2017 - RABixby
+  * A virtual machine's size affects the cost of using it, as well as configuration options such as how many data disks you can attach. For more information, see [Sizes for virtual machines](/documentation/articles/virtual-machines-windows-sizes/).
+  -->
+
+创建虚拟机之后，门户将在“所有资源”下列出新虚拟机，并在仪表板上显示虚拟机的磁贴。此外，还会创建并列出相应的云服务和存储帐户。虚拟机和云服务都会自动启动，其状态将显示为“正在运行”。
+
+![配置虚拟机的 VM 代理和终结点](./media/virtual-machines-common-portal-create-fqdn/portal-with-new-vm.png)  
+
+<!---HONumber=Mooncake_0313_2017-->

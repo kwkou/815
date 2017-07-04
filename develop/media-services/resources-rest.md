@@ -1,7 +1,7 @@
 <properties 
   pageTitle="媒体服务资源 - Azure 微软云"
   metakeywords="" 
-  description="" 
+  description="媒体服务资源 - Azure 微软云" 
   services="" 
   documentationCenter="media-services-resources" 
   authors="" 
@@ -46,8 +46,9 @@
 <p>了解如何使用用于 Windows 8 的平滑流式处理客户端 SDK 生成 Windows 应用商店应用程序。</p>
 <h3>功能指南： <a href="/documentation/articles/media-services-use-osmf-smooth-streaming-client-plugin/">使用平滑流式处理 OSMF 插件生成 Adobe Flash Player 应用程序</a></h3>
 <p>了解如何使用用于 OSMF 的平滑流式处理插件扩展 Adobe 开源媒体框架的功能。</p>
+<!--
 <h3>功能指南： <a href="/documentation/articles/media-services-use-ios-media-player-framework/">构建 iOS 视频应用程序</a></h3>
-<p>了解如何使用 Azure 媒体服务 iOS 媒体播放器框架生成支持 HLS 的 iOS 视频应用程序。</p>
+<p>了解如何使用 Azure 媒体服务 iOS 媒体播放器框架生成支持 HLS 的 iOS 视频应用程序。</p>-->
 <h2 id="header-5">调整规模</h2>
 <h3>如何： <a href="/documentation/articles/media-services-how-to-scale/">改变媒体服务规模</a></h3>
-<p>本主题介绍如何更改希望帐户使用的按需流式处理保留单位和编码保留单位的数目。</p>
+<p>本主题介绍如何更改希望帐户使用的按需流式处理保留单元和编码保留单元的数目。</p>

@@ -4,7 +4,7 @@ Azure 使用 xml 文件定义可用于订阅的所有 VNet。可以下载此文�
 
 若要通过 PowerShell 使用 netcfg 文件创建 VNet，请执行下面的步骤。
 
-1. 如果你从未使用过 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)，并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
+1. 如果你从未使用过 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)，并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
 2. 从 Azure PowerShell 控制台中，通过运行以下命令使用 **Get-AzureVnetConfig** cmdlet 下载网络配置文件。 
 
 		Get-AzureVNetConfig -ExportToFile c:\NetworkConfig.xml

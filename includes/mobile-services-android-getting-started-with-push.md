@@ -128,7 +128,7 @@
 15. 回到 TodoActivity.java 文件中，更新 ToDoActivity 类的 **onCreate** 方法，以注册通知处理程序类。请确保在 MobileServiceClient 实例化之后再添加此代码。
 
 
-		NotificationsManager.handleNotifications(this, SENDER_ID, MyHandler.class);
+		NotificationsManager.handleNotifications(this, SENDER_ID, NotificationsHandler.class);
 
     您的应用现已更新，可支持推送通知。
 

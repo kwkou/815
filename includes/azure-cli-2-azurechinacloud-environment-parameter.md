@@ -1,0 +1,2 @@
+> [AZURE.NOTE]
+在 Azure 中国区使用 Azure CLI 2.0 之前，需要修改 Azure 配置文件。运行 `az configure` 可以查看配置文件的路径，一般为 `C:\Users\<user name>\.azure\config`（Windows）和 `/var/users/<username>/.azure/config `（Linux）。打开该配置文件，把 `AzureCloud` 替换为 `AzureChinaCloud`。

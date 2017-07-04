@@ -1,5 +1,5 @@
 > [AZURE.SELECTOR]
-- [.NET](/documentation/articles/media-services-dotnet-connect_programmatically)
-- [REST API](/documentation/articles/media-services-rest-connect_programmatically)
+- [.NET](/documentation/articles/media-services-dotnet-connect-programmatically/)
+- [REST API](/documentation/articles/media-services-rest-connect-programmatically/)
 
-<!---HONumber=67-->
+<!---HONumber=Mooncake_1107_2016-->

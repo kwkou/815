@@ -26,10 +26,10 @@
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
 
-    这段代码可在插入 Todo 项之后发送推送通知（包含所插入项的文本）。在发生错误的情况下，这段代码将添加一个错误日志条目，该条目可在管理门户中的移动服务的“日志”选项卡上查看。
+    这段代码可在插入 Todo 项之后发送推送通知（包含所插入项的文本）。在发生错误的情况下，这段代码将添加一个错误日志条目，该条目可在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中的移动服务的“日志”选项卡上查看。
 
-	>[AZURE.NOTE]可以使用模板通知将一条推送通知发送到多个平台上的客户端。有关更多信息，请参阅[从单个移动服务支持多个设备平台](/zh-cn/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service/#push)。
+	>[AZURE.NOTE]可以使用模板通知将一条推送通知发送到多个平台上的客户端。有关更多信息，请参阅[从单个移动服务支持多个设备平台](/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service/#push)。
 
 2. 将移动服务项目重新发布到 Azure。
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_0118_2016-->

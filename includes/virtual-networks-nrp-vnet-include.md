@@ -10,7 +10,7 @@ VNet 包含以下属性。
 |属性|说明|示例值|
 |---|---|---|
 |**addressSpace**|在 CIDR 表示法中构成 VNet 的地址前缀集合|192\.168.0.0/16|
-|**子网**|构成 VNet 的子网集合|请参阅下面的[子网](#Subnets)。|
+|**子网**|构成 VNet 的子网集合| |
 |**ipAddress**|分配给对象的 IP 地址。这是只读属性。|104\.42.233.77|
 
 ### 子网
@@ -72,7 +72,7 @@ VNet 包含以下属性。
 
 ### 其他资源
 
-- 获取有关 [VNet](/documentation/articles/virtual-networks-overview) 的详细信息。
+- 获取有关 [VNet](/documentation/articles/virtual-networks-overview/) 的详细信息。
 - 阅读 VNet 的 [REST API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/mt163650.aspx)。
 - 阅读子网的 [REST API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/mt163618.aspx)。
 

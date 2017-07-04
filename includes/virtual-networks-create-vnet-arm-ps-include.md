@@ -1,12 +1,14 @@
+<!-- ARM: tested -->
+
 ## 如何使用 PowerShell 创建 VNet
 
 若要使用 PowerShell 创建 VNet，请执行下面的步骤。
 
-1. 如果你从未使用过 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure)，并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
+1. 如果你从未使用过 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)，并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
 	
-3. 如有必要，请运行 **New-AzureRMResourceGroup** cmdlet 来创建新资源组，如下所示。对于我们的方案，创建一个名为 *TestRG* 的资源组。有关资源组的详细信息，请访问 [Azure 资源管理器概述](/documentation/articles/resource-group-overview#resource-groups)。
+3. 如有必要，创建一个新的资源组，如下所示。对于我们的方案，创建一个名为 *TestRG* 的资源组。有关资源组的详细信息，请访问 [Azure 资源管理器概述](/documentation/articles/resource-group-overview/)。
 
-		New-AzureRMResourceGroup -Name TestRG -Location centralus
+		New-AzureResourceGroup -Name TestRG -Location centralus
 
 	预期输出：
 	
@@ -21,9 +23,9 @@
 		
 		ResourceId        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG	
 
-4. 运行 **New-AzureRMVirtualNetwork** cmdlet 以创建新 VNet，如下所示。
+4. 创建名为 *TestVNet* 的新 VNet，如下所示。
 
-		New-AzureRMVirtualNetwork -ResourceGroupName TestRG -Name TestVNet `
+		New-AzureVirtualNetwork -ResourceGroupName TestRG -Name TestVNet `
 			-AddressPrefix 192.168.0.0/16 -Location centralus	
 		
 	预期输出：
@@ -46,15 +48,15 @@
 		NetworkInterfaces : null
 		Subnets           : []
 
-5. 运行 **Get-AzureRMVirtualNetwork** cmdlet 以将虚拟网络对象存储在变量中，如下所示。
+5. 将虚拟网络对象存储在变量中，如下所示。
 
-		$vnet = Get-AzureRMVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
+		$vnet = Get-AzureVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
 	
-	>[AZURE.TIP]可以通过运行 **$vnet = New-AzureRMVirtualNetwork -ResourceGroupName TestRG -Name TestVNet -AddressPrefix 192.168.0.0/16 -Location centralus** 合并步骤 4 和步骤 5。
+	>[AZURE.TIP]可以通过运行 **$vnet = New-AzureVirtualNetwork -ResourceGroupName TestRG -Name TestVNet -AddressPrefix 192.168.0.0/16 -Location centralus** 合并步骤 4 和步骤 5。
 
-6. 运行 **Add-AzureRMVirtualNetworkSubnetConfig** cmdlet 将一个子网添加到新 VNet，如下所示。
+6. 将子网添加到新的 VNet 变量中，如下所示。
 
-		Add-AzureRMVirtualNetworkSubnetConfig -Name FrontEnd `
+		Add-AzureVirtualNetworkSubnetConfig -Name FrontEnd `
 			-VirtualNetwork $vnet -AddressPrefix 192.168.1.0/24
 		
 	预期输出：
@@ -90,12 +92,12 @@
 
 7. 对要创建的每个子网重复执行上面的步骤 6。对于我们的方案，以下命令将创建 *BackEnd* 子网。
 
-		Add-AzureRMVirtualNetworkSubnetConfig -Name BackEnd `
+		Add-AzureVirtualNetworkSubnetConfig -Name BackEnd `
 			-VirtualNetwork $vnet -AddressPrefix 192.168.2.0/24
 
-8. 尽管你创建了子网，但它们当前仅存在于用于检索你在上面的步骤 4 中创建的 VNet 的本地变量中。若要将所做的更改保存到 Azure，请运行 **Set-AzureRMVirtualNetwork** cmdlet，如下所示。
+8. 尽管你创建了子网，但它们当前仅存在于用于检索你在上面的步骤 4 中创建的 VNet 的本地变量中。若要将所做的更改保存到 Azure，请运行 **Set-AzureVirtualNetwork** cmdlet，如下所示。
 
-		Set-AzureRMVirtualNetwork -VirtualNetwork $vnet	
+		Set-AzureVirtualNetwork -VirtualNetwork $vnet	
 		
 	预期输出：
 
@@ -138,4 +140,4 @@
 		                      }
 		                    ]
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_1221_2015-->
